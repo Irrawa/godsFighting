@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+vector
+-
+string
+-
+
+/Users/otbooster/Downloads/2019up/cpp/gods/main.cpp
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+iostream
+-
+vector
+-
+string
+-
+
