@@ -31,11 +31,12 @@ private:
     vector <status> sta_rmStat;
     bool sta_pos, sta_neg;
 
+
 };
 
 class character{
 public:
-    void TakeTurn(character oppoCharacter, cmove chosenMove);
+    void TakeTurn(character oppoCharacter, cmove chosenMove,field currentField);
     //玩家针对对手玩家行动
 private:
     string cName; //角色名
@@ -45,6 +46,7 @@ private:
     //     状态列表
     vector <cmove> moveL;
     //     技能列表
+    vector <status> statM;
 };
 
 class cmove{
@@ -76,15 +78,22 @@ private:
     vector <cmove> comMove;
     //   与此技能联动施放的技能
     static int mv_idCount;
-    //        计数技能id。每一种技能拥有其独立的id。
+    //   计数技能id。每一种技能拥有其独立的id。
 
 };
 
 
 class field{
 public:
+    void FieldTakeEffect(character character1, character character2);
+    //场地状态生效
 
 private:
+    vector <field_status> FStatusL;
+
+    // 场地状态列表
+
+    //   ！！！需要设计一个可以记录全部战斗流程的数据结构！！！
 
 };
 
