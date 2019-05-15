@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp
+
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
+
+/Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
+
+/Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp
+
 /Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
 vector
 -
@@ -13,6 +21,30 @@ string
 -
 
 /Users/otbooster/Downloads/2019up/cpp/gods/main.cpp
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+status.h
+/Users/otbooster/Downloads/2019up/cpp/gods/status.h
+status.cpp
+/Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
+iostream
+-
+vector
+-
+string
+-
+
+/Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+iostream
+-
+vector
+-
+string
+-
+
+/Users/otbooster/Downloads/2019up/cpp/gods/status.h
 godFighting.h
 /Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
 iostream

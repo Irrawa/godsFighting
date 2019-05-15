@@ -81,17 +81,147 @@ CMakeFiles/gods.dir/main.cpp.o.provides: CMakeFiles/gods.dir/main.cpp.o.requires
 CMakeFiles/gods.dir/main.cpp.o.provides.build: CMakeFiles/gods.dir/main.cpp.o
 
 
+CMakeFiles/gods.dir/status.cpp.o: CMakeFiles/gods.dir/flags.make
+CMakeFiles/gods.dir/status.cpp.o: ../status.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gods.dir/status.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gods.dir/status.cpp.o -c /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
+
+CMakeFiles/gods.dir/status.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gods.dir/status.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp > CMakeFiles/gods.dir/status.cpp.i
+
+CMakeFiles/gods.dir/status.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gods.dir/status.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp -o CMakeFiles/gods.dir/status.cpp.s
+
+CMakeFiles/gods.dir/status.cpp.o.requires:
+
+.PHONY : CMakeFiles/gods.dir/status.cpp.o.requires
+
+CMakeFiles/gods.dir/status.cpp.o.provides: CMakeFiles/gods.dir/status.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/status.cpp.o.provides.build
+.PHONY : CMakeFiles/gods.dir/status.cpp.o.provides
+
+CMakeFiles/gods.dir/status.cpp.o.provides.build: CMakeFiles/gods.dir/status.cpp.o
+
+
+CMakeFiles/gods.dir/character.cpp.o: CMakeFiles/gods.dir/flags.make
+CMakeFiles/gods.dir/character.cpp.o: ../character.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gods.dir/character.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gods.dir/character.cpp.o -c /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp
+
+CMakeFiles/gods.dir/character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gods.dir/character.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp > CMakeFiles/gods.dir/character.cpp.i
+
+CMakeFiles/gods.dir/character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gods.dir/character.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp -o CMakeFiles/gods.dir/character.cpp.s
+
+CMakeFiles/gods.dir/character.cpp.o.requires:
+
+.PHONY : CMakeFiles/gods.dir/character.cpp.o.requires
+
+CMakeFiles/gods.dir/character.cpp.o.provides: CMakeFiles/gods.dir/character.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/character.cpp.o.provides.build
+.PHONY : CMakeFiles/gods.dir/character.cpp.o.provides
+
+CMakeFiles/gods.dir/character.cpp.o.provides.build: CMakeFiles/gods.dir/character.cpp.o
+
+
+CMakeFiles/gods.dir/cmove.cpp.o: CMakeFiles/gods.dir/flags.make
+CMakeFiles/gods.dir/cmove.cpp.o: ../cmove.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gods.dir/cmove.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gods.dir/cmove.cpp.o -c /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
+
+CMakeFiles/gods.dir/cmove.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gods.dir/cmove.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp > CMakeFiles/gods.dir/cmove.cpp.i
+
+CMakeFiles/gods.dir/cmove.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gods.dir/cmove.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp -o CMakeFiles/gods.dir/cmove.cpp.s
+
+CMakeFiles/gods.dir/cmove.cpp.o.requires:
+
+.PHONY : CMakeFiles/gods.dir/cmove.cpp.o.requires
+
+CMakeFiles/gods.dir/cmove.cpp.o.provides: CMakeFiles/gods.dir/cmove.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/cmove.cpp.o.provides.build
+.PHONY : CMakeFiles/gods.dir/cmove.cpp.o.provides
+
+CMakeFiles/gods.dir/cmove.cpp.o.provides.build: CMakeFiles/gods.dir/cmove.cpp.o
+
+
+CMakeFiles/gods.dir/field_status.cpp.o: CMakeFiles/gods.dir/flags.make
+CMakeFiles/gods.dir/field_status.cpp.o: ../field_status.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gods.dir/field_status.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gods.dir/field_status.cpp.o -c /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp
+
+CMakeFiles/gods.dir/field_status.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gods.dir/field_status.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp > CMakeFiles/gods.dir/field_status.cpp.i
+
+CMakeFiles/gods.dir/field_status.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gods.dir/field_status.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp -o CMakeFiles/gods.dir/field_status.cpp.s
+
+CMakeFiles/gods.dir/field_status.cpp.o.requires:
+
+.PHONY : CMakeFiles/gods.dir/field_status.cpp.o.requires
+
+CMakeFiles/gods.dir/field_status.cpp.o.provides: CMakeFiles/gods.dir/field_status.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field_status.cpp.o.provides.build
+.PHONY : CMakeFiles/gods.dir/field_status.cpp.o.provides
+
+CMakeFiles/gods.dir/field_status.cpp.o.provides.build: CMakeFiles/gods.dir/field_status.cpp.o
+
+
+CMakeFiles/gods.dir/field.cpp.o: CMakeFiles/gods.dir/flags.make
+CMakeFiles/gods.dir/field.cpp.o: ../field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gods.dir/field.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gods.dir/field.cpp.o -c /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
+
+CMakeFiles/gods.dir/field.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gods.dir/field.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp > CMakeFiles/gods.dir/field.cpp.i
+
+CMakeFiles/gods.dir/field.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gods.dir/field.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp -o CMakeFiles/gods.dir/field.cpp.s
+
+CMakeFiles/gods.dir/field.cpp.o.requires:
+
+.PHONY : CMakeFiles/gods.dir/field.cpp.o.requires
+
+CMakeFiles/gods.dir/field.cpp.o.provides: CMakeFiles/gods.dir/field.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field.cpp.o.provides.build
+.PHONY : CMakeFiles/gods.dir/field.cpp.o.provides
+
+CMakeFiles/gods.dir/field.cpp.o.provides.build: CMakeFiles/gods.dir/field.cpp.o
+
+
 # Object files for target gods
 gods_OBJECTS = \
-"CMakeFiles/gods.dir/main.cpp.o"
+"CMakeFiles/gods.dir/main.cpp.o" \
+"CMakeFiles/gods.dir/status.cpp.o" \
+"CMakeFiles/gods.dir/character.cpp.o" \
+"CMakeFiles/gods.dir/cmove.cpp.o" \
+"CMakeFiles/gods.dir/field_status.cpp.o" \
+"CMakeFiles/gods.dir/field.cpp.o"
 
 # External object files for target gods
 gods_EXTERNAL_OBJECTS =
 
 gods: CMakeFiles/gods.dir/main.cpp.o
+gods: CMakeFiles/gods.dir/status.cpp.o
+gods: CMakeFiles/gods.dir/character.cpp.o
+gods: CMakeFiles/gods.dir/cmove.cpp.o
+gods: CMakeFiles/gods.dir/field_status.cpp.o
+gods: CMakeFiles/gods.dir/field.cpp.o
 gods: CMakeFiles/gods.dir/build.make
 gods: CMakeFiles/gods.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable gods"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable gods"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gods.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +230,11 @@ CMakeFiles/gods.dir/build: gods
 .PHONY : CMakeFiles/gods.dir/build
 
 CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/main.cpp.o.requires
+CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/status.cpp.o.requires
+CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/character.cpp.o.requires
+CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/cmove.cpp.o.requires
+CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/field_status.cpp.o.requires
+CMakeFiles/gods.dir/requires: CMakeFiles/gods.dir/field.cpp.o.requires
 
 .PHONY : CMakeFiles/gods.dir/requires
 

@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gods.dir/main.cpp.o"
+  "CMakeFiles/gods.dir/status.cpp.o"
+  "CMakeFiles/gods.dir/character.cpp.o"
+  "CMakeFiles/gods.dir/cmove.cpp.o"
+  "CMakeFiles/gods.dir/field_status.cpp.o"
+  "CMakeFiles/gods.dir/field.cpp.o"
   "gods.pdb"
   "gods"
 )

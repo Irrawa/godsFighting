@@ -123,6 +123,114 @@ gods/fast:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/build
 .PHONY : gods/fast
 
+character.o: character.cpp.o
+
+.PHONY : character.o
+
+# target to build an object file
+character.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/character.cpp.o
+.PHONY : character.cpp.o
+
+character.i: character.cpp.i
+
+.PHONY : character.i
+
+# target to preprocess a source file
+character.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/character.cpp.i
+.PHONY : character.cpp.i
+
+character.s: character.cpp.s
+
+.PHONY : character.s
+
+# target to generate assembly for a file
+character.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/character.cpp.s
+.PHONY : character.cpp.s
+
+cmove.o: cmove.cpp.o
+
+.PHONY : cmove.o
+
+# target to build an object file
+cmove.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/cmove.cpp.o
+.PHONY : cmove.cpp.o
+
+cmove.i: cmove.cpp.i
+
+.PHONY : cmove.i
+
+# target to preprocess a source file
+cmove.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/cmove.cpp.i
+.PHONY : cmove.cpp.i
+
+cmove.s: cmove.cpp.s
+
+.PHONY : cmove.s
+
+# target to generate assembly for a file
+cmove.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/cmove.cpp.s
+.PHONY : cmove.cpp.s
+
+field.o: field.cpp.o
+
+.PHONY : field.o
+
+# target to build an object file
+field.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field.cpp.o
+.PHONY : field.cpp.o
+
+field.i: field.cpp.i
+
+.PHONY : field.i
+
+# target to preprocess a source file
+field.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field.cpp.i
+.PHONY : field.cpp.i
+
+field.s: field.cpp.s
+
+.PHONY : field.s
+
+# target to generate assembly for a file
+field.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field.cpp.s
+.PHONY : field.cpp.s
+
+field_status.o: field_status.cpp.o
+
+.PHONY : field_status.o
+
+# target to build an object file
+field_status.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field_status.cpp.o
+.PHONY : field_status.cpp.o
+
+field_status.i: field_status.cpp.i
+
+.PHONY : field_status.i
+
+# target to preprocess a source file
+field_status.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field_status.cpp.i
+.PHONY : field_status.cpp.i
+
+field_status.s: field_status.cpp.s
+
+.PHONY : field_status.s
+
+# target to generate assembly for a file
+field_status.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/field_status.cpp.s
+.PHONY : field_status.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +258,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+status.o: status.cpp.o
+
+.PHONY : status.o
+
+# target to build an object file
+status.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/status.cpp.o
+.PHONY : status.cpp.o
+
+status.i: status.cpp.i
+
+.PHONY : status.i
+
+# target to preprocess a source file
+status.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/status.cpp.i
+.PHONY : status.cpp.i
+
+status.s: status.cpp.s
+
+.PHONY : status.s
+
+# target to generate assembly for a file
+status.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/status.cpp.s
+.PHONY : status.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... gods"
+	@echo "... character.o"
+	@echo "... character.i"
+	@echo "... character.s"
+	@echo "... cmove.o"
+	@echo "... cmove.i"
+	@echo "... cmove.s"
+	@echo "... field.o"
+	@echo "... field.i"
+	@echo "... field.s"
+	@echo "... field_status.o"
+	@echo "... field_status.i"
+	@echo "... field_status.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... status.o"
+	@echo "... status.i"
+	@echo "... status.s"
 .PHONY : help
 
 
