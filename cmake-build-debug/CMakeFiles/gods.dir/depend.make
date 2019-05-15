@@ -4,11 +4,15 @@
 CMakeFiles/gods.dir/character.cpp.o: ../character.cpp
 
 CMakeFiles/gods.dir/cmove.cpp.o: ../cmove.cpp
+CMakeFiles/gods.dir/cmove.cpp.o: ../godFighting.h
 
 CMakeFiles/gods.dir/field.cpp.o: ../field.cpp
+CMakeFiles/gods.dir/field.cpp.o: ../godFighting.h
 
 CMakeFiles/gods.dir/field_status.cpp.o: ../field_status.cpp
 
+CMakeFiles/gods.dir/main.cpp.o: ../cmove.cpp
+CMakeFiles/gods.dir/main.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/main.cpp.o: ../godFighting.h
 CMakeFiles/gods.dir/main.cpp.o: ../main.cpp
 CMakeFiles/gods.dir/main.cpp.o: ../status.cpp

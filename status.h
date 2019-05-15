@@ -52,12 +52,6 @@ public:
             sta_ds = 0;
         }
     }
-
-
-
 };
-
-
-
 
 #endif //GODS_STATUS_H

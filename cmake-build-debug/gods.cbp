@@ -86,6 +86,9 @@
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp">
 			<Option target="gods"/>
 		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h">
+			<Option target="gods"/>
+		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/field.cpp">
 			<Option target="gods"/>
 		</Unit>

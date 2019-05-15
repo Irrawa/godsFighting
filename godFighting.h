@@ -61,17 +61,24 @@ public:
     //     技能列表
     vector <status> statM;
 
+    void Initialize(vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd);
+    //初始化角色，用于创建角色
+
     void TakeTurn(character oppoCharacter, cmove chosenMove,field currentField);
     //玩家针对对手玩家行动
+
+    void add_status(status S){
+        statL.push_back(S);
+    };
 };
 
 class cmove{
 public:
     string mName, mInfo;
     //     技能名  技能介绍
-    int slf_dh, slf_dm, slf_da, slf_dd, slf_ds,
+    int slf_dh = 0, slf_dm = 0, slf_da = 0, slf_dd = 0, slf_ds = 0,
     //自身的hp、mp、atk、def、spd 变化
-            opo_dh, opo_dm, opo_da, opo_dd, opo_ds,
+            opo_dh = 0, opo_dm = 0, opo_da = 0, opo_dd = 0, opo_ds = 0,
     //对方的hp、mp、atk、def、spd 变化
             mv_atk, mv_id;
     //技能攻击，技能id
@@ -84,7 +91,7 @@ public:
     static int mv_idCount;
     //   计数技能id。每一种技能拥有其独立的id。
 
-    void SpellMove(character speller, character receiver, vector <field_status> SFS);
+    void SpellMove(character speller, character taker, vector <field_status> SFS);
     /*表示搓技能的过程，在此函数中初始化技能的各项数值。
     例如要搓一个使对方受到其剩余生命值(10% + (攻击者攻击力/受攻击者防御) * 10%)的伤害，则应在此函数中做到：
     1，获取speller的攻击力
@@ -93,8 +100,25 @@ public:
     4，将伤害值赋予技能的O_dh,注意正负号！造成伤害为负数！
     5，初始化技能的其它数值
     6，结束搓技能，进入技能生效阶段*/
-    void LaunchMove(character speller);
+    void LaunchMove(character speller, character receiver, vector <field_status> SFS);
     //此阶段扣除施放技能消耗的魔法值/生命值，并造成应有的影响
+
+    void set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,int oh = 0 ,int om = 0,int oa = 0,int od = 0,int os = 0){
+        slf_dh = sh;
+        slf_dm = sm;
+        slf_da = sa;
+        slf_dd = sd;
+        slf_ds = ss;
+        opo_dh = oh;
+        opo_dm = om;
+        opo_da = oa;
+        opo_dd = od;
+        opo_ds = os;
+    }
+
+    void set_atk(int attack){
+        mv_atk = attack;
+    }
 
 
 };

@@ -9,8 +9,34 @@
 /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp
 
 /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+iostream
+-
+vector
+-
+string
+-
+
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+iostream
+-
+vector
+-
+string
+-
 
 /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
+godFighting.h
+/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
+iostream
+-
+vector
+-
+string
+-
 
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp
 
@@ -27,6 +53,10 @@ status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 status.cpp
 /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
+cmove.h
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
+cmove.cpp
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
 iostream
 -
 vector

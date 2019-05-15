@@ -5,11 +5,15 @@ CMakeFiles/gods.dir/character.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp
 CMakeFiles/gods.dir/cmove.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
+ /Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
 CMakeFiles/gods.dir/field.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
+ /Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
 CMakeFiles/gods.dir/field_status.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp
 CMakeFiles/gods.dir/main.cpp.o
+ /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
+ /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
  /Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h
  /Users/otbooster/Downloads/2019up/cpp/gods/main.cpp
  /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
