@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gods.dir/cmove.cpp.o"
   "CMakeFiles/gods.dir/field_status.cpp.o"
   "CMakeFiles/gods.dir/field.cpp.o"
+  "CMakeFiles/gods.dir/note_page.cpp.o"
   "gods.pdb"
   "gods"
 )

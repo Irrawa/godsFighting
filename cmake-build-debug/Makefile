@@ -258,6 +258,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+note_page.o: note_page.cpp.o
+
+.PHONY : note_page.o
+
+# target to build an object file
+note_page.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/note_page.cpp.o
+.PHONY : note_page.cpp.o
+
+note_page.i: note_page.cpp.i
+
+.PHONY : note_page.i
+
+# target to preprocess a source file
+note_page.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/note_page.cpp.i
+.PHONY : note_page.cpp.i
+
+note_page.s: note_page.cpp.s
+
+.PHONY : note_page.s
+
+# target to generate assembly for a file
+note_page.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/note_page.cpp.s
+.PHONY : note_page.cpp.s
+
 status.o: status.cpp.o
 
 .PHONY : status.o
@@ -309,6 +336,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... note_page.o"
+	@echo "... note_page.i"
+	@echo "... note_page.s"
 	@echo "... status.o"
 	@echo "... status.i"
 	@echo "... status.s"

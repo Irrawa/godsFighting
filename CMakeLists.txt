@@ -3,4 +3,4 @@ project(gods)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(gods main.cpp godFighting.h status.cpp character.cpp cmove.cpp field_status.cpp field.cpp status.h cmove.h)
+add_executable(gods main.cpp godFighting.h status.cpp character.cpp cmove.cpp field_status.cpp field.cpp status.h cmove.h character.h field_status.h note_page.cpp note_page.h field.h)

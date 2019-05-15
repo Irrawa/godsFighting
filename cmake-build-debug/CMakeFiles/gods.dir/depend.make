@@ -3,21 +3,36 @@
 
 CMakeFiles/gods.dir/character.cpp.o: ../character.cpp
 
+CMakeFiles/gods.dir/cmove.cpp.o: ../character.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../cmove.cpp
-CMakeFiles/gods.dir/cmove.cpp.o: ../godFighting.h
+CMakeFiles/gods.dir/cmove.cpp.o: ../cmove.h
+CMakeFiles/gods.dir/cmove.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/field.cpp.o: ../field.cpp
-CMakeFiles/gods.dir/field.cpp.o: ../godFighting.h
 
+CMakeFiles/gods.dir/field_status.cpp.o: ../character.h
+CMakeFiles/gods.dir/field_status.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/field_status.cpp.o: ../field_status.cpp
+CMakeFiles/gods.dir/field_status.cpp.o: ../field_status.h
+CMakeFiles/gods.dir/field_status.cpp.o: ../note_Page.h
+CMakeFiles/gods.dir/field_status.cpp.o: ../status.h
 
-CMakeFiles/gods.dir/main.cpp.o: ../cmove.cpp
+CMakeFiles/gods.dir/main.cpp.o: ../character.h
 CMakeFiles/gods.dir/main.cpp.o: ../cmove.h
-CMakeFiles/gods.dir/main.cpp.o: ../godFighting.h
+CMakeFiles/gods.dir/main.cpp.o: ../field.h
+CMakeFiles/gods.dir/main.cpp.o: ../field_status.h
 CMakeFiles/gods.dir/main.cpp.o: ../main.cpp
-CMakeFiles/gods.dir/main.cpp.o: ../status.cpp
+CMakeFiles/gods.dir/main.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/main.cpp.o: ../status.h
 
-CMakeFiles/gods.dir/status.cpp.o: ../godFighting.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../character.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../cmove.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../field_status.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../note_page.cpp
+CMakeFiles/gods.dir/note_page.cpp.o: ../note_page.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../status.h
+
+CMakeFiles/gods.dir/status.cpp.o: ../character.h
 CMakeFiles/gods.dir/status.cpp.o: ../status.cpp
+CMakeFiles/gods.dir/status.cpp.o: ../status.h
 

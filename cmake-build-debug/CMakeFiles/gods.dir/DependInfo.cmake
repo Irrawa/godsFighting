@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/otbooster/Downloads/2019up/cpp/gods/field.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/field.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/field_status.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/main.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/main.cpp.o"
+  "/Users/otbooster/Downloads/2019up/cpp/gods/note_page.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/note_page.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/status.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/status.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

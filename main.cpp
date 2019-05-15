@@ -1,8 +1,9 @@
-#include "godFighting.h"
+#include "character.h"
 #include "status.h"
-#include "status.cpp"
 #include "cmove.h"
-#include "cmove.cpp"
+#include "field.h"
+#include "field_status.h"
+#include "note_page.h"
 #include <iostream>
 #include <vector>
 #include <string>

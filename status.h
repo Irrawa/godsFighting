@@ -1,33 +1,55 @@
 //
 // Created by 梦芙兰 on 2019/5/15.
 //
-#include "godFighting.h"
 #include <iostream>
 #include <vector>
 #include <string>
+
 using namespace std;
+class cmove;
+class field;
+class character;
+class field_status;
+class status;
 
 #ifndef GODS_STATUS_H
 #define GODS_STATUS_H
 
-void status::SetupStatus(){}
+class status{
+public:
+    string sta_name, sta_info;
+    //      状态名    状态介绍
+    int sta_dh = 0, sta_dm = 0, sta_da = 0, sta_dd = 0, sta_ds = 0,
+    //状态造成的生命值、魔法值、攻击、防御、速度 的变化
+            sta_Odh = 0, sta_Odm = 0, sta_Oda = 0, sta_Odd = 0, sta_Ods = 0,
+    //对对手造成的...变化
+            iniT = 1, nT = 1, sta_id = 0;
+    //初始持续时间 目前持续时间 状态id
 
-void status::RefStatus(){}
+    vector <status> sta_rmStat;
+    //移除自身的状态
 
-void status::StatusTakeEffect(character self, character oppo){
-    self.HP += sta_dh;
-    self.MP += sta_dm;
-    self.ctr_atk += sta_da;
-    self.ctr_def += sta_dd;
-    self.ctr_spd += sta_ds;
-    oppo.HP += sta_Odh;
-    oppo.MP += sta_Odm;
-    oppo.ctr_atk += sta_Oda;
-    oppo.ctr_def += sta_Odd;
-    oppo.ctr_spd += sta_Ods;
-}
+    bool sta_pos, sta_neg;
+    //正面状态还是负面状态？
 
-void status::StatusLoss(){}
+    bool showStatus = true;
+    // 该状态是否可被玩家看到
+
+
+    void SetupStatus();
+    //状态被施加时，使用此函数初始化，
+    void RefStatus();
+    //每经过一回合，所有生效的status需要使用此函数刷新。
+    void StatusTakeEffect(character selfCharacter, character oppoCharacter);
+    //效果产生影响，状态消失时也调用此函数将一些状态造成的改变复原（如攻击力降低等）
+    void StatusLoss();
+    //状态消逝时的特殊行为，如失去状态时回血等等
+    string get_information(){
+        string output = "【" + sta_name + "】" + ":\n" + sta_info + "\n目前剩余" + to_string(nT) + "回合。";
+        return output ;
+    }
+
+};
 
 class choke : public status{
 public:
@@ -53,5 +75,6 @@ public:
         }
     }
 };
+
 
 #endif //GODS_STATUS_H
