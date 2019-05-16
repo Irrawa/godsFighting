@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 #include "status.h"
 #include "character.h"
 #include "cmove.h"
@@ -31,12 +32,46 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
     cout << "Character " << cName << " created!" << endl;
 }
 
-void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* currentField){
-    cout << cName << " casted move <" << (*chosenMove).mName << "> to " << (*oppoCharacter).cName << endl;
+void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* currentField){  //角色对对方施放技能的全过程
+    if ((*chosenMove).selfTarget == false) {
+        cout << cName << " casted move <" << (*chosenMove).mName << "> to " << (*oppoCharacter).cName << "!" << endl;
+    }
+    else{
+        cout << cName << " casted move <" << (*chosenMove).mName << ">!" << endl;
+    }
     (*chosenMove).SpellMove(this, oppoCharacter, &((*currentField).FStatusL));
     (*chosenMove).LaunchMove(this, oppoCharacter, &((*currentField).FStatusL));
-    cout << (*oppoCharacter).HP << endl;
+//    cout << (*oppoCharacter).HP << endl;
 
+}
+
+void character::SufferStatus(character* oppoCharacter, field* currentField){
+    if(statL.size() > 0){
+        for(int i = 0; i < statL.size(); i++){
+            status tempStat = statL[i];
+            
+        }
+    }
+}
+
+
+string character::print(){ //输出角色状态
+    stringstream infof;
+    infof << "[" << cName << "]" << "\n";
+    infof <<"HP:" << HP << "   MP:" << MP << "   ATK:" << ctr_atk << "   DEF:" << ctr_def << "   SPD:" << ctr_spd << "\n";
+    infof << "Status: ";
+    if(statL.size() > 0){
+        for(int i = 0; i < statL.size(); i++){
+            infof << "{" << statL[i].sta_name << "} ";
+        }
+    }
+    else{
+        infof << "None";
+    }
+    infof << "\n";
+    string info = infof.str();
+    cout << info;
+    return info;
 }
 
 //string cName; //角色名

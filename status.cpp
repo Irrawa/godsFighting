@@ -7,6 +7,7 @@
 #include <string>
 #include "character.h"
 #include "status.h"
+#include "cmove.h"
 
 using namespace std;
 
@@ -23,9 +24,11 @@ void status::StatusTakeEffect(character self, character oppo){
     oppo.ctr_atk += sta_Oda;
     oppo.ctr_def += sta_Odd;
     oppo.ctr_spd += sta_Ods;
+    nT -= 1;
 }
 
-void status::SetupStatus(){}
+void status::SetupStatus(){
+}
 
 void status::RefStatus(){}
 

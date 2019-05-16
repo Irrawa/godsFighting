@@ -29,7 +29,7 @@ public:
     //技能攻击，技能id
     vector <status> slf_rmStat, opo_rmStat, slf_adStat, opo_adStat;
     //          移除自身状态，移除对手状态，增加自身状态，增加对手状态（这些均为vector容器）
-    bool selfTarget;
+    bool selfTarget = false;
     //   作用目标是否为自身
     vector <cmove> comMove;
     //   与此技能联动施放的技能

@@ -25,8 +25,8 @@ public:
             iniT = 1, nT = 1, sta_id = 0;
     //初始持续时间 目前持续时间 状态id
 
-    vector <status> sta_rmStat;
-    //移除自身的状态
+    vector <cmove> LinkedMoves;
+    //联携技能表，若此表不空，则在状态生效时自动施放技能。
 
     bool sta_pos, sta_neg;
     //正面状态还是负面状态？
@@ -36,7 +36,7 @@ public:
 
 
     void SetupStatus();
-    //状态被施加时，使用此函数初始化，
+    //状态被施加时，使用此函数初始化，并返回初始化后的状态
     void RefStatus();
     //每经过一回合，所有生效的status需要使用此函数刷新。
     void StatusTakeEffect(character selfCharacter, character oppoCharacter);

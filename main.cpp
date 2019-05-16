@@ -19,14 +19,17 @@ int main() {
     cmove aqua_ball = AquaBall();
     cmove wind_slash = WindSlash();
     cmove psycho_boost = PsychoBoost();
-    cout << aqua_ball.slf_dm << endl;
-    cout << AllMoveList.size() << endl;
-    cout << IrrawaMoveList.size() << endl;
+//    cout << aqua_ball.slf_dm << endl;
+//    cout << AllMoveList.size() << endl;
+//    cout << IrrawaMoveList.size() << endl;
     character Irrawa = IRRAWA();
     character Mew = MEW();
 
-    Irrawa.TakeTurn(&Mew, &wind_slash, {});
-    cout << Mew.HP << endl;
+    Irrawa.TakeTurn(&Mew, &aqua_ball, {});
+    Mew.TakeTurn(&Irrawa, &psycho_boost,{});
+    Mew.print();
+    Irrawa.print();
+
 
     return 0;
 }

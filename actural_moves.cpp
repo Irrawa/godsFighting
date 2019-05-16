@@ -47,6 +47,7 @@ cmove PsychoBoost(){
     psychoBoost.mName = "Psycho Boost";
     psychoBoost.slf_dm = -25;
     psychoBoost.slf_da = 15;
+    psychoBoost.selfTarget = true;
     cout << "PsychoBoost established!" << endl;
     AllMoveList.push_back(psychoBoost);
     MewMoveList.push_back(psychoBoost);

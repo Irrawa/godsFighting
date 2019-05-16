@@ -43,8 +43,17 @@ void cmove::LaunchMove(character *speller, character *taker, vector <field_statu
     (*taker).ctr_spd += opo_ds;
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
-            (*speller).add_status(slf_adStat[i]);
+            status tempStatus = slf_adStat[i];
+            tempStatus.SetupStatus();
+            (*speller).add_status(tempStatus);
         }
     }
-    cout << (*taker).HP << endl;
+    if (opo_adStat.size() != 0){
+        for (int i = 0; i < opo_adStat.size(); i++) {
+            status tempStatus = opo_adStat[i];
+            tempStatus.SetupStatus();
+            (*taker).add_status(tempStatus);
+        }
+    }
+//    cout << (*taker).HP << endl;
 }

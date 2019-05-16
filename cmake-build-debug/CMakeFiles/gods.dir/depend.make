@@ -57,6 +57,7 @@ CMakeFiles/gods.dir/note_page.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/note_page.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/status.cpp.o: ../character.h
+CMakeFiles/gods.dir/status.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/status.cpp.o: ../status.cpp
 CMakeFiles/gods.dir/status.cpp.o: ../status.h
 

@@ -33,6 +33,12 @@ public:
     //玩家针对对手玩家行动
 
     void add_status(status S);
+
+    void SufferStatus(character* oppoCharacter, field* currentField);
+
+    bool IsAlive();
+
+    string print();
 };
 
 #endif //GODS_CHARACTER_H

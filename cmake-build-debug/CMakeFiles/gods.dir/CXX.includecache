@@ -71,6 +71,8 @@ vector
 -
 string
 -
+sstream
+-
 status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 character.h
@@ -215,6 +217,8 @@ character.h
 /Users/otbooster/Downloads/2019up/cpp/gods/character.h
 status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/status.h
+cmove.h
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 iostream
