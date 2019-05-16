@@ -29,7 +29,7 @@ public:
     void Initialize(string name, vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd);
     //初始化角色，用于创建角色
 
-    void TakeTurn(character oppoCharacter, cmove chosenMove,field currentField);
+    void TakeTurn(character* oppoCharacter, cmove* chosenMove, field* currentField);
     //玩家针对对手玩家行动
 
     void add_status(status S);

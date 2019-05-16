@@ -31,11 +31,11 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
     cout << "Character " << cName << " created!" << endl;
 }
 
-void character::TakeTurn(character oppoCharacter, cmove chosenMove,field currentField){
-    cout << cName << " casted move <" << chosenMove.mName << "> to " << oppoCharacter.cName << endl;
-    chosenMove.SpellMove(*this, oppoCharacter, currentField.FStatusL);
-    chosenMove.LaunchMove(*this, oppoCharacter, currentField.FStatusL);
-    cout << oppoCharacter.HP << endl;
+void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* currentField){
+    cout << cName << " casted move <" << (*chosenMove).mName << "> to " << (*oppoCharacter).cName << endl;
+    (*chosenMove).SpellMove(this, oppoCharacter, &((*currentField).FStatusL));
+    (*chosenMove).LaunchMove(this, oppoCharacter, &((*currentField).FStatusL));
+    cout << (*oppoCharacter).HP << endl;
 
 }
 

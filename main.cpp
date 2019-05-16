@@ -25,7 +25,7 @@ int main() {
     character Irrawa = IRRAWA();
     character Mew = MEW();
 
-    Irrawa.TakeTurn(Mew, wind_slash, {});
+    Irrawa.TakeTurn(&Mew, &wind_slash, {});
     cout << Mew.HP << endl;
 
     return 0;

@@ -22,29 +22,29 @@ void cmove::set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,
     opo_ds = os;
 }
 
-void cmove::SpellMove(character speller, character taker, vector <field_status> SFS){
-    int damage = mv_atk * speller.ctr_atk / taker.ctr_def;
+void cmove::SpellMove(character *speller, character *taker, vector <field_status> *SFS){
+    int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
     opo_dh -= damage;
     if(opo_dh < 0){
-        cout << "The move <" << mName <<"> inflicted *" << damage << "* damage to " << taker.cName << endl;
+        cout << "The move <" << mName <<"> inflicted *" << damage << "* damage to " << (*taker).cName << endl;
     }
 }
 
-void cmove::LaunchMove(character speller, character taker, vector <field_status> SFS) {
-    speller.HP += slf_dh;
-    speller.MP += slf_dm;
-    speller.ctr_atk += slf_da;
-    speller.ctr_def += slf_dd;
-    speller.ctr_spd += slf_ds;
-    taker.HP += opo_dh;
-    taker.MP += opo_dm;
-    taker.ctr_atk += opo_da;
-    taker.ctr_def += opo_dd;
-    taker.ctr_spd += opo_ds;
+void cmove::LaunchMove(character *speller, character *taker, vector <field_status> *SFS) {
+    (*speller).HP += slf_dh;
+    (*speller).MP += slf_dm;
+    (*speller).ctr_atk += slf_da;
+    (*speller).ctr_def += slf_dd;
+    (*speller).ctr_spd += slf_ds;
+    (*taker).HP += opo_dh;
+    (*taker).MP += opo_dm;
+    (*taker).ctr_atk += opo_da;
+    (*taker).ctr_def += opo_dd;
+    (*taker).ctr_spd += opo_ds;
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
-            speller.add_status(slf_adStat[i]);
+            (*speller).add_status(slf_adStat[i]);
         }
     }
-    cout << taker.HP << endl;
+    cout << (*taker).HP << endl;
 }
