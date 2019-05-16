@@ -123,6 +123,60 @@ gods/fast:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/build
 .PHONY : gods/fast
 
+actural_characters.o: actural_characters.cpp.o
+
+.PHONY : actural_characters.o
+
+# target to build an object file
+actural_characters.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_characters.cpp.o
+.PHONY : actural_characters.cpp.o
+
+actural_characters.i: actural_characters.cpp.i
+
+.PHONY : actural_characters.i
+
+# target to preprocess a source file
+actural_characters.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_characters.cpp.i
+.PHONY : actural_characters.cpp.i
+
+actural_characters.s: actural_characters.cpp.s
+
+.PHONY : actural_characters.s
+
+# target to generate assembly for a file
+actural_characters.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_characters.cpp.s
+.PHONY : actural_characters.cpp.s
+
+actural_moves.o: actural_moves.cpp.o
+
+.PHONY : actural_moves.o
+
+# target to build an object file
+actural_moves.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_moves.cpp.o
+.PHONY : actural_moves.cpp.o
+
+actural_moves.i: actural_moves.cpp.i
+
+.PHONY : actural_moves.i
+
+# target to preprocess a source file
+actural_moves.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_moves.cpp.i
+.PHONY : actural_moves.cpp.i
+
+actural_moves.s: actural_moves.cpp.s
+
+.PHONY : actural_moves.s
+
+# target to generate assembly for a file
+actural_moves.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_moves.cpp.s
+.PHONY : actural_moves.cpp.s
+
 character.o: character.cpp.o
 
 .PHONY : character.o
@@ -321,6 +375,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... gods"
+	@echo "... actural_characters.o"
+	@echo "... actural_characters.i"
+	@echo "... actural_characters.s"
+	@echo "... actural_moves.o"
+	@echo "... actural_moves.i"
+	@echo "... actural_moves.s"
 	@echo "... character.o"
 	@echo "... character.i"
 	@echo "... character.s"

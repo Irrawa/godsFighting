@@ -8,7 +8,8 @@
 #include "field_status.h"
 #include "character.h"
 #include "cmove.h"
-#include "note_Page.h"
+#include "note_page.h"
+#include "status.h"
 
 using namespace std;
 

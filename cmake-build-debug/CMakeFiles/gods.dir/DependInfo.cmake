@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/actural_characters.cpp.o"
+  "/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/actural_moves.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/character.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/cmove.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/field.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/field.cpp.o"

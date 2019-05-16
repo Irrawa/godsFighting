@@ -3,13 +3,31 @@
 //
 #include "character.h"
 #include "cmove.h"
+#include "status.h"
 #include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
 
-void cmove::SpellMove(character speller, character taker, vector <field_status> SFS){
+void cmove::set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,int oh = 0 ,int om = 0,int oa = 0,int od = 0,int os = 0){
+    slf_dh = sh;
+    slf_dm = sm;
+    slf_da = sa;
+    slf_dd = sd;
+    slf_ds = ss;
+    opo_dh = oh;
+    opo_dm = om;
+    opo_da = oa;
+    opo_dd = od;
+    opo_ds = os;
+}
 
+void cmove::SpellMove(character speller, character taker, vector <field_status> SFS){
+    int damage = mv_atk * speller.ctr_atk / taker.ctr_def;
+    opo_dh -= damage;
+    if(opo_dh < 0){
+        cout << "The move <" << mName <<"> inflicted *" << damage << "* damage to " << taker.cName << endl;
+    }
 }
 
 void cmove::LaunchMove(character speller, character taker, vector <field_status> SFS) {
@@ -28,4 +46,5 @@ void cmove::LaunchMove(character speller, character taker, vector <field_status>
             speller.add_status(slf_adStat[i]);
         }
     }
+    cout << taker.HP << endl;
 }

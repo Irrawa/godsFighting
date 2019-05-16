@@ -10,7 +10,6 @@ class cmove;
 class field;
 class character;
 class field_status;
-class status;
 
 #ifndef GODS_STATUS_H
 #define GODS_STATUS_H
@@ -44,10 +43,7 @@ public:
     //效果产生影响，状态消失时也调用此函数将一些状态造成的改变复原（如攻击力降低等）
     void StatusLoss();
     //状态消逝时的特殊行为，如失去状态时回血等等
-    string get_information(){
-        string output = "【" + sta_name + "】" + ":\n" + sta_info + "\n目前剩余" + to_string(nT) + "回合。";
-        return output ;
-    }
+    string get_information();
 
 };
 

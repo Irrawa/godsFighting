@@ -6,13 +6,11 @@
 #include <vector>
 #include <string>
 #include "character.h"
+#include "status.h"
 
 using namespace std;
 
-class cmove;
-class field;
-class character;
-class field_status;
+
 
 void status::StatusTakeEffect(character self, character oppo){
     self.HP += sta_dh;
@@ -33,3 +31,8 @@ void status::RefStatus(){}
 
 
 void status::StatusLoss(){}
+
+string status::get_information(){
+    string output = "【" + sta_name + "】" + ":\n" + sta_info + "\n目前剩余" + to_string(nT) + "回合。";
+    return output;
+}

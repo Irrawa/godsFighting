@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.cpp">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.cpp">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h">
+			<Option target="gods"/>
+		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp">
 			<Option target="gods"/>
 		</Unit>

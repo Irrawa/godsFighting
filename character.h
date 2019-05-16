@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "status.h"
 using namespace std;
 
 #ifndef GODS_CHARACTER_H
@@ -27,15 +26,13 @@ public:
     //     技能列表
     vector <status> statM;
 
-    void Initialize(vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd);
+    void Initialize(string name, vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd);
     //初始化角色，用于创建角色
 
     void TakeTurn(character oppoCharacter, cmove chosenMove,field currentField);
     //玩家针对对手玩家行动
 
-    void add_status(status S){
-        statL.push_back(S);
-    };
+    void add_status(status S);
 };
 
 #endif //GODS_CHARACTER_H

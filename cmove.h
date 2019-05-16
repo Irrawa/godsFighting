@@ -9,7 +9,6 @@
 #include <vector>
 #include <string>
 using namespace std;
-
 #ifndef GODS_CMOVE_H
 #define GODS_CMOVE_H
 
@@ -37,7 +36,10 @@ public:
     static int mv_idCount;
     //   计数技能id。每一种技能拥有其独立的id。
 
-    void SpellMove(character speller, character taker, vector <field_status> SFS);
+    void set_SODhmads(int sh,int sm,int sa,int sd,int ss,int oh, int om,int oa,int od,int os);
+    //用于快速定义技能，共十项参数。
+
+    void SpellMove(character speller, character taker, vector <field_status> SFS = {});
     /*表示搓技能的过程，在此函数中初始化技能的各项数值。
     例如要搓一个使对方受到其剩余生命值(10% + (攻击者攻击力/受攻击者防御) * 10%)的伤害，则应在此函数中做到：
     1，获取speller的攻击力
@@ -46,28 +48,13 @@ public:
     4，将伤害值赋予技能的O_dh,注意正负号！造成伤害为负数！
     5，初始化技能的其它数值
     6，结束搓技能，进入技能生效阶段*/
-    void LaunchMove(character speller, character receiver, vector <field_status> SFS);
+    void LaunchMove(character speller, character receiver, vector <field_status> SFS = {});
     //此阶段扣除施放技能消耗的魔法值/生命值，并造成应有的影响
 
-    void set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,int oh = 0 ,int om = 0,int oa = 0,int od = 0,int os = 0){
-        slf_dh = sh;
-        slf_dm = sm;
-        slf_da = sa;
-        slf_dd = sd;
-        slf_ds = ss;
-        opo_dh = oh;
-        opo_dm = om;
-        opo_da = oa;
-        opo_dd = od;
-        opo_ds = os;
-    }
-
-    void set_atk(int attack){
+    void set_atk(int attack){ //设置技能攻击
         mv_atk = attack;
     }
 };
-
-
 
 
 #endif //GODS_CMOVE_H

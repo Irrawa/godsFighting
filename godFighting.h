@@ -12,6 +12,4 @@ class field;
 class character;
 class field_status;
 
-
-
 #endif //GODS_GODFIGHTING_H

@@ -7,7 +7,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "character.h"
 
 using namespace std;
 class cmove;
@@ -22,29 +21,20 @@ public:
     vector <field_status> StartFStatusL;
     vector <character> CSerie; // 依顺序行动的角色
     vector <cmove> MSerie; //依顺序施放的技能
-    character checkedCharacter1;
-    character checkedCharacter2;
 
     note_page(int npage){
         numTurn = npage;
     }
 
-    void set_start_characterL(vector <character> SC){
-        StartCharacterL[0] = SC[0];
-        StartCharacterL[1] = SC[1];
-    }
+    void set_start_characterL(vector <character> SC);
 
     void set_start_field_statusL(vector <field_status> SFS);
 
     void add_action(character acter, cmove act);
 
-    void set_C1(character acter){   //快速角色状态清算后记录
-        checkedCharacter1 = acter;
-    }
+    void set_C1(character acter);
 
-    void set_C2(character acter){   //慢速角色状态清算后记录
-        checkedCharacter2 = acter;
-    }
+    void set_C2(character acter);
 
 
     //   每回合开始时（也是场地状态清算后的情况）：{character Irrawa, character Mew},{field_status, numTurn, }
