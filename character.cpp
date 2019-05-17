@@ -25,7 +25,7 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
     maxHP = hp;
     maxMP = mp;
     HP = hp;
-    mp = mp;
+    MP = mp;
     ctr_atk = atk;
     ctr_def = def;
     ctr_spd = spd;
@@ -48,8 +48,11 @@ void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* curr
 void character::SufferStatus(character* oppoCharacter, field* currentField){
     if(statL.size() > 0){
         for(int i = 0; i < statL.size(); i++){
-            status tempStat = statL[i];
-            
+            status* tempStat = &statL[i];
+            (*tempStat).RefStatus();
+            (*tempStat).StatusTakeEffect(this, oppoCharacter, currentField);
+
+
         }
     }
 }

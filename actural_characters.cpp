@@ -26,7 +26,7 @@ character IRRAWA(){
 
 character MEW(){
     character mew;
-    mew.Initialize("Mew", MewMoveList, 1000, 100, 100, 100, 100);
+    mew.Initialize("Mew", MewMoveList, 1000, 1000, 100, 100, 100);
     AllCharacterList.push_back(mew);
     return mew;
 }

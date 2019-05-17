@@ -13,17 +13,17 @@ using namespace std;
 
 
 
-void status::StatusTakeEffect(character self, character oppo){
-    self.HP += sta_dh;
-    self.MP += sta_dm;
-    self.ctr_atk += sta_da;
-    self.ctr_def += sta_dd;
-    self.ctr_spd += sta_ds;
-    oppo.HP += sta_Odh;
-    oppo.MP += sta_Odm;
-    oppo.ctr_atk += sta_Oda;
-    oppo.ctr_def += sta_Odd;
-    oppo.ctr_spd += sta_Ods;
+void status::StatusTakeEffect(character* self, character* oppo, field* currentField){
+    (*self).HP += sta_dh;
+    (*self).MP += sta_dm;
+    (*self).ctr_atk += sta_da;
+    (*self).ctr_def += sta_dd;
+    (*self).ctr_spd += sta_ds;
+    (*oppo).HP += sta_Odh;
+    (*oppo).MP += sta_Odm;
+    (*oppo).ctr_atk += sta_Oda;
+    (*oppo).ctr_def += sta_Odd;
+    (*oppo).ctr_spd += sta_Ods;
     nT -= 1;
 }
 
