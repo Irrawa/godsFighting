@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gods.dir/note_page.cpp.o"
   "CMakeFiles/gods.dir/actural_moves.cpp.o"
   "CMakeFiles/gods.dir/actural_characters.cpp.o"
+  "CMakeFiles/gods.dir/actural_statuses.cpp.o"
   "gods.pdb"
   "gods"
 )

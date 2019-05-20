@@ -92,6 +92,12 @@
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h">
 			<Option target="gods"/>
 		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.cpp">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h">
+			<Option target="gods"/>
+		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp">
 			<Option target="gods"/>
 		</Unit>

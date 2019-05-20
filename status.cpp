@@ -27,15 +27,32 @@ void status::StatusTakeEffect(character* self, character* oppo, field* currentFi
     nT -= 1;
 }
 
-void status::SetupStatus(){
+void status::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
 }
 
-void status::RefStatus(){}
+void status::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){}
 
 
-void status::StatusLoss(){}
+void status::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){}
 
 string status::get_information(){
     string output = "【" + sta_name + "】" + ":\n" + sta_info + "\n目前剩余" + to_string(nT) + "回合。";
     return output;
+}
+
+
+
+void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    sta_ds = -15;
+    cout << sta_ds << "ggggggggggg" << endl;
+}
+
+void choke::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+    if (nT > 0 && nT < iniT) {
+        sta_ds = 0;
+    }
+}
+
+void choke::StatusLoss(character* selfCharacter){
+        (*selfCharacter).ctr_spd += 15;
 }

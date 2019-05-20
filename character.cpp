@@ -39,21 +39,28 @@ void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* curr
     else{
         cout << cName << " casted move <" << (*chosenMove).mName << ">!" << endl;
     }
-    (*chosenMove).SpellMove(this, oppoCharacter, &((*currentField).FStatusL));
-    (*chosenMove).LaunchMove(this, oppoCharacter, &((*currentField).FStatusL));
+    (*chosenMove).SpellMove(this, oppoCharacter, currentField);
+    (*chosenMove).LaunchMove(this, oppoCharacter, currentField);
 //    cout << (*oppoCharacter).HP << endl;
 
 }
 
 void character::SufferStatus(character* oppoCharacter, field* currentField){
     if(statL.size() > 0){
+        vector <status> NewStatL;
         for(int i = 0; i < statL.size(); i++){
             status* tempStat = &statL[i];
-            (*tempStat).RefStatus();
+            (*tempStat).RefStatus(this, oppoCharacter, currentField);
             (*tempStat).StatusTakeEffect(this, oppoCharacter, currentField);
-
-
+            if((*tempStat).nT > 0){
+                NewStatL.push_back(statL[i]);
+            }
+            else{
+                (*tempStat).StatusLoss(this, oppoCharacter, currentField);
+            }
         }
+        statL.clear();
+        statL = NewStatL;
     }
 }
 

@@ -11,6 +11,7 @@
 #include "cmove.h"
 #include "note_page.h"
 #include "status.h"
+#include "actural_statuses.h"
 
 using namespace std;
 

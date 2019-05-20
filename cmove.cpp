@@ -22,7 +22,7 @@ void cmove::set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,
     opo_ds = os;
 }
 
-void cmove::SpellMove(character *speller, character *taker, vector <field_status> *SFS){
+void cmove::SpellMove(character *speller, character *taker, field *thisField){
     int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
     opo_dh -= damage;
     if(opo_dh < 0){
@@ -30,7 +30,7 @@ void cmove::SpellMove(character *speller, character *taker, vector <field_status
     }
 }
 
-void cmove::LaunchMove(character *speller, character *taker, vector <field_status> *SFS) {
+void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     (*speller).HP += slf_dh;
     (*speller).MP += slf_dm;
     (*speller).ctr_atk += slf_da;
@@ -44,14 +44,14 @@ void cmove::LaunchMove(character *speller, character *taker, vector <field_statu
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
             status tempStatus = slf_adStat[i];
-            tempStatus.SetupStatus();
+            tempStatus.SetupStatus(speller, taker, thisField);
             (*speller).add_status(tempStatus);
         }
     }
     if (opo_adStat.size() != 0){
         for (int i = 0; i < opo_adStat.size(); i++) {
             status tempStatus = opo_adStat[i];
-            tempStatus.SetupStatus();
+            tempStatus.SetupStatus(speller, taker, thisField);
             (*taker).add_status(tempStatus);
         }
     }

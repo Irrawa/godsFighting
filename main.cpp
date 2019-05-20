@@ -9,26 +9,41 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "actural_statuses.h"
 using namespace std;
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     choke c;
     cout << c.get_information() << endl;
     cmove aqua_ball = AquaBall();
     cmove wind_slash = WindSlash();
     cmove psycho_boost = PsychoBoost();
+    field TestField;
 //    cout << aqua_ball.slf_dm << endl;
 //    cout << AllMoveList.size() << endl;
 //    cout << IrrawaMoveList.size() << endl;
     character Irrawa = IRRAWA();
     character Mew = MEW();
 
-    Irrawa.TakeTurn(&Mew, &aqua_ball, {});
-    Mew.TakeTurn(&Irrawa, &psycho_boost,{});
+    Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
+    Mew.TakeTurn(&Irrawa, &psycho_boost,&TestField);
     Mew.print();
     Irrawa.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    cout << Mew.statL[0].get_information() << endl;
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    cout << Mew.statL[0].get_information() << endl;
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    cout << Mew.statL[0].get_information() << endl;
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    cout << Mew.statL[0].get_information() << endl;
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
 
 
     return 0;
