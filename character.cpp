@@ -51,7 +51,7 @@ void character::SufferStatus(character* oppoCharacter, field* currentField){
         for(int i = 0; i < statL.size(); i++){
             status* tempStat = &statL[i];
             (*tempStat).RefStatus(this, oppoCharacter, currentField);
-            (*tempStat).StatusTakeEffect(this, oppoCharacter, currentField);
+            tempStat -> StatusTakeEffect(this, oppoCharacter, currentField);
             if((*tempStat).nT > 0){
                 NewStatL.push_back(statL[i]);
             }

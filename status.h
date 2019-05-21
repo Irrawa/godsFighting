@@ -35,13 +35,13 @@ public:
     // 该状态是否可被玩家看到
 
 
-    void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
     //状态被施加时，使用此函数初始化，并返回初始化后的状态
-    void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
     //每经过一回合，所有生效的status需要使用此函数刷新。
-    void StatusTakeEffect(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void StatusTakeEffect(character* selfCharacter, character* oppoCharacter, field* currentField);
     //效果产生影响（如攻击力降低等）
-    void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
     //状态消逝时的特殊行为，如失去状态时回血等等,状态消失时也调用此函数将一些状态造成的改变复原
     string get_information();
 
@@ -58,11 +58,11 @@ public:
         sta_neg = true;
     }
 
-    void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
-    void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
-    void StatusLoss(character* selfCharacter);
+    virtual void StatusLoss(character* selfCharacter);
 };
 
 #endif //GODS_STATUS_H

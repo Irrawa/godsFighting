@@ -28,6 +28,7 @@ void status::StatusTakeEffect(character* self, character* oppo, field* currentFi
 }
 
 void status::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "General status setup..."<< endl;
 }
 
 void status::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){}
@@ -44,7 +45,7 @@ string status::get_information(){
 
 void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     sta_ds = -15;
-    cout << sta_ds << "ggggggggggg" << endl;
+    cout << sta_ds << "Choke status setup..." << endl;
 }
 
 void choke::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
