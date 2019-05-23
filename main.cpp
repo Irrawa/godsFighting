@@ -25,45 +25,27 @@ int main() {
 //    cout << IrrawaMoveList.size() << endl;
     character Irrawa = IRRAWA();
     character Mew = MEW();
-//    aqua_ball.LaunchMove(&Irrawa, &Mew, &TestField);
     Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
+    Mew.TakeTurn(&Irrawa, &aqua_ball, &TestField);
 //    Mew.TakeTurn(&Irrawa, &psycho_boost,&TestField);
 
     Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
+    Irrawa.SufferStatus(&Irrawa, &TestField);
     Mew.print();
+    Irrawa.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Irrawa.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Irrawa.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Irrawa.print();
 
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
-
-    Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
-
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    cout << Mew.statL[0]->get_information() << endl;
-    Mew.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
 
     return 0;
 }

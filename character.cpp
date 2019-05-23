@@ -53,12 +53,12 @@ void character::SufferStatus(character* oppoCharacter, field* currentField){
         for(int i = 0; i < statL.size(); i++){
             status* tempStat = statL[i];
             (*tempStat).RefStatus(this, oppoCharacter, currentField);
-            tempStat -> StatusTakeEffect(this, oppoCharacter, currentField);
+            tempStat -> StatusTakeEffect(this, oppoCharacter, currentField);  //效果造成影响，效果持续时间减少也在此实现
             if((*tempStat).nT >= 0){
                 NewStatL.push_back(statL[i]);
             }
             else{
-                tempStat->StatusLoss(this, oppoCharacter, currentField);
+                tempStat->StatusLoss(this, oppoCharacter, currentField);  //状态消失时将改变的状态复原
             }
         }
         statL.clear();

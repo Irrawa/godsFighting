@@ -18,7 +18,7 @@ class note_page;
 
 class field{
 public:
-    vector <field_status> FStatusL;
+    vector <field_status*> FStatusL;
     // 场地状态列表
     vector <note_page> BattleRecord;
 
