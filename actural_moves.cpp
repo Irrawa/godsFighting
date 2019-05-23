@@ -27,7 +27,7 @@ cmove AquaBall(){
     aquaBall.slf_dm = -100;
     aquaBall.mv_atk = 20;
     choke Choke;
-    aquaBall.opo_adStat = {Choke};
+    aquaBall.opo_adStat = {ChokePtr};
     cout << "AquaBall established!" << endl;
     AllMoveList.push_back(aquaBall);
     IrrawaMoveList.push_back(aquaBall);

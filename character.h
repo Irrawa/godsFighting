@@ -20,7 +20,7 @@ public:
     string cName; //角色名
     int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;
     //最大生命值       最大魔法值     攻击力       防御力       速度      生命值  魔法值
-    vector <status> statL;
+    vector <status*> statL;
     //     状态列表
     vector <cmove> moveL;
     //     技能列表

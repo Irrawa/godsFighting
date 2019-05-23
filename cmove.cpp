@@ -43,7 +43,7 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     (*taker).ctr_spd += opo_ds;
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
-            status *tempStatus = &slf_adStat[i];
+            status *tempStatus = slf_adStat[i];
 //            cout << tempStatus->get_information() << endl;
             tempStatus->SetupStatus(speller, taker, thisField);
             (*speller).add_status(tempStatus);
@@ -51,14 +51,19 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     }
     if (opo_adStat.size() != 0){
         for (int i = 0; i < opo_adStat.size(); i++) {
-            status *tempStatus = &opo_adStat[i];
-            cout << tempStatus->get_information() << endl;
-
+            status *tempStatus = opo_adStat[i];
             tempStatus->SetupStatus(speller, taker, thisField);  //<------出问题的地方
 
-            cout << tempStatus->get_information() << endl;
+            //Q:想在这里复制一个tempStatus指针指向的状态并将其加入角色的状态列表，不想只传递指针。应该怎么做？
+            //(同时要避免slicing)
+
             (*taker).add_status(tempStatus);
         }
     }
 //    cout << (*taker).HP << endl;
+}
+
+void cmove::ResetMove(character *speller, character *taker, field *thisField){
+    int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
+    opo_dh += damage;
 }

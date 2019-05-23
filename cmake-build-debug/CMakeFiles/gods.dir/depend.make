@@ -4,6 +4,7 @@
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_characters.cpp
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_characters.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_moves.h
+CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../character.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../field_status.h

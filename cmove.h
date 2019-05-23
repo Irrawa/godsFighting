@@ -27,7 +27,7 @@ public:
     //对方的hp、mp、atk、def、spd 变化
             mv_atk, mv_id;
     //技能攻击，技能id
-    vector <status> slf_rmStat, opo_rmStat, slf_adStat, opo_adStat;
+    vector <status*> slf_rmStat, opo_rmStat, slf_adStat, opo_adStat;
     //          移除自身状态，移除对手状态，增加自身状态，增加对手状态（这些均为vector容器）
     bool selfTarget = false;
     //   作用目标是否为自身
@@ -50,6 +50,8 @@ public:
     6，结束搓技能，进入技能生效阶段*/
     void LaunchMove(character *speller, character *taker, field *thisField);
     //此阶段扣除施放技能消耗的魔法值/生命值，并造成应有的影响
+
+    void ResetMove(character *speller, character *taker, field *thisField);
 
     void set_atk(int attack){ //设置技能攻击
         mv_atk = attack;

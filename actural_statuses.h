@@ -32,9 +32,10 @@ public:
 
     virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
-    virtual void StatusLoss(character* selfCharacter);
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 
+extern choke *ChokePtr;
 
 
 #endif //GODS_ACTURAL_STATUSES_H

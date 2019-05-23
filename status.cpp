@@ -31,13 +31,17 @@ void status::SetupStatus(character* selfCharacter, character* oppoCharacter, fie
     cout << "General status setup..."<< endl;
 }
 
-void status::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){}
+void status::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "General status refreshed..."<< endl;
+}
 
 
-void status::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){}
+void status::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "General status Lost.."<< endl;
+}
 
 string status::get_information(){
-    string output = "[" + sta_name + "]" + ":\n" + sta_info + "\nLEFT:" + to_string(nT) + "turns\n";
+    string output = "[" + sta_name + "]" + ":\n" + sta_info + "\nLEFT:" + to_string(nT + 1) + "turns\n";
     return output;
 }
 

@@ -16,7 +16,7 @@ using namespace std;
 
 
 void character::add_status(status* S){
-    status tempStatus = *S;
+    status* tempStatus = S;
     statL.push_back(tempStatus);
 };
 
@@ -42,22 +42,23 @@ void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* curr
     }
     (*chosenMove).SpellMove(this, oppoCharacter, currentField);
     (*chosenMove).LaunchMove(this, oppoCharacter, currentField);
+    (*chosenMove).ResetMove(this, oppoCharacter, currentField);
 //    cout << (*oppoCharacter).HP << endl;
 
 }
 
 void character::SufferStatus(character* oppoCharacter, field* currentField){
     if(statL.size() > 0){
-        vector <status> NewStatL;
+        vector <status*> NewStatL;
         for(int i = 0; i < statL.size(); i++){
-            status* tempStat = &statL[i];
+            status* tempStat = statL[i];
             (*tempStat).RefStatus(this, oppoCharacter, currentField);
             tempStat -> StatusTakeEffect(this, oppoCharacter, currentField);
-            if((*tempStat).nT > 0){
+            if((*tempStat).nT >= 0){
                 NewStatL.push_back(statL[i]);
             }
             else{
-                (*tempStat).StatusLoss(this, oppoCharacter, currentField);
+                tempStat->StatusLoss(this, oppoCharacter, currentField);
             }
         }
         statL.clear();
@@ -73,7 +74,7 @@ string character::print(){ //输出角色状态
     infof << "Status: ";
     if(statL.size() > 0){
         for(int i = 0; i < statL.size(); i++){
-            infof << "{" << statL[i].sta_name << "} ";
+            infof << "{" << statL[i]->sta_name << "} ";
         }
     }
     else{

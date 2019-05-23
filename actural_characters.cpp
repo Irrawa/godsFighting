@@ -4,6 +4,7 @@
 
 #include "actural_characters.h"
 #include "actural_moves.h"
+#include "actural_statuses.h"
 #include <iostream>
 #include <vector>
 #include <string>
