@@ -32,7 +32,7 @@ public:
     void TakeTurn(character* oppoCharacter, cmove* chosenMove, field* currentField);
     //玩家针对对手玩家行动
 
-    void add_status(status S);
+    void add_status(status* S);
 
     void SufferStatus(character* oppoCharacter, field* currentField);
 

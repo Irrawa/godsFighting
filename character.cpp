@@ -15,8 +15,9 @@
 using namespace std;
 
 
-void character::add_status(status S){
-    statL.push_back(S);
+void character::add_status(status* S){
+    status tempStatus = *S;
+    statL.push_back(tempStatus);
 };
 
 void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd){

@@ -17,6 +17,23 @@
 
 using namespace std;
 
+class choke : public status{
+public:
+    choke(){
+        sta_name = "CHOKE";
+        sta_info = "Reduce speed by 15. Last 3 turns.";
+        iniT = 3;
+        nT = iniT;
+        sta_pos = false;
+        sta_neg = true;
+    }
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void StatusLoss(character* selfCharacter);
+};
 
 
 

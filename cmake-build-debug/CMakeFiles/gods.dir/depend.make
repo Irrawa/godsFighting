@@ -23,6 +23,7 @@ CMakeFiles/gods.dir/actural_moves.cpp.o: ../status.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_characters.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_statuses.cpp
+CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../character.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../field_status.h

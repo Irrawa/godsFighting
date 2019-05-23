@@ -47,22 +47,5 @@ public:
 
 };
 
-class choke : public status{
-public:
-    choke(){
-        sta_name = "窒息";
-        sta_info = "减少目标15点速度，持续3回合。";
-        iniT = 3;
-        nT = iniT;
-        sta_pos = false;
-        sta_neg = true;
-    }
-
-    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
-
-    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
-
-    virtual void StatusLoss(character* selfCharacter);
-};
 
 #endif //GODS_STATUS_H

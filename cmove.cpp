@@ -43,15 +43,20 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     (*taker).ctr_spd += opo_ds;
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
-            status tempStatus = slf_adStat[i];
-            tempStatus.SetupStatus(speller, taker, thisField);
+            status *tempStatus = &slf_adStat[i];
+//            cout << tempStatus->get_information() << endl;
+            tempStatus->SetupStatus(speller, taker, thisField);
             (*speller).add_status(tempStatus);
         }
     }
     if (opo_adStat.size() != 0){
         for (int i = 0; i < opo_adStat.size(); i++) {
-            status tempStatus = opo_adStat[i];
-            tempStatus.SetupStatus(speller, taker, thisField);
+            status *tempStatus = &opo_adStat[i];
+            cout << tempStatus->get_information() << endl;
+
+            tempStatus->SetupStatus(speller, taker, thisField);  //<------出问题的地方
+
+            cout << tempStatus->get_information() << endl;
             (*taker).add_status(tempStatus);
         }
     }

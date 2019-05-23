@@ -37,7 +37,7 @@ public:
     void set_C2(character acter);
 
 
-    //   每回合开始时（也是场地状态清算后的情况）：{character Irrawa, character Mew},{field_status, numTurn, }
+    //   每回合开始时（也是场地状态清算后的情况）：{character Irrawa, character Mew}, {field_status, numTurn, }
     //   技能施放阶段：{character 行动方, cmove 行动技能, character 行动方, cmove 行动技能...}（一方可能行动多次）
     //   速度较快的一方状态清算后： {character 速度较快的角色}
     //   速度较慢的一方状态清算后： {character 速度较慢的角色}

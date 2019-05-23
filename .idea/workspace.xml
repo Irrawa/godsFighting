@@ -20,69 +20,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="cmove.h" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/cmove.h">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="161">
-                    <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-                    <folding>
-                      <element signature="e#39#58#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="character.h" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/character.h">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="717">
-                    <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-                    <folding>
-                      <element signature="e#38#57#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="status.h" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/status.h">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="581">
-                    <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="102" />
-                    <folding>
-                      <element signature="e#38#57#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/main.cpp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="40">
-                    <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="status.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/status.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="498">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
               </folding>
@@ -90,11 +35,44 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="cmove.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmove.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-120">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="e#39#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="status.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/status.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#38#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="actural_statuses.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actural_statuses.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="220">
+              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
               <folding>
                 <element signature="e#38#69#0" expanded="true" />
               </folding>
@@ -105,8 +83,8 @@
       <file leaf-file-name="actural_statuses.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actural_statuses.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="100">
+              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding>
                 <element signature="e#103#134#0" expanded="true" />
               </folding>
@@ -117,22 +95,10 @@
       <file leaf-file-name="actural_moves.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actural_moves.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+            <state relative-caret-position="538">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmove.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmove.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-              <folding>
-                <element signature="e#38#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +107,8 @@
       <file leaf-file-name="actural_moves.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actural_moves.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
               <folding>
                 <element signature="e#39#65#0" expanded="true" />
               </folding>
@@ -150,25 +116,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="character.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/character.cpp">
+      <file leaf-file-name="Questions.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Questions.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="949">
-              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
-              <folding>
-                <element signature="e#39#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="field.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/field.h">
+      <file leaf-file-name="note_page.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/note_page.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="637">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
-                <element signature="e#82#101#0" expanded="true" />
+                <element signature="e#89#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,27 +148,28 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/character.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/field_status.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/note_page.h" />
-        <option value="$PROJECT_DIR$/field.h" />
         <option value="$PROJECT_DIR$/field_status.h" />
         <option value="$PROJECT_DIR$/field.cpp" />
         <option value="$PROJECT_DIR$/godFighting.h" />
-        <option value="$PROJECT_DIR$/note_page.h" />
         <option value="$PROJECT_DIR$/field_status.cpp" />
         <option value="$PROJECT_DIR$/note_page.cpp" />
         <option value="$PROJECT_DIR$/actural_characters.h" />
-        <option value="$PROJECT_DIR$/actural_moves.h" />
-        <option value="$PROJECT_DIR$/character.h" />
         <option value="$PROJECT_DIR$/actural_characters.cpp" />
         <option value="$PROJECT_DIR$/cmove.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/actural_statuses.h" />
-        <option value="$PROJECT_DIR$/actural_statuses.cpp" />
-        <option value="$PROJECT_DIR$/actural_moves.cpp" />
-        <option value="$PROJECT_DIR$/actural_statuses.h" />
-        <option value="$PROJECT_DIR$/character.cpp" />
-        <option value="$PROJECT_DIR$/status.h" />
-        <option value="$PROJECT_DIR$/cmove.cpp" />
-        <option value="$PROJECT_DIR$/status.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/field.h" />
+        <option value="$PROJECT_DIR$/character.h" />
+        <option value="$PROJECT_DIR$/character.cpp" />
+        <option value="$PROJECT_DIR$/cmove.cpp" />
+        <option value="$PROJECT_DIR$/actural_moves.cpp" />
+        <option value="$PROJECT_DIR$/actural_moves.h" />
+        <option value="$PROJECT_DIR$/note_page.h" />
+        <option value="$PROJECT_DIR$/status.h" />
+        <option value="$PROJECT_DIR$/actural_statuses.h" />
+        <option value="$PROJECT_DIR$/status.cpp" />
+        <option value="$PROJECT_DIR$/actural_statuses.cpp" />
+        <option value="$PROJECT_DIR$/Questions.txt" />
       </list>
     </option>
   </component>
@@ -218,11 +182,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1829" />
-    <option name="y" value="23" />
-    <option name="width" value="1636" />
-    <option name="height" value="1027" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -294,12 +256,13 @@
       <workItem from="1557846879865" duration="4832000" />
       <workItem from="1557881006899" duration="15427000" />
       <workItem from="1557918461433" duration="27417000" />
-      <workItem from="1558003685989" duration="33066000" />
+      <workItem from="1558003685989" duration="41789000" />
+      <workItem from="1558570660324" duration="6870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95827000" />
+    <option name="totallyTimeSpent" value="111420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -311,15 +274,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1829" y="23" width="1636" height="1027" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1601467" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15595238" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960325" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.76785713" weight="0.39978677" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.76785713" weight="0.39877924" />
       <window_info anchor="bottom" id="CMake" order="11" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23214285" side_tool="true" weight="0.40081385" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4690476" visible="true" weight="0.336887" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4690476" visible="true" weight="0.3214649" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
@@ -333,26 +296,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960325" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15595238" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32960325" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4690476" visible="true" weight="0.32960325" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960325" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.76785713" weight="0.40081385" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23214285" side_tool="true" weight="0.40081385" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="CMake" order="11" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -366,16 +309,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cmove.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/field.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -550,9 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,9 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-71">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#96#115#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,18 +504,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-130">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/actural_statuses.cpp" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/actural_statuses.h" />
+    <entry file="file://$PROJECT_DIR$/actural_characters.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#39#61#0" expanded="true" />
+            <element signature="e#39#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/note_page.h">
+    <entry file="file://$PROJECT_DIR$/actural_characters.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="320">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
-            <element signature="e#89#108#0" expanded="true" />
+            <element signature="e#38#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmove.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+          <folding>
+            <element signature="e#38#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -602,84 +558,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/field.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="901">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="e#82#101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/actural_statuses.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/actural_statuses.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_characters.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#38#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_characters.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="e#39#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_moves.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="e#39#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_statuses.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#38#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_statuses.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#103#134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actural_moves.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="e#38#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/character.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+        <state relative-caret-position="177">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
           </folding>
@@ -688,55 +578,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmove.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        <state relative-caret-position="-120">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="e#39#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character.cpp">
+    <entry file="file://$PROJECT_DIR$/note_page.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="949">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+        <state relative-caret-position="637">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
-            <element signature="e#39#58#0" expanded="true" />
+            <element signature="e#89#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/actural_moves.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmove.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-          <folding>
-            <element signature="e#38#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/status.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="102" />
+        <state relative-caret-position="538">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/actural_moves.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding>
+            <element signature="e#39#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#38#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actural_statuses.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#38#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actural_statuses.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="e#103#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Questions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/status.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="1" />
+        <state relative-caret-position="498">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#39#58#0" expanded="true" />
           </folding>

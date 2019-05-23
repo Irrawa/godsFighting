@@ -13,30 +13,32 @@ using namespace std;
 extern vector <cmove> AllMoveList;
 extern vector <cmove> IrrawaMoveList;
 extern vector <cmove> MewMoveList;
+extern vector <cmove> RosieMoveList;
+extern vector <cmove> AsibiMoveList;
 
 //
 //vector <cmove> IrrawaMoveList;
 
 cmove AquaBall();  //move1
 cmove WindSlash();  //move2
-//cmove Tsunami();  //move3
-//cmove RainOfNayad  //move4
-//cmove Tailwind  //move5
-//cmove NetherVeil  //move6
+cmove Tsunami();  //move3
+cmove RainOfNayad();  //move4
+cmove Tailwind();  //move5
+cmove NetherVeil();  //move6
 cmove PsychoBoost();  //move7
-//cmove Tsunami();  //move8
-//cmove RainOfNayad  //move9
-//cmove Tailwind  //move10
-//cmove NetherVeil  //move11
-//cmove Tsunami();  //move12
-//cmove RainOfNayad  //move13
-//cmove Tailwind  //move14
-//cmove NetherVeil  //move15
-//cmove Tsunami();  //move16
-//cmove RainOfNayad  //move17
-//cmove Tailwind  //move18
-//cmove NetherVeil  //move19
-//cmove NetherVeil  //move20
+cmove OneiroSting();  //move8
+cmove MewsWonderland();  //move9
+cmove ToxicBlast(); //move10
+cmove KissOfSuccubus();  //move11
+cmove LustStorm();  //move12
+cmove ShadowMirror();  //move13
+cmove DevilMentel();  //move14
+cmove ArcTurbo();  //move15
+cmove ObjectiveIllusion();  //move16
+cmove DarkVoid(); //move17
+cmove Utopia();  //move18
+cmove FleetingMeme();  //move19
+cmove DoomDesire();  //move20
 
 
 #endif //GODS_ACTURAL_MOVES_H

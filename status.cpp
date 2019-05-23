@@ -37,23 +37,7 @@ void status::RefStatus(character* selfCharacter, character* oppoCharacter, field
 void status::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){}
 
 string status::get_information(){
-    string output = "【" + sta_name + "】" + ":\n" + sta_info + "\n目前剩余" + to_string(nT) + "回合。";
+    string output = "[" + sta_name + "]" + ":\n" + sta_info + "\nLEFT:" + to_string(nT) + "turns\n";
     return output;
 }
 
-
-
-void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
-    sta_ds = -15;
-    cout << sta_ds << "Choke status setup..." << endl;
-}
-
-void choke::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
-    if (nT > 0 && nT < iniT) {
-        sta_ds = 0;
-    }
-}
-
-void choke::StatusLoss(character* selfCharacter){
-        (*selfCharacter).ctr_spd += 15;
-}

@@ -18,6 +18,8 @@ using namespace std;
 vector <cmove> AllMoveList;   //全游戏技能表，已设为全局变量
 vector <cmove> IrrawaMoveList;  //伊洛瓦的技能表，已设为全局变量
 vector <cmove> MewMoveList;  //妙的技能表，已设为全局变量
+vector <cmove> RosieMoveList;  //露丝的技能表，已设为全局变量
+vector <cmove> AsibiMoveList;  //Asibi的技能表，已设为全局变量
 
 cmove AquaBall(){
     cmove aquaBall;
