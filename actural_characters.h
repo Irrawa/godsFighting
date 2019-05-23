@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-class cmove;
 class character;
 using namespace std;
 #ifndef GODS_ACTURAL_CHARACTERS_H

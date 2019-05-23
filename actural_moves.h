@@ -4,7 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-class cmove;
+#include "cmove.h"
+
 using namespace std;
 #ifndef GODS_ACTURAL_MOVES_H
 #define GODS_ACTURAL_MOVES_H
@@ -19,7 +20,7 @@ extern vector <cmove> AsibiMoveList;
 //
 //vector <cmove> IrrawaMoveList;
 
-cmove AquaBall();  //move1
+cmove AquaBall(character * owner, character * taker, field * place);  //move1
 cmove WindSlash();  //move2
 cmove Tsunami();  //move3
 cmove RainOfNayad();  //move4

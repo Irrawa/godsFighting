@@ -24,7 +24,14 @@ void status::StatusTakeEffect(character* self, character* oppo, field* currentFi
     (*oppo).ctr_atk += sta_Oda;
     (*oppo).ctr_def += sta_Odd;
     (*oppo).ctr_spd += sta_Ods;
+    cout << "生效："<< sta_ds << endl;
     nT -= 1;
+    sta_da = 0;
+    sta_dd = 0;
+    sta_ds = 0;
+    sta_Oda = 0;
+    sta_Odd = 0;
+    sta_Ods = 0;
 }
 
 void status::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){

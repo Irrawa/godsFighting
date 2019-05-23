@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "status.h"
+#include "actural_statuses.h"
 using namespace std;
 
 #ifndef GODS_CHARACTER_H
@@ -39,6 +41,8 @@ public:
     bool IsAlive();
 
     string print();
+
+    choke CharChoke;
 };
 
 #endif //GODS_CHARACTER_H

@@ -9,6 +9,7 @@
 #include <string>
 using namespace std;
 
+
 void cmove::set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,int oh = 0 ,int om = 0,int oa = 0,int od = 0,int os = 0){
     slf_dh = sh;
     slf_dm = sm;
@@ -31,6 +32,7 @@ void cmove::SpellMove(character *speller, character *taker, field *thisField){
 }
 
 void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
+    owner = speller;
     (*speller).HP += slf_dh;
     (*speller).MP += slf_dm;
     (*speller).ctr_atk += slf_da;
@@ -44,7 +46,6 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
             status *tempStatus = slf_adStat[i];
-//            cout << tempStatus->get_information() << endl;
             tempStatus->SetupStatus(speller, taker, thisField);
             (*speller).add_status(tempStatus);
         }
@@ -52,12 +53,29 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     if (opo_adStat.size() != 0){
         for (int i = 0; i < opo_adStat.size(); i++) {
             status *tempStatus = opo_adStat[i];
-            tempStatus->SetupStatus(speller, taker, thisField);  //<------出问题的地方
 
             //Q:想在这里复制一个tempStatus指针指向的状态并将其加入角色的状态列表，不想只传递指针。应该怎么做？
             //(同时要避免slicing)
-
-            (*taker).add_status(tempStatus);
+            bool duplicateFlag = false;
+            int length = taker->statL.size();
+            int a = 0;
+            if(length > 0){
+                for(int i = 0; i < length; i++){
+                    if ((taker->statL[i])->sta_name == tempStatus->sta_name){
+                        duplicateFlag = true;
+                        a = i;
+                    }
+                }
+            }
+            if(!duplicateFlag) {
+                tempStatus->SetupStatus(speller, taker, thisField);
+                (*taker).add_status(tempStatus);
+                cout << "添加" << endl;
+            }
+            else{
+                taker->statL[a]->nT = taker->statL[a]->iniT;
+                cout << "覆盖" << endl;
+            }
         }
     }
 //    cout << (*taker).HP << endl;

@@ -51,8 +51,6 @@ field_status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
 character.h
 /Users/otbooster/Downloads/2019up/cpp/gods/character.h
-cmove.h
-/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
 note_page.h
 /Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
 status.h
@@ -67,36 +65,26 @@ vector
 -
 string
 -
+cmove.h
+/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.cpp
-actural_characters.h
-/Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
-actural_moves.h
-/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
 iostream
 -
 vector
 -
 string
 -
-field_status.h
-/Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
-character.h
-/Users/otbooster/Downloads/2019up/cpp/gods/character.h
-cmove.h
-/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
-note_page.h
-/Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
-status.h
-/Users/otbooster/Downloads/2019up/cpp/gods/status.h
 actural_statuses.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
+character.h
+/Users/otbooster/Downloads/2019up/cpp/gods/character.h
+actural_moves.h
+/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
 actural_characters.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
-actural_moves.h
-/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
 iostream
 -
 vector
@@ -105,10 +93,6 @@ string
 -
 field_status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
-character.h
-/Users/otbooster/Downloads/2019up/cpp/gods/character.h
-cmove.h
-/Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
 note_page.h
 /Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
 status.h
@@ -133,6 +117,8 @@ field.h
 /Users/otbooster/Downloads/2019up/cpp/gods/field.h
 field_status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
+actural_statuses.h
+/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/character.h
 iostream
@@ -141,6 +127,10 @@ vector
 -
 string
 -
+status.h
+/Users/otbooster/Downloads/2019up/cpp/gods/status.h
+actural_statuses.h
+/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
 character.h
@@ -169,6 +159,10 @@ vector
 -
 string
 -
+character.h
+/Users/otbooster/Downloads/2019up/cpp/gods/character.h
+field.h
+/Users/otbooster/Downloads/2019up/cpp/gods/field.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
 iostream

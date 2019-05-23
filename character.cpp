@@ -11,6 +11,7 @@
 #include "cmove.h"
 #include "field.h"
 #include "field_status.h"
+#include "actural_statuses.h"
 
 using namespace std;
 
@@ -85,6 +86,9 @@ string character::print(){ //输出角色状态
     cout << info;
     return info;
 }
+
+
+
 
 //string cName; //角色名
 //int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;

@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "character.h"
+#include "field.h"
 using namespace std;
 #ifndef GODS_CMOVE_H
 #define GODS_CMOVE_H
@@ -29,6 +31,9 @@ public:
     //技能攻击，技能id
     vector <status*> slf_rmStat, opo_rmStat, slf_adStat, opo_adStat;
     //          移除自身状态，移除对手状态，增加自身状态，增加对手状态（这些均为vector容器）
+    character* owner;
+    character* taker;
+    field* place;
     bool selfTarget = false;
     //   作用目标是否为自身
     vector <cmove> comMove;
@@ -56,6 +61,8 @@ public:
     void set_atk(int attack){ //设置技能攻击
         mv_atk = attack;
     }
+
+
 };
 
 
