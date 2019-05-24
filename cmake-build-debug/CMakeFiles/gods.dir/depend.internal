@@ -4,6 +4,19 @@
 CMakeFiles/gods.dir/actural_characters.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.cpp
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/character.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/field.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/status.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.cpp
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
@@ -14,6 +27,7 @@ CMakeFiles/gods.dir/actural_characters.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/actural_moves.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.cpp
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
@@ -25,6 +39,7 @@ CMakeFiles/gods.dir/actural_moves.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.cpp
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
@@ -36,6 +51,7 @@ CMakeFiles/gods.dir/actural_statuses.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/character.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.cpp
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
@@ -46,6 +62,7 @@ CMakeFiles/gods.dir/character.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/cmove.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
  /Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp
@@ -55,9 +72,19 @@ CMakeFiles/gods.dir/cmove.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/field.cpp.o
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/character.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
  /Users/otbooster/Downloads/2019up/cpp/gods/field.cpp
+ /Users/otbooster/Downloads/2019up/cpp/gods/field.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/field_status.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
  /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
@@ -68,6 +95,7 @@ CMakeFiles/gods.dir/field_status.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/main.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
@@ -79,6 +107,7 @@ CMakeFiles/gods.dir/main.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/note_page.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
  /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
@@ -89,6 +118,7 @@ CMakeFiles/gods.dir/note_page.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 CMakeFiles/gods.dir/status.cpp.o
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h
+ /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
  /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
  /Users/otbooster/Downloads/2019up/cpp/gods/character.h
  /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h

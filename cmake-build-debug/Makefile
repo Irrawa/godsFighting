@@ -150,6 +150,33 @@ actural_characters.cpp.s:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_characters.cpp.s
 .PHONY : actural_characters.cpp.s
 
+actural_field_status.o: actural_field_status.cpp.o
+
+.PHONY : actural_field_status.o
+
+# target to build an object file
+actural_field_status.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_field_status.cpp.o
+.PHONY : actural_field_status.cpp.o
+
+actural_field_status.i: actural_field_status.cpp.i
+
+.PHONY : actural_field_status.i
+
+# target to preprocess a source file
+actural_field_status.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_field_status.cpp.i
+.PHONY : actural_field_status.cpp.i
+
+actural_field_status.s: actural_field_status.cpp.s
+
+.PHONY : actural_field_status.s
+
+# target to generate assembly for a file
+actural_field_status.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_field_status.cpp.s
+.PHONY : actural_field_status.cpp.s
+
 actural_moves.o: actural_moves.cpp.o
 
 .PHONY : actural_moves.o
@@ -405,6 +432,9 @@ help:
 	@echo "... actural_characters.o"
 	@echo "... actural_characters.i"
 	@echo "... actural_characters.s"
+	@echo "... actural_field_status.o"
+	@echo "... actural_field_status.i"
+	@echo "... actural_field_status.s"
 	@echo "... actural_moves.o"
 	@echo "... actural_moves.i"
 	@echo "... actural_moves.s"

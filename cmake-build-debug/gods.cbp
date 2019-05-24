@@ -86,6 +86,12 @@
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_characters.h">
 			<Option target="gods"/>
 		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.cpp">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h">
+			<Option target="gods"/>
+		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.cpp">
 			<Option target="gods"/>
 		</Unit>

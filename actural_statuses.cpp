@@ -10,7 +10,7 @@
 #include "actural_moves.h"
 using namespace std;
 
-
+//*****************************CHOKE*******************************
 void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 3;
     nT = iniT;
@@ -32,7 +32,7 @@ void choke::StatusLoss(character* selfCharacter, character* oppoCharacter, field
 
 //choke oriChoke;
 //choke *ChokePtr = &oriChoke;
-
+//*****************************AQUA BLAST********************************
 void aquaBlast::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;

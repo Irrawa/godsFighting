@@ -27,10 +27,11 @@ public:
     //自身的hp、mp、atk、def、spd 变化
             opo_dh = 0, opo_dm = 0, opo_da = 0, opo_dd = 0, opo_ds = 0,
     //对方的hp、mp、atk、def、spd 变化
-            mv_atk, mv_id;
+            mv_atk = 0, mv_id;
     //技能攻击，技能id
     vector <status*> slf_rmStat, opo_rmStat, slf_adStat, opo_adStat;
     //          移除自身状态，移除对手状态，增加自身状态，增加对手状态（这些均为vector容器）
+    vector <field_status*> field_adStat, field_rmStat;
     character* owner;
     character* taker;
     field* place;

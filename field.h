@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "character.h"
+#include "actural_field_status.h"
 using namespace std;
 
 class cmove;
@@ -47,14 +49,14 @@ public:
     bool if_move_again(character fasterC, character slowerC);
     //判断快速一方是否应继续行动
 
-    bool status_take_effect(character effectOwner, status S, character nonOwner);
+    bool status_take_effect(character* faster, character* slower);
     //状态生效，应包括
     //1，根据所剩回合数和总回合数判断是否为第一回合/随后一回合
     //2，计算状态将造成的影响
     //3，状态生效，造成变化
     //4，清算是否分出胜负，分出返回true，不分出返回false
 
-    void FieldTakeEffect(character character1, character character2);
+    void FieldSufferStatus(character* owner, character* other);
     //场地状态生效
 
 
@@ -63,6 +65,11 @@ public:
     //   技能施放阶段：{character 行动方, cmove 行动技能, character 行动方, cmove 行动技能...}（一方可能行动多次）
     //   速度较快的一方状态清算后： {character 速度较快的角色}
     //   速度较慢的一方状态清算后： {character 速度较慢的角色}
+
+    void add_status(field_status* S);
+
+    nayadBreeze RainOfNayad;
+
 };
 
 #endif //GODS_FIELD_H

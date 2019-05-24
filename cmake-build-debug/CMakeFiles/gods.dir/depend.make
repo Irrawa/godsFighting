@@ -3,6 +3,7 @@
 
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_characters.cpp
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../character.h
@@ -12,7 +13,20 @@ CMakeFiles/gods.dir/actural_characters.cpp.o: ../field_status.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/actural_characters.cpp.o: ../status.h
 
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../actural_field_status.cpp
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../actural_field_status.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../actural_moves.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../actural_statuses.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../character.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../cmove.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../field.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../field_status.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../note_page.h
+CMakeFiles/gods.dir/actural_field_status.cpp.o: ../status.h
+
 CMakeFiles/gods.dir/actural_moves.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/actural_moves.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/actural_moves.cpp.o: ../actural_moves.cpp
 CMakeFiles/gods.dir/actural_moves.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/actural_moves.cpp.o: ../actural_statuses.h
@@ -24,6 +38,7 @@ CMakeFiles/gods.dir/actural_moves.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/actural_moves.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_statuses.cpp
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../actural_statuses.h
@@ -35,6 +50,7 @@ CMakeFiles/gods.dir/actural_statuses.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/character.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/character.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/character.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/character.cpp.o: ../character.cpp
 CMakeFiles/gods.dir/character.cpp.o: ../character.h
@@ -45,6 +61,7 @@ CMakeFiles/gods.dir/character.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/character.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/cmove.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/cmove.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../character.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../cmove.cpp
@@ -54,9 +71,19 @@ CMakeFiles/gods.dir/cmove.cpp.o: ../field_status.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/cmove.cpp.o: ../status.h
 
+CMakeFiles/gods.dir/field.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/field.cpp.o: ../actural_field_status.h
+CMakeFiles/gods.dir/field.cpp.o: ../actural_statuses.h
+CMakeFiles/gods.dir/field.cpp.o: ../character.h
+CMakeFiles/gods.dir/field.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/field.cpp.o: ../field.cpp
+CMakeFiles/gods.dir/field.cpp.o: ../field.h
+CMakeFiles/gods.dir/field.cpp.o: ../field_status.h
+CMakeFiles/gods.dir/field.cpp.o: ../note_page.h
+CMakeFiles/gods.dir/field.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/field_status.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/field_status.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/field_status.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/field_status.cpp.o: ../character.h
 CMakeFiles/gods.dir/field_status.cpp.o: ../cmove.h
@@ -67,6 +94,7 @@ CMakeFiles/gods.dir/field_status.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/field_status.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/main.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/main.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/main.cpp.o: ../character.h
@@ -78,6 +106,7 @@ CMakeFiles/gods.dir/main.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/main.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/note_page.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/note_page.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/note_page.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/note_page.cpp.o: ../character.h
 CMakeFiles/gods.dir/note_page.cpp.o: ../cmove.h
@@ -88,6 +117,7 @@ CMakeFiles/gods.dir/note_page.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/note_page.cpp.o: ../status.h
 
 CMakeFiles/gods.dir/status.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/status.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/status.cpp.o: ../actural_statuses.h
 CMakeFiles/gods.dir/status.cpp.o: ../character.h
 CMakeFiles/gods.dir/status.cpp.o: ../cmove.h

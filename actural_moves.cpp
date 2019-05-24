@@ -101,3 +101,19 @@ cmove Tsunami(){
     IrrawaMoveList.push_back(tsunami);
     return tsunami;
 }
+
+cmove RainOfNayad(character * owner, character * taker, field * place){
+    cmove rainOfNayad;
+    rainOfNayad.mName = "Rain Of Nayad";
+    rainOfNayad.field_adStat.push_back(&(place->RainOfNayad));
+    return rainOfNayad;
+}
+
+cmove RainOfNayad(){
+    cmove rainOfNayad;
+    rainOfNayad.mName = "Aqua Ball";
+    cout << "Rain of Nayad established!" << endl;
+    AllMoveList.push_back(rainOfNayad);
+    IrrawaMoveList.push_back(rainOfNayad);
+    return rainOfNayad;
+}
