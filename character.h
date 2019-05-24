@@ -43,6 +43,7 @@ public:
     string print();
 
     choke CharChoke;
+    aquaBlast CharAquaBlast;
 };
 
 #endif //GODS_CHARACTER_H

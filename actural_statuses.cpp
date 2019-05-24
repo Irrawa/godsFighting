@@ -30,5 +30,29 @@ void choke::StatusLoss(character* selfCharacter, character* oppoCharacter, field
     (*selfCharacter).ctr_spd += 15;
 }
 
-choke oriChoke;
-choke *ChokePtr = &oriChoke;
+//choke oriChoke;
+//choke *ChokePtr = &oriChoke;
+
+void aquaBlast::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 2;
+    nT = iniT;
+    cout << "AquaBlast status setup..." << endl;
+}
+
+void aquaBlast::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+    if (nT > 0 && nT < iniT) {
+        sta_ds = 0;
+    }
+}
+
+void aquaBlast::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField) {
+    cout << "AquaBlast status lost" << endl;
+}
+
+void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* currentField){
+    if(nT <= 0) {
+        (*self).HP -= 300;
+        cout << "爆炸！💥" << endl;
+    }
+    nT -= 1;
+}

@@ -20,26 +20,65 @@ extern vector <cmove> AsibiMoveList;
 //
 //vector <cmove> IrrawaMoveList;
 
+cmove AquaBall();
 cmove AquaBall(character * owner, character * taker, field * place);  //move1
-cmove WindSlash();  //move2
-cmove Tsunami();  //move3
-cmove RainOfNayad();  //move4
-cmove Tailwind();  //move5
-cmove NetherVeil();  //move6
-cmove PsychoBoost();  //move7
-cmove OneiroSting();  //move8
-cmove MewsWonderland();  //move9
-cmove ToxicBlast(); //move10
-cmove KissOfSuccubus();  //move11
-cmove LustStorm();  //move12
-cmove ShadowMirror();  //move13
-cmove DevilMentel();  //move14
-cmove ArcTurbo();  //move15
-cmove ObjectiveIllusion();  //move16
-cmove DarkVoid(); //move17
-cmove Utopia();  //move18
-cmove FleetingMeme();  //move19
-cmove DoomDesire();  //move20
+
+cmove WindSlash();
+cmove WindSlash(character * owner, character * taker, field * place);  //move2
+
+cmove Tsunami();
+cmove Tsunami(character * owner, character * taker, field * place);  //move3
+
+cmove RainOfNayad();
+cmove RainOfNayad(character * owner, character * taker, field * place);  //move4
+
+cmove Tailwind();
+cmove Tailwind(character * owner, character * taker, field * place);  //move5
+
+cmove NetherVeil();
+cmove NetherVeil(character * owner, character * taker, field * place);  //move6
+
+cmove PsychoBoost();
+cmove PsychoBoost(character * owner, character * taker, field * place);  //move7
+
+cmove OneiroSting();
+cmove OneiroSting(character * owner, character * taker, field * place);  //move8
+
+cmove MewsWonderland();
+cmove MewsWonderland(character * owner, character * taker, field * place);  //move9
+
+cmove ToxicBlast();
+cmove ToxicBlast(character * owner, character * taker, field * place); //move10
+
+cmove KissOfSuccubus();
+cmove KissOfSuccubus(character * owner, character * taker, field * place);  //move11
+
+cmove LustStorm();
+cmove LustStorm(character * owner, character * taker, field * place);  //move12
+
+cmove ShadowMirror();
+cmove ShadowMirror(character * owner, character * taker, field * place);  //move13
+
+cmove DevilMentel();
+cmove DevilMentel(character * owner, character * taker, field * place);  //move14
+
+cmove ArcTurbo();
+cmove ArcTurbo(character * owner, character * taker, field * place);  //move15
+
+cmove ObjectiveIllusion();
+cmove ObjectiveIllusion(character * owner, character * taker, field * place);  //move16
+
+cmove DarkVoid();
+cmove DarkVoid(character * owner, character * taker, field * place); //move17
+
+cmove Utopia();
+cmove Utopia(character * owner, character * taker, field * place);  //move18
+
+cmove FleetingMeme();
+cmove FleetingMeme(character * owner, character * taker, field * place);  //move19
+
+cmove DoomDesire();
+cmove DoomDesire(character * owner, character * taker, field * place);  //move20
 
 
 #endif //GODS_ACTURAL_MOVES_H

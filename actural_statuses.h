@@ -16,6 +16,7 @@ using namespace std;
 
 class character;
 class cmove;
+
 class choke : public status{
 public:
     choke(){
@@ -34,7 +35,27 @@ public:
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 
-extern choke *ChokePtr;
+class aquaBlast : public status{
+public:
+    aquaBlast(){
+        sta_name = "AQUA BLAST";
+        sta_info = "Deals 300 damage after 2 turns.";
+        iniT = 2;
+        nT = iniT;
+        sta_pos = false;
+        sta_neg = true;
+    }
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
+};
+
+//extern choke *ChokePtr;
 
 
 #endif //GODS_ACTURAL_STATUSES_H

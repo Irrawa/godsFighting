@@ -12,10 +12,18 @@
 #include "actural_statuses.h"
 using namespace std;
 
+void establish_moves(){
+    cmove aqua_ball = AquaBall();
+    cmove wind_slash = WindSlash();
+    cmove psycho_boost = PsychoBoost();
+    cmove tsunami = Tsunami();
+
+}
 
 int main() {
 //    choke c;
 //    cout << c.get_information() << endl;
+    establish_moves();
     character Irrawa = IRRAWA();
     character Mew = MEW();
 
@@ -25,29 +33,26 @@ int main() {
 //    cout << aqua_ball.slf_dm << endl;
 //    cout << AllMoveList.size() << endl;
 //    cout << IrrawaMoveList.size() << endl;
-    cmove aqua_ball = AquaBall(&Irrawa, &Mew, &TestField);
-    Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
+    Irrawa.moveL[2] = Tsunami(&Irrawa, &Mew, &TestField);
+    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[2]), &TestField);
+    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[2]), &TestField);
+    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[2]), &TestField);
     Mew.SufferStatus(&Irrawa, &TestField);
     Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Mew.print();
+
+//    Irrawa.moveL[1] = WindSlash(&Irrawa, &Mew, &TestField);
+//    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[1]), &TestField);
+//
+//    cout << Irrawa.moveL[0].mName << endl;
 
-    aqua_ball = AquaBall(&Irrawa, &Mew, &TestField);
-    Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
-
-    aqua_ball = AquaBall(&Irrawa, &Mew, &TestField);
-    Irrawa.TakeTurn(&Mew, &aqua_ball, &TestField);
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
-//    Irrawa.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-//    Irrawa.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
-//    Irrawa.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
-    Mew.SufferStatus(&Irrawa, &TestField);
-    Mew.print();
 
 
     return 0;
