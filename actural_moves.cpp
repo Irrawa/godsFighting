@@ -125,6 +125,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
     tailwind.mName = "Tailwind";
     vector <status*> badStatL;
     vector <int> NumShoot;
+    tailwind.selfTarget = true;
     int NumStatus = owner->statL.size();
     for(int i = 0; i < NumStatus; i++){
         if(owner->statL[i]->sta_neg == true){
@@ -148,31 +149,27 @@ cmove Tailwind(){
     tailwind.mName = "Tailwind";
     cout << "Tailwind established!" << endl;
     AllMoveList.push_back(tailwind);
+    tailwind.selfTarget = true;
     IrrawaMoveList.push_back(tailwind);
     return tailwind;
 }
 
-//cmove NetherVeil(character * owner, character * taker, field * place){
-//    cmove netherVeil;
-//    tailwind.mName = "Nether Veil";
-//    int NumStatus = owner->statL.size();
-//    if(NumStatus > 0) {
-//        int deleteNum = rand() % NumStatus;
-//        cout << "deleteNum = " << deleteNum << endl;
-//        owner->statL[deleteNum]->StatusLoss(owner, taker, place);
-//        (owner->statL).erase(owner->statL.begin() + deleteNum);
-//    }
-//    return tailwind;
-//}
-//
-//cmove NetherVeil(){
-//    cmove netherVeil;
-//    tailwind.mName = "Nether Veil";
-//    cout << "Tailwind established!" << endl;
-//    AllMoveList.push_back(tailwind);
-//    IrrawaMoveList.push_back(tailwind);
-//    return tailwind;
-//}
+cmove NetherVeil(character * owner, character * taker, field * place){
+    cmove netherVeil;
+    netherVeil.mName = "Nether Veil";
+    netherVeil.slf_adStat.push_back(&(owner->NetherCircuit));
+    netherVeil.selfTarget = true;
+    return netherVeil;
+}
+
+cmove NetherVeil(){
+    cmove netherVeil;
+    netherVeil.mName = "Nether Veil";
+    netherVeil.selfTarget = true;
+    AllMoveList.push_back(netherVeil);
+    MewMoveList.push_back(netherVeil);
+    return netherVeil;
+}
 
 cmove OneiroSting(character * owner, character * taker, field * place){
     cmove oneiroSting;
@@ -191,6 +188,6 @@ cmove OneiroSting(){
     oneiroSting.mv_atk = 30;
     cout << "Oneiro Sting established!" << endl;
     AllMoveList.push_back(oneiroSting);
-    IrrawaMoveList.push_back(oneiroSting);
+    MewMoveList.push_back(oneiroSting);
     return oneiroSting;
 }

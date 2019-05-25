@@ -58,26 +58,41 @@ void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* curren
 }
 
 //*****************************NETHER CIRCUIT********************************待完成
-//void netherCircuit::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
-//    iniT = 2;
-//    nT = iniT;
-//    sta_da = 15;
-//    sta_dd = 15;
-//    cout << "Nether Circuit status setup..." << endl;
-//}
-//
-//void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
-////    cout << "Choke status refreshed..." << endl;
-//    if (nT > 0 && nT < iniT) {
-//        sta_ds = 0;
-//    }
-//}
-//
-//void netherCircuit::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
-//    cout << "Choke status lost" << endl;
-//    (*selfCharacter).ctr_atk -= 20;
-//    (*selfCharacter).ctr_def -= 20;
-//}
+void netherCircuit::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 2;
+    nT = iniT;
+    sta_da = 20;
+    sta_dd = 20;
+    cout << "Nether Circuit status setup..." << endl;
+}
+
+void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+//    cout << "Choke status refreshed..." << endl;
+    vector <status*> targetSList = selfCharacter->statL;
+    int Length = targetSList.size();
+    for(int i = 0; i < Length; i++){
+        if(targetSList[i]->sta_name == "TOXIC" or targetSList[i]->sta_name == "POISONED"){
+            if(targetSList[i]->sta_dh < 0) {
+                targetSList[i]->sta_dh *= -1;
+            }
+        }
+    }
+}
+
+void netherCircuit::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "Nether Circuit status lost" << endl;
+    (*selfCharacter).ctr_atk -= 20;
+    (*selfCharacter).ctr_def -= 20;
+    vector <status*> targetSList = selfCharacter->statL;
+    int Length = targetSList.size();
+    for(int i = 0; i < Length; i++){
+        if(targetSList[i]->sta_name == "TOXIC" or targetSList[i]->sta_name == "POISONED"){
+            if(targetSList[i]->sta_dh > 0) {
+                targetSList[i]->sta_dh *= -1;
+            }
+        }
+    }
+}
 
 //*****************************TOXIC*******************************
 void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){

@@ -45,6 +45,7 @@ public:
     choke CharChoke;
     aquaBlast CharAquaBlast;
     toxic CharToxic;
+    netherCircuit NetherCircuit;
 };
 
 #endif //GODS_CHARACTER_H

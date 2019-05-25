@@ -55,25 +55,24 @@ public:
     virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
 };
 
-//class netherCircuit : public status{
-//public:
-//    aquaBlast(){
-//        sta_name = "NETHER CIRCUIT";
-//        sta_info = "Increase 20 ATK and DEF, heals the character when suffer poison";
-//        iniT = 2;
-//        nT = iniT;
-//        sta_pos = true;
-//        sta_neg = false;
-//    }
-//
-//    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
-//
-//    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
-//
-//    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
-//
-//    virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
-//};
+class netherCircuit : public status{
+public:
+    netherCircuit(){
+        sta_name = "NETHER CIRCUIT";
+        sta_info = "Increase 20 ATK and DEF, heals the character when suffer poison";
+        iniT = 2;
+        nT = iniT;
+        sta_pos = true;
+        sta_neg = false;
+    }
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+};
 
 //*****************************TOXIC*******************************
 class toxic : public status{
