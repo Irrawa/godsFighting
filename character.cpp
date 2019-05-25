@@ -15,10 +15,29 @@
 
 using namespace std;
 
-
-void character::add_status(status* S){
+void character::add_status(status* S, character* creator, field* thisField){
     status* tempStatus = S;
-    statL.push_back(tempStatus);
+    bool duplicateFlag = false;
+    int length = this->statL.size();
+    int a = 0;
+    if (length > 0) {
+        for (int i = 0; i < length; i++) {
+            if ((this->statL[i])->sta_name == tempStatus->sta_name) {
+                duplicateFlag = true;
+                a = i;
+                break;
+            }
+        }
+    }
+    if (!duplicateFlag) {
+        tempStatus->SetupStatus(creator, this, thisField);
+        (*this).statL.push_back(tempStatus);
+        cout << "添加" << endl;
+    } else {
+        this->statL[a]->nT = this->statL[a]->iniT;
+        cout << "覆盖" << endl;
+    }
+//    statL.push_back(tempStatus);
 };
 
 void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp, int atk, int def, int spd){

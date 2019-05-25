@@ -10,9 +10,28 @@
 #include "cmove.h"
 using namespace std;
 
-void field::add_status(field_status* S){
+void field::add_status(field_status* S, character* maker, character* other){
     field_status* tempStatus = S;
-    FStatusL.push_back(tempStatus);
+    bool duplicateFlag = false;
+    int length = this->FStatusL.size();
+    int a = 0;
+    if (length > 0) {
+        for (int i = 0; i < length; i++) {
+            if ((this->FStatusL[i])->sta_name == tempStatus->sta_name) {
+                duplicateFlag = true;
+                a = i;
+                break;
+            }
+        }
+    }
+    if (!duplicateFlag) {
+        tempStatus->SetupStatus(maker, other, this);
+        this->FStatusL.push_back(tempStatus);
+        cout << "添加" << tempStatus->sta_name << endl;
+    } else {
+        this->FStatusL[a]->nT = this->FStatusL[a]->iniT;
+        cout << "覆盖" << endl;
+    }
 };
 
 void field::FieldSufferStatus(character* owner, character* other){

@@ -47,80 +47,21 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {
             status *tempStatus = slf_adStat[i];
-            bool duplicateFlag = false;
-            int length = speller->statL.size();
-            int a = 0;
-            if (length > 0) {
-                for (int i = 0; i < length; i++) {
-                    if ((speller->statL[i])->sta_name == tempStatus->sta_name) {
-                        duplicateFlag = true;
-                        a = i;
-                        break;
-                    }
-                }
-            }
-            if (!duplicateFlag) {
-                tempStatus->SetupStatus(speller, taker, thisField);
-                (*speller).add_status(tempStatus);
-                cout << "添加" << endl;
-            } else {
-                speller->statL[a]->nT = speller->statL[a]->iniT;
-                cout << "覆盖" << endl;
-            }
+            speller->add_status(tempStatus, speller, thisField);
         }
     }
 
     if (opo_adStat.size() != 0) {
         for (int i = 0; i < opo_adStat.size(); i++) {
             status *tempStatus = opo_adStat[i];
-
-            //Q:想在这里复制一个tempStatus指针指向的状态并将其加入角色的状态列表，不想只传递指针。应该怎么做？
-            //(同时要避免slicing)
-            bool duplicateFlag = false;
-            int length = taker->statL.size();
-            int a = 0;
-            if (length > 0) {
-                for (int i = 0; i < length; i++) {
-                    if ((taker->statL[i])->sta_name == tempStatus->sta_name) {
-                        duplicateFlag = true;
-                        a = i;
-                        break;
-                    }
-                }
-            }
-            if (!duplicateFlag) {
-                tempStatus->SetupStatus(speller, taker, thisField);
-                (*taker).add_status(tempStatus);
-                cout << "添加" << endl;
-            } else {
-                taker->statL[a]->nT = taker->statL[a]->iniT;
-                cout << "覆盖" << endl;
-            }
+            taker->add_status(tempStatus, speller, thisField);
         }
     }
     if (field_adStat.size() != 0) {
         for (int i = 0; i < field_adStat.size(); i++) {
             field_status *tempStatus = field_adStat[i];
-            bool duplicateFlag = false;
-            int length = thisField->FStatusL.size();
-            int a = 0;
-            if (length > 0) {
-                for (int i = 0; i < length; i++) {
-                    if ((thisField->FStatusL[i])->sta_name == tempStatus->sta_name) {
-                        duplicateFlag = true;
-                        a = i;
-                        break;
-                    }
-                }
-            }
-            if (!duplicateFlag) {
-                tempStatus->SetupStatus(speller, taker, thisField);
-                (*thisField).add_status(tempStatus);
-                cout << "添加" << tempStatus->sta_name << endl;
-            } else {
-                thisField->FStatusL[a]->nT = thisField->FStatusL[a]->iniT;
-                cout << "覆盖" << endl;
-            }
+            thisField->add_status(tempStatus, speller, taker);
+
         }
     }
 }

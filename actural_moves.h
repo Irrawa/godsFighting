@@ -44,8 +44,8 @@ cmove PsychoBoost(character * owner, character * taker, field * place);  //move7
 cmove OneiroSting();
 cmove OneiroSting(character * owner, character * taker, field * place);  //move8
 
-cmove MewsWonderland();
-cmove MewsWonderland(character * owner, character * taker, field * place);  //move9
+cmove Desolation();
+cmove Desolation(character * owner, character * taker, field * place);  //move9
 
 cmove ToxicBlast();
 cmove ToxicBlast(character * owner, character * taker, field * place); //move10

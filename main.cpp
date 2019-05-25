@@ -21,6 +21,7 @@ void establish_moves(){
     cmove tailwind = Tailwind();
     cmove oneiro_sting = OneiroSting();
     cmove nether_veil = NetherVeil();
+    cmove desolation = Desolation();
 }
 
 int main() {
@@ -33,22 +34,26 @@ int main() {
 //    cmove wind_slash = WindSlash();
 //    cmove psycho_boost = PsychoBoost();
     field TestField;
-    Mew.moveL[0] = OneiroSting(&Mew, &Irrawa, &TestField);
-    Mew.TakeTurn(&Mew, &(Mew.moveL[0]), &TestField);
-    Irrawa.moveL[0] = AquaBall(&Irrawa, &Mew, &TestField);
-    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[0]), &TestField);
-    Mew.moveL[0] = OneiroSting(&Mew, &Irrawa, &TestField);
-    Mew.TakeTurn(&Mew, &(Mew.moveL[0]), &TestField);
 
-    Mew.SufferStatus(&Mew, &TestField);
+    Mew.moveL[0] = Desolation(&Mew, &Irrawa, &TestField);
+    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
     Mew.print();
-    Mew.moveL[2] = PsychoBoost(&Mew, &Irrawa, &TestField);
-    Mew.TakeTurn(&Irrawa, &(Mew.moveL[2]), &TestField);
+    Irrawa.print();
+    TestField.FieldSufferStatus(&Mew, &Irrawa);
+    Mew.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Mew, &TestField);
 
-    Mew.SufferStatus(&Mew, &TestField);
-    Mew.print();
-    Mew.SufferStatus(&Mew, &TestField);
-    Mew.print();
+
+
+//    Mew.SufferStatus(&Mew, &TestField);
+//    Mew.print();
+//    Mew.moveL[2] = PsychoBoost(&Mew, &Irrawa, &TestField);
+//    Mew.TakeTurn(&Irrawa, &(Mew.moveL[2]), &TestField);
+//
+//    Mew.SufferStatus(&Mew, &TestField);
+//    Mew.print();
+//    Mew.SufferStatus(&Mew, &TestField);
+//    Mew.print();
 
 
 //    cout << aqua_ball.slf_dm << endl;

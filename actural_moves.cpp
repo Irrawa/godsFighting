@@ -191,3 +191,19 @@ cmove OneiroSting(){
     MewMoveList.push_back(oneiroSting);
     return oneiroSting;
 }
+
+cmove Desolation(character * owner, character * taker, field * place){
+    cmove desolation;
+    desolation.mName = "Desolation";
+    desolation.field_adStat.push_back(&(place->PoisonAura));
+    return desolation;
+}
+
+cmove Desolation(){
+    cmove desolation;
+    desolation.mName = "Desolation";
+    cout << "Desolation established!" << endl;
+    AllMoveList.push_back(desolation);
+    MewMoveList.push_back(desolation);
+    return desolation;
+}

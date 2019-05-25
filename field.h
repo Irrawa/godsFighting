@@ -66,9 +66,10 @@ public:
     //   速度较快的一方状态清算后： {character 速度较快的角色}
     //   速度较慢的一方状态清算后： {character 速度较慢的角色}
 
-    void add_status(field_status* S);
+    void add_status(field_status* S, character* maker, character* other);
 
     nayadBreeze RainOfNayad;
+    poisonAura PoisonAura;
 
 };
 

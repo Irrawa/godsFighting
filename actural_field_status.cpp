@@ -11,7 +11,7 @@
 #include "actural_moves.h"
 using namespace std;
 
-//*****************************CHOKE    *******************************
+//*****************************Nayad Breeze*******************************
 void nayadBreeze::SetupStatus(character* maker, character* other, field* currentField){
     iniT = 5;
     nT = iniT;
@@ -45,4 +45,25 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
 void nayadBreeze::StatusLoss(character* maker, character* other, field* currentField){
     cout << "Nayad Breeze status lost" << endl;
     (*maker).ctr_spd -= totalBuffCount;
+}
+
+//*****************************Poison Aura*******************************
+void poisonAura::SetupStatus(character* maker, character* other, field* currentField){
+    iniT = 5;
+    nT = iniT;
+    cout << "Poison Aura status setup..." << endl;
+}
+
+
+void poisonAura::StatusTakeEffect(character* maker, character* other, field* currentField){
+    status* selfTempStatus = &(maker->Poisoned);
+    selfTempStatus->SetupStatus(maker, other, currentField);
+    (*maker).add_status(selfTempStatus, maker, currentField);
+
+    status* otherTempStatus = &(other->Poisoned);
+    otherTempStatus->SetupStatus(other, maker, currentField);
+    (*other).add_status(otherTempStatus, maker, currentField);
+
+    cout << "毒气效果生效："<< sta_ds << endl;
+    nT -= 1;
 }

@@ -94,5 +94,22 @@ public:
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 
+class poisoned : public status{
+public:
+    poisoned(){
+        sta_name = "POISONED";
+        sta_info = "Inflict damage each turn.";
+        iniT = 5;
+        nT = iniT;
+        sta_pos = false;
+        sta_neg = true;
+    }
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+};
+
 
 #endif //GODS_ACTURAL_STATUSES_H

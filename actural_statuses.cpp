@@ -100,7 +100,7 @@ void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
     nT = iniT;
     sta_dh = -10;
     toxicEnhancer = 1;
-    cout << "Choke status setup..." << endl;
+    cout << "Toxic status setup..." << endl;
 }
 
 void toxic::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -114,4 +114,19 @@ void toxic::RefStatus(character* selfCharacter, character* oppoCharacter, field*
 
 void toxic::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     cout << "Toxic status lost" << endl;
+}
+
+//*****************************POISONED*******************************
+void poisoned::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 5;
+    nT = iniT;
+    sta_dh = -30;
+    cout << "Poisoned status setup..." << endl;
+}
+
+void poisoned::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+}
+
+void poisoned::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "Poisoned status lost" << endl;
 }
