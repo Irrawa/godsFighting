@@ -23,7 +23,7 @@ public:
     nayadBreeze(){
         sta_name = "NAYAD BREEZE";
         sta_info = "Increase speed each turn, the longer the status last, the more the speed increases.\nStill helps recover some HP.";
-        iniT = 3;
+        iniT = 5;
         nT = iniT;
         sta_pos = false;
         sta_neg = true;

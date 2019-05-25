@@ -16,6 +16,7 @@ void nayadBreeze::SetupStatus(character* maker, character* other, field* current
     iniT = 5;
     nT = iniT;
     sta_ds = 5;
+    sta_dh = 20;
     cout << "Nayad Breeze status setup..." << endl;
 }
 

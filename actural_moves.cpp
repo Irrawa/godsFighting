@@ -6,6 +6,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
 #include "field_status.h"
 #include "character.h"
 #include "note_page.h"
@@ -116,4 +118,26 @@ cmove RainOfNayad(){
     AllMoveList.push_back(rainOfNayad);
     IrrawaMoveList.push_back(rainOfNayad);
     return rainOfNayad;
+}
+
+cmove Tailwind(character * owner, character * taker, field * place){
+    cmove tailwind;
+    tailwind.mName = "Tailwind";
+    int NumStatus = owner->statL.size();
+    if(NumStatus > 0) {
+        int deleteNum = rand() % NumStatus;
+        cout << "deleteNum = " << deleteNum << endl;
+        owner->statL[deleteNum]->StatusLoss(owner, taker, place);
+        (owner->statL).erase(owner->statL.begin() + deleteNum);
+    }
+    return tailwind;
+}
+
+cmove Tailwind(){
+    cmove tailwind;
+    tailwind.mName = "Tailwind";
+    cout << "Tailwind established!" << endl;
+    AllMoveList.push_back(tailwind);
+    IrrawaMoveList.push_back(tailwind);
+    return tailwind;
 }

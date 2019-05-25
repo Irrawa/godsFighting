@@ -18,6 +18,7 @@ void establish_moves(){
     cmove psycho_boost = PsychoBoost();
     cmove tsunami = Tsunami();
     cmove rain_of_nayad = RainOfNayad();
+    cmove tailwind = Tailwind();
 }
 
 int main() {
@@ -33,8 +34,22 @@ int main() {
 //    cout << aqua_ball.slf_dm << endl;
 //    cout << AllMoveList.size() << endl;
 //    cout << IrrawaMoveList.size() << endl;
-    Irrawa.moveL[4] = RainOfNayad(&Irrawa, &Mew, &TestField);
-    Irrawa.TakeTurn(&Mew, &(Irrawa.moveL[4]), &TestField);
+    Irrawa.moveL[0] = AquaBall(&Irrawa, &Mew, &TestField);
+    Irrawa.print();
+    Irrawa.moveL[1] = Tailwind(&Irrawa, &Mew, &TestField);
+    Irrawa.TakeTurn(&Irrawa, &(Irrawa.moveL[1]), &TestField);
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    Irrawa.TakeTurn(&Irrawa, &(Irrawa.moveL[0]), &TestField);
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+
+
+    //    TestField.FieldSufferStatus(&Irrawa, &Mew);
+
+
 
 
 
