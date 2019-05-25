@@ -56,3 +56,47 @@ void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* curren
     }
     nT -= 1;
 }
+
+//*****************************NETHER CIRCUIT********************************待完成
+//void netherCircuit::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+//    iniT = 2;
+//    nT = iniT;
+//    sta_da = 15;
+//    sta_dd = 15;
+//    cout << "Nether Circuit status setup..." << endl;
+//}
+//
+//void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+////    cout << "Choke status refreshed..." << endl;
+//    if (nT > 0 && nT < iniT) {
+//        sta_ds = 0;
+//    }
+//}
+//
+//void netherCircuit::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+//    cout << "Choke status lost" << endl;
+//    (*selfCharacter).ctr_atk -= 20;
+//    (*selfCharacter).ctr_def -= 20;
+//}
+
+//*****************************TOXIC*******************************
+void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 3;
+    nT = iniT;
+    sta_dh = -10;
+    toxicEnhancer = 1;
+    cout << "Choke status setup..." << endl;
+}
+
+void toxic::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
+//    cout << "Choke status refreshed..." << endl;
+    sta_dh *= 1.3;
+    toxicEnhancer *= 1.3;
+    if(sta_dh < -200){
+        sta_dh = -200;
+    }
+}
+
+void toxic::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "Toxic status lost" << endl;
+}

@@ -123,12 +123,22 @@ cmove RainOfNayad(){
 cmove Tailwind(character * owner, character * taker, field * place){
     cmove tailwind;
     tailwind.mName = "Tailwind";
+    vector <status*> badStatL;
+    vector <int> NumShoot;
     int NumStatus = owner->statL.size();
-    if(NumStatus > 0) {
-        int deleteNum = rand() % NumStatus;
+    for(int i = 0; i < NumStatus; i++){
+        if(owner->statL[i]->sta_neg == true){
+            badStatL.push_back(owner->statL[i]);
+            NumShoot.push_back(i);
+        }
+    }
+    int NumBadStatus = badStatL.size();
+    if(NumBadStatus > 0) {
+        int deleteNum = rand() % NumBadStatus;
         cout << "deleteNum = " << deleteNum << endl;
-        owner->statL[deleteNum]->StatusLoss(owner, taker, place);
-        (owner->statL).erase(owner->statL.begin() + deleteNum);
+        int deleteOriginNum = NumShoot[deleteNum];
+        owner->statL[deleteOriginNum]->StatusLoss(owner, taker, place);
+        (owner->statL).erase(owner->statL.begin() + deleteOriginNum);
     }
     return tailwind;
 }
@@ -140,4 +150,47 @@ cmove Tailwind(){
     AllMoveList.push_back(tailwind);
     IrrawaMoveList.push_back(tailwind);
     return tailwind;
+}
+
+//cmove NetherVeil(character * owner, character * taker, field * place){
+//    cmove netherVeil;
+//    tailwind.mName = "Nether Veil";
+//    int NumStatus = owner->statL.size();
+//    if(NumStatus > 0) {
+//        int deleteNum = rand() % NumStatus;
+//        cout << "deleteNum = " << deleteNum << endl;
+//        owner->statL[deleteNum]->StatusLoss(owner, taker, place);
+//        (owner->statL).erase(owner->statL.begin() + deleteNum);
+//    }
+//    return tailwind;
+//}
+//
+//cmove NetherVeil(){
+//    cmove netherVeil;
+//    tailwind.mName = "Nether Veil";
+//    cout << "Tailwind established!" << endl;
+//    AllMoveList.push_back(tailwind);
+//    IrrawaMoveList.push_back(tailwind);
+//    return tailwind;
+//}
+
+cmove OneiroSting(character * owner, character * taker, field * place){
+    cmove oneiroSting;
+    oneiroSting.mName = "Oneiro Sting";
+    oneiroSting.slf_dm = -25;
+    oneiroSting.mv_atk = 30;
+    cout << "Oneiro Sting established!" << endl;
+    oneiroSting.opo_adStat.push_back(&(taker->CharToxic));
+    return oneiroSting;
+}
+
+cmove OneiroSting(){
+    cmove oneiroSting;
+    oneiroSting.mName = "Oneiro Sting";
+    oneiroSting.slf_dm = -25;
+    oneiroSting.mv_atk = 30;
+    cout << "Oneiro Sting established!" << endl;
+    AllMoveList.push_back(oneiroSting);
+    IrrawaMoveList.push_back(oneiroSting);
+    return oneiroSting;
 }
