@@ -22,6 +22,8 @@ vector <cmove> MewMoveList;  //妙的技能表，已设为全局变量
 vector <cmove> RosieMoveList;  //露丝的技能表，已设为全局变量
 vector <cmove> AsibiMoveList;  //Asibi的技能表，已设为全局变量
 
+//****************************************************************************************************
+
 cmove AquaBall(character * owner, character * taker, field * place){
     cmove aquaBall;
     aquaBall.mName = "Aqua Ball";
@@ -43,6 +45,8 @@ cmove AquaBall(){
     return aquaBall;
 }
 
+//****************************************************************************************************
+
 cmove WindSlash(character * owner, character * taker, field * place){
     cmove windSlash;
     windSlash.mName = "Wind Slash";
@@ -62,6 +66,8 @@ cmove WindSlash(){
     IrrawaMoveList.push_back(windSlash);
     return windSlash;
 }
+
+//****************************************************************************************************
 
 cmove PsychoBoost(character * owner, character * taker, field * place){
     cmove psychoBoost;
@@ -85,6 +91,8 @@ cmove PsychoBoost(){
     return psychoBoost;
 }
 
+//****************************************************************************************************
+
 cmove Tsunami(character * owner, character * taker, field * place){
     cmove tsunami;
     tsunami.mName = "Tsunami";
@@ -104,6 +112,8 @@ cmove Tsunami(){
     return tsunami;
 }
 
+//****************************************************************************************************
+
 cmove RainOfNayad(character * owner, character * taker, field * place){
     cmove rainOfNayad;
     rainOfNayad.mName = "Rain Of Nayad";
@@ -119,6 +129,8 @@ cmove RainOfNayad(){
     IrrawaMoveList.push_back(rainOfNayad);
     return rainOfNayad;
 }
+
+//****************************************************************************************************
 
 cmove Tailwind(character * owner, character * taker, field * place){
     cmove tailwind;
@@ -138,8 +150,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
         int deleteNum = rand() % NumBadStatus;
         cout << "deleteNum = " << deleteNum << endl;
         int deleteOriginNum = NumShoot[deleteNum];
-        owner->statL[deleteOriginNum]->StatusLoss(owner, taker, place);
-        (owner->statL).erase(owner->statL.begin() + deleteOriginNum);
+        tailwind.slf_rmStat.push_back(owner->statL[deleteOriginNum]);
     }
     return tailwind;
 }
@@ -153,6 +164,8 @@ cmove Tailwind(){
     IrrawaMoveList.push_back(tailwind);
     return tailwind;
 }
+
+//****************************************************************************************************
 
 cmove NetherVeil(character * owner, character * taker, field * place){
     cmove netherVeil;
@@ -170,6 +183,8 @@ cmove NetherVeil(){
     MewMoveList.push_back(netherVeil);
     return netherVeil;
 }
+
+//****************************************************************************************************
 
 cmove OneiroSting(character * owner, character * taker, field * place){
     cmove oneiroSting;
@@ -192,6 +207,8 @@ cmove OneiroSting(){
     return oneiroSting;
 }
 
+//****************************************************************************************************
+
 cmove Desolation(character * owner, character * taker, field * place){
     cmove desolation;
     desolation.mName = "Desolation";
@@ -206,4 +223,37 @@ cmove Desolation(){
     AllMoveList.push_back(desolation);
     MewMoveList.push_back(desolation);
     return desolation;
+}
+
+//****************************************************************************************************
+
+cmove ToxicBlast(character * owner, character * taker, field * place){
+    cmove toxicBlast;
+    toxicBlast.mName = "Toxic Blast";
+    int statLen = taker->statL.size();
+    int totalDh = 0;
+    vector <status*> NewStatL;
+    for(int i = 0; i < statLen; i++){
+        if(taker->statL[i]->sta_name == "TOXIC" or taker->statL[i]->sta_name == "POISONED"){
+            toxicBlast.opo_rmStat.push_back(taker->statL[i]);
+            totalDh += 5 * taker->statL[i]->sta_dh;
+        }
+    }
+    if(totalDh > -30){
+        toxicBlast.opo_dh = -30;
+    }
+    else {
+        toxicBlast.opo_dh = totalDh;
+    }
+    return toxicBlast;
+}
+
+cmove ToxicBlast(){
+    cmove toxicBlast;
+    toxicBlast.mName = "Toxic Blast";
+    cout << "Toxic Blast established!" << endl;
+    AllMoveList.push_back(toxicBlast);
+    MewMoveList.push_back(toxicBlast);
+    return toxicBlast;
+
 }

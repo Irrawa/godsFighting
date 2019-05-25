@@ -27,7 +27,7 @@ void cmove::SpellMove(character *speller, character *taker, field *thisField){
     int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
     opo_dh -= damage;
     if(opo_dh < 0){
-        cout << "The move <" << mName <<"> inflicted *" << damage << "* damage to " << (*taker).cName << endl;
+        cout << "The move <" << mName <<"> inflicted *" << -opo_dh << "* damage to " << (*taker).cName << endl;
     }
 }
 
@@ -43,6 +43,50 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     (*taker).ctr_atk += opo_da;
     (*taker).ctr_def += opo_dd;
     (*taker).ctr_spd += opo_ds;
+
+    int rmLen = slf_rmStat.size();  //删除自身的指定状态列表
+    if(rmLen > 0){
+        int len = speller->statL.size();
+        vector <status*> NewStatL;
+        for (int i = 0; i < len; i++){
+            bool deleteFlag = false;
+            string originName = speller->statL[i]->sta_name;
+            for (int j = 0; j < rmLen; j++){
+                if(originName == slf_rmStat[j]->sta_name){
+                    deleteFlag = true;
+                }
+            }
+            if(deleteFlag){
+                speller->statL[i]->StatusLoss(speller, taker, thisField);
+            }
+            else{
+                NewStatL.push_back(speller->statL[i]);
+            }
+        }
+        speller->statL = NewStatL;
+    }
+
+    rmLen = opo_rmStat.size();  //删除对方的指定状态列表
+    if(rmLen > 0){
+        int len = taker->statL.size();
+        vector <status*> NewStatL;
+        for (int i = 0; i < len; i++){
+            bool deleteFlag = false;
+            string originName = taker->statL[i]->sta_name;
+            for (int j = 0; j < rmLen; j++){
+                if(originName == opo_rmStat[j]->sta_name){
+                    deleteFlag = true;
+                }
+            }
+            if(deleteFlag){
+                taker->statL[i]->StatusLoss(taker, speller, thisField);
+            }
+            else{
+                NewStatL.push_back(taker->statL[i]);
+            }
+        }
+        taker->statL = NewStatL;
+    }
 
     if (slf_adStat.size() != 0) {
         for (int i = 0; i < slf_adStat.size(); i++) {

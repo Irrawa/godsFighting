@@ -22,6 +22,22 @@ void establish_moves(){
     cmove oneiro_sting = OneiroSting();
     cmove nether_veil = NetherVeil();
     cmove desolation = Desolation();
+    cmove toxic_blast = ToxicBlast();
+}
+void IrrawaMoveReset(character* irrawa, character* opponent, field* battleField){
+    irrawa->moveL[0] = AquaBall(irrawa, opponent, battleField);
+    irrawa->moveL[1] = WindSlash(irrawa, opponent, battleField);
+    irrawa->moveL[2] = Tsunami(irrawa, opponent, battleField);
+    irrawa->moveL[3] = RainOfNayad(irrawa, opponent, battleField);
+    irrawa->moveL[4] = Tailwind(irrawa, opponent, battleField);
+}
+
+void MewMoveReset(character* mew, character* opponent, field* battleField){
+    mew->moveL[0] = OneiroSting(mew, opponent, battleField);
+    mew->moveL[1] = NetherVeil(mew, opponent, battleField);
+    mew->moveL[2] = Desolation(mew, opponent, battleField);
+    mew->moveL[3] = PsychoBoost(mew, opponent, battleField);
+    mew->moveL[4] = ToxicBlast(mew, opponent, battleField);
 }
 
 int main() {
@@ -35,16 +51,23 @@ int main() {
 //    cmove psycho_boost = PsychoBoost();
     field TestField;
 
-    Mew.moveL[0] = Desolation(&Mew, &Irrawa, &TestField);
+    MewMoveReset(&Mew, &Irrawa, &TestField);
     Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
-    Mew.print();
+//    Mew.print();
     Irrawa.print();
-    TestField.FieldSufferStatus(&Mew, &Irrawa);
-    Mew.SufferStatus(&Irrawa, &TestField);
+
     Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    MewMoveReset(&Mew, &Irrawa, &TestField);
+    Mew.TakeTurn(&Irrawa, &(Mew.moveL[4]), &TestField);
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
 
 
-
+//    TestField.FieldSufferStatus(&Mew, &Irrawa);
+//    Mew.SufferStatus(&Irrawa, &TestField);
+//    Irrawa.moveL[0] = Tailwind(&Irrawa, &Mew, &TestField);
+//    Irrawa.TakeTurn(&Irrawa, &(Irrawa.moveL[0]), &TestField);
 //    Mew.SufferStatus(&Mew, &TestField);
 //    Mew.print();
 //    Mew.moveL[2] = PsychoBoost(&Mew, &Irrawa, &TestField);
