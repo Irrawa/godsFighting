@@ -37,8 +37,6 @@ cmove AquaBall(character * owner, character * taker, field * place){
 cmove AquaBall(){
     cmove aquaBall;
     aquaBall.mName = "Aqua Ball";
-    aquaBall.slf_dm = -100;
-    aquaBall.mv_atk = 20;
     cout << "AquaBall established!" << endl;
     AllMoveList.push_back(aquaBall);
     IrrawaMoveList.push_back(aquaBall);
@@ -59,8 +57,6 @@ cmove WindSlash(character * owner, character * taker, field * place){
 cmove WindSlash(){
     cmove windSlash;
     windSlash.mName = "Wind Slash";
-    windSlash.slf_dm = -80;
-    windSlash.mv_atk = 65;
     cout << "WindSlash established!" << endl;
     AllMoveList.push_back(windSlash);
     IrrawaMoveList.push_back(windSlash);
@@ -116,6 +112,7 @@ cmove Tsunami(){
 
 cmove RainOfNayad(character * owner, character * taker, field * place){
     cmove rainOfNayad;
+    rainOfNayad.slf_dm = -50;
     rainOfNayad.mName = "Rain Of Nayad";
     rainOfNayad.field_adStat.push_back(&(place->RainOfNayad));
     return rainOfNayad;
@@ -134,6 +131,7 @@ cmove RainOfNayad(){
 
 cmove Tailwind(character * owner, character * taker, field * place){
     cmove tailwind;
+    tailwind.slf_dm = -20;
     tailwind.mName = "Tailwind";
     vector <status*> badStatL;
     vector <int> NumShoot;
@@ -169,6 +167,7 @@ cmove Tailwind(){
 
 cmove NetherVeil(character * owner, character * taker, field * place){
     cmove netherVeil;
+    netherVeil.slf_dm = -75;
     netherVeil.mName = "Nether Veil";
     netherVeil.slf_adStat.push_back(&(owner->NetherCircuit));
     netherVeil.selfTarget = true;
@@ -211,6 +210,7 @@ cmove OneiroSting(){
 
 cmove Desolation(character * owner, character * taker, field * place){
     cmove desolation;
+    desolation.slf_dm = -25;
     desolation.mName = "Desolation";
     desolation.field_adStat.push_back(&(place->PoisonAura));
     return desolation;
@@ -230,6 +230,7 @@ cmove Desolation(){
 cmove ToxicBlast(character * owner, character * taker, field * place){
     cmove toxicBlast;
     toxicBlast.mName = "Toxic Blast";
+    toxicBlast.slf_dm = -150;
     int statLen = taker->statL.size();
     int totalDh = 0;
     vector <status*> NewStatL;
@@ -255,5 +256,24 @@ cmove ToxicBlast(){
     AllMoveList.push_back(toxicBlast);
     MewMoveList.push_back(toxicBlast);
     return toxicBlast;
+}
 
+//****************************************************************************************************
+
+cmove KissOfSuccubus(character * owner, character * taker, field * place){
+    cmove kissOfSuccubus;
+    kissOfSuccubus.mName = "Kiss Of Succubus";
+    kissOfSuccubus.mv_atk = 75;
+    kissOfSuccubus.slf_dm = -90;
+    kissOfSuccubus.slf_dh = (owner->ctr_atk * kissOfSuccubus.mv_atk / taker->ctr_def) * 0.5;
+    return kissOfSuccubus;
+}
+
+cmove KissOfSuccubus(){
+    cmove kissOfSuccubus;
+    kissOfSuccubus.mName = "Kiss Of Succubus";
+    cout << "Kiss of Succubus established!" << endl;
+    AllMoveList.push_back(kissOfSuccubus);
+    RosieMoveList.push_back(kissOfSuccubus);
+    return kissOfSuccubus;
 }

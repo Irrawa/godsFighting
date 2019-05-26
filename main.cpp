@@ -23,6 +23,7 @@ void establish_moves(){
     cmove nether_veil = NetherVeil();
     cmove desolation = Desolation();
     cmove toxic_blast = ToxicBlast();
+    cmove kiss_of_succubus = KissOfSuccubus();
 }
 void IrrawaMoveReset(character* irrawa, character* opponent, field* battleField){
     irrawa->moveL[0] = AquaBall(irrawa, opponent, battleField);
@@ -40,28 +41,43 @@ void MewMoveReset(character* mew, character* opponent, field* battleField){
     mew->moveL[4] = ToxicBlast(mew, opponent, battleField);
 }
 
+void RosieMoveReset(character* rosie, character* opponent, field* battleField){
+    rosie->moveL[0] = KissOfSuccubus(rosie, opponent, battleField);
+}
+
 int main() {
 //    choke c;
 //    cout << c.get_information() << endl;
     establish_moves();
     character Irrawa = IRRAWA();
     character Mew = MEW();
+    character Rosie = ROSIE();
+    character Asibi = ASIBI();
 
 //    cmove wind_slash = WindSlash();
 //    cmove psycho_boost = PsychoBoost();
     field TestField;
+    Irrawa.print();
+    Rosie.print();
+    RosieMoveReset(&Rosie, &Irrawa, &TestField);
+    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[0]), &TestField);
+//    Asibi.print();
+//    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
+//    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
+    Irrawa.print();
+    Rosie.print();
 
-    MewMoveReset(&Mew, &Irrawa, &TestField);
-    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
+//    MewMoveReset(&Mew, &Irrawa, &TestField);
+//    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
 //    Mew.print();
-    Irrawa.print();
+//    Irrawa.print();
 
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
-    MewMoveReset(&Mew, &Irrawa, &TestField);
-    Mew.TakeTurn(&Irrawa, &(Mew.moveL[4]), &TestField);
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
+//    Irrawa.SufferStatus(&Mew, &TestField);
+//    Irrawa.print();
+//    MewMoveReset(&Mew, &Irrawa, &TestField);
+//    Mew.TakeTurn(&Irrawa, &(Mew.moveL[4]), &TestField);
+//    Irrawa.SufferStatus(&Mew, &TestField);
+//    Irrawa.print();
 
 
 //    TestField.FieldSufferStatus(&Mew, &Irrawa);

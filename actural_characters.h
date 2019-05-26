@@ -14,6 +14,8 @@ extern vector <character> AllCharacterList;
 
 character IRRAWA();
 character MEW();
+character ROSIE();
+character ASIBI();
 
 
 #endif //GODS_ACTURAL_CHARACTERS_H

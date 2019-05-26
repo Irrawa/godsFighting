@@ -32,3 +32,17 @@ character MEW(){
     AllCharacterList.push_back(mew);
     return mew;
 }
+
+character ROSIE(){
+    character rosie;
+    rosie.Initialize("Rosie", RosieMoveList, 900, 1000, 90, 90, 120);
+    AllCharacterList.push_back(rosie);
+    return rosie;
+}
+
+character ASIBI(){
+    character asibi;
+    asibi.Initialize("Asibi", AsibiMoveList, 1100, 1200, 110, 110, 100);
+    AllCharacterList.push_back(asibi);
+    return asibi;
+}
