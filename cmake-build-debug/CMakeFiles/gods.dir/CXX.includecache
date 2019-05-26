@@ -129,8 +129,6 @@ string
 -
 field_status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.h
-note_page.h
-/Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
 status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/status.h
 
@@ -225,6 +223,8 @@ character.h
 /Users/otbooster/Downloads/2019up/cpp/gods/character.h
 actural_field_status.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.h
+note_page.h
+/Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/field_status.cpp
 iostream
@@ -279,6 +279,8 @@ string
 -
 actural_statuses.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
+note_page.h
+/Users/otbooster/Downloads/2019up/cpp/gods/note_page.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/note_page.cpp
 note_page.h
@@ -299,6 +301,10 @@ vector
 -
 string
 -
+character.h
+/Users/otbooster/Downloads/2019up/cpp/gods/character.h
+status.h
+/Users/otbooster/Downloads/2019up/cpp/gods/status.h
 
 /Users/otbooster/Downloads/2019up/cpp/gods/status.cpp
 iostream

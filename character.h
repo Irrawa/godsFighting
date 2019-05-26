@@ -42,6 +42,8 @@ public:
 
     string print();
 
+    vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned};
+
     choke CharChoke;
     aquaBlast CharAquaBlast;
     toxic CharToxic;

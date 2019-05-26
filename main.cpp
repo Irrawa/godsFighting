@@ -10,6 +10,8 @@
 #include <vector>
 #include <string>
 #include "actural_statuses.h"
+#include "note_page.h"
+
 using namespace std;
 
 void establish_moves(){
@@ -53,27 +55,35 @@ int main() {
     character Mew = MEW();
     character Rosie = ROSIE();
     character Asibi = ASIBI();
+    note_page testPage;
 
 //    cmove wind_slash = WindSlash();
 //    cmove psycho_boost = PsychoBoost();
     field TestField;
-    Irrawa.print();
-    Rosie.print();
-    RosieMoveReset(&Rosie, &Irrawa, &TestField);
-    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[0]), &TestField);
+//    Irrawa.print();
+//    Rosie.print();
+//    RosieMoveReset(&Rosie, &Irrawa, &TestField);
+//    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[0]), &TestField);
 //    Asibi.print();
 //    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
 //    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
+
+    MewMoveReset(&Mew, &Irrawa, &TestField);
+    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
+    Mew.print();
     Irrawa.print();
-    Rosie.print();
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    testPage.set_after1stStatSlow(&Irrawa);
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    Irrawa.SufferStatus(&Mew, &TestField);
+    Irrawa.print();
+    testPage.C07.print();
 
-//    MewMoveReset(&Mew, &Irrawa, &TestField);
-//    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
-//    Mew.print();
-//    Irrawa.print();
 
-//    Irrawa.SufferStatus(&Mew, &TestField);
-//    Irrawa.print();
 //    MewMoveReset(&Mew, &Irrawa, &TestField);
 //    Mew.TakeTurn(&Irrawa, &(Mew.moveL[4]), &TestField);
 //    Irrawa.SufferStatus(&Mew, &TestField);

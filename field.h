@@ -10,6 +10,7 @@
 #include <string>
 #include "character.h"
 #include "actural_field_status.h"
+#include "note_page.h"
 using namespace std;
 
 class cmove;

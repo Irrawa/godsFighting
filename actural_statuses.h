@@ -9,7 +9,6 @@
 #include <vector>
 #include <string>
 #include "field_status.h"
-#include "note_page.h"
 #include "status.h"
 
 using namespace std;

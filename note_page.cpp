@@ -13,29 +13,22 @@ using namespace std;
 character checkedCharacter1;
 character checkedCharacter2;
 
-void note_page::add_action(character acter, cmove act){ //添加角色和其行动
-    CSerie.push_back(acter);
-    MSerie.push_back(act);
-}
 
-void note_page::set_start_field_statusL(vector <field_status> SFS){
-    int length = SFS.size();
-    for (int i = 0; i < length; i++){
-        field_status tempFS;
-        tempFS = SFS[i];
-        StartFStatusL[i] = tempFS;
+character note_page::copy_char(character* originChar){
+    character newChar = *originChar;
+    int lenStat = originChar->statL.size();
+    int lenAllStat = newChar.noteStatL.size();
+    if(lenStat > 0) {
+        vector <status*> newStatL;
+        for (int i = 0; i < lenStat; i++){
+            string staName = originChar->statL[i]->sta_name;
+            for (int j = 0; j < lenAllStat; j++){
+                if(staName == newChar.noteStatL[j]->sta_name){
+                    newStatL.push_back(newChar.noteStatL[j]);
+                }
+            }
+        }
+        newChar.statL = newStatL;
     }
-}
-
-void note_page::set_start_characterL(vector <character> SC){
-    StartCharacterL[0] = SC[0];
-    StartCharacterL[1] = SC[1];
-}
-
-void note_page::set_C1(character acter){   //快速角色状态清算后记录
-    checkedCharacter1 = acter;
-}
-
-void note_page::set_C2(character acter){   //慢速角色状态清算后记录
-    checkedCharacter2 = acter;
+    return newChar;
 }
