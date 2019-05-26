@@ -26,6 +26,7 @@ void establish_moves(){
     cmove desolation = Desolation();
     cmove toxic_blast = ToxicBlast();
     cmove kiss_of_succubus = KissOfSuccubus();
+    cmove lust_storm = LustStorm();
 }
 void IrrawaMoveReset(character* irrawa, character* opponent, field* battleField){
     irrawa->moveL[0] = AquaBall(irrawa, opponent, battleField);
@@ -45,6 +46,7 @@ void MewMoveReset(character* mew, character* opponent, field* battleField){
 
 void RosieMoveReset(character* rosie, character* opponent, field* battleField){
     rosie->moveL[0] = KissOfSuccubus(rosie, opponent, battleField);
+    rosie->moveL[1] = LustStorm(rosie, opponent, battleField);
 }
 
 int main() {
@@ -54,12 +56,8 @@ int main() {
     character Irrawa = IRRAWA();
     character Mew = MEW();
     character Rosie = ROSIE();
-    character Asibi = ASIBI();
-    note_page testPage;
-
-//    cmove wind_slash = WindSlash();
-//    cmove psycho_boost = PsychoBoost();
     field TestField;
+    TestField.NewPage();
 //    Irrawa.print();
 //    Rosie.print();
 //    RosieMoveReset(&Rosie, &Irrawa, &TestField);
@@ -68,20 +66,37 @@ int main() {
 //    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
 //    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
 
-    MewMoveReset(&Mew, &Irrawa, &TestField);
+    TestField.BattleRecord[0].set_beforeMoveFast(&Rosie);
+    TestField.BattleRecord[0].set_beforeMoveSlow(&Irrawa);
+
+    RosieMoveReset(&Rosie, &Irrawa, &TestField);
+    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[1]), &TestField);
+
+    TestField.BattleRecord[0].set_after1stMoveFast(&Rosie);
+    TestField.BattleRecord[0].set_after1stMoveSlow(&Irrawa);
+
+    IrrawaMoveReset(&Irrawa, &Rosie, &TestField);
+    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+
+    TestField.BattleRecord[0].set_after2ndMoveFast(&Rosie);
+    TestField.BattleRecord[0].set_after2ndMoveSlow(&Irrawa);
+
+    Rosie.SufferStatus(&Irrawa, &TestField);
+
+    TestField.BattleRecord[0].set_after1stStatFast(&Rosie);
+    TestField.BattleRecord[0].set_after1stStatSlow(&Irrawa);
+
+    Irrawa.SufferStatus(&Rosie, &TestField);
+
+    TestField.BattleRecord[0].set_after2ndStatFast(&Rosie);
+    TestField.BattleRecord[0].set_after2ndStatSlow(&Irrawa);
+    TestField.NewPage();
+
+
+
+
     Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
     Mew.print();
-    Irrawa.print();
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
-    testPage.set_after1stStatSlow(&Irrawa);
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
-    Irrawa.SufferStatus(&Mew, &TestField);
-    Irrawa.print();
-    testPage.C07.print();
 
 
 //    MewMoveReset(&Mew, &Irrawa, &TestField);

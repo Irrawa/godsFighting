@@ -72,6 +72,18 @@ public:
     nayadBreeze RainOfNayad;
     poisonAura PoisonAura;
 
+    vector <note_page> battleRecord;
+
+    void NewPage();  //在战斗记录中新加一页
+
+    note_page GetPage(int PageNum);  //读取战斗记录的指定页
+
+    note_page GetCurrentPage();  //读取当前页
+
+
+
+
+
 };
 
 #endif //GODS_FIELD_H

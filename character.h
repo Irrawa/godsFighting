@@ -49,6 +49,7 @@ public:
     toxic CharToxic;
     netherCircuit NetherCircuit;
     poisoned Poisoned;
+    staticOverload StaticOverload;
 };
 
 #endif //GODS_CHARACTER_H

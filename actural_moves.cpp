@@ -277,3 +277,23 @@ cmove KissOfSuccubus(){
     RosieMoveList.push_back(kissOfSuccubus);
     return kissOfSuccubus;
 }
+
+//****************************************************************************************************
+
+cmove LustStorm(character * owner, character * taker, field * place){
+    cmove lustStorm;
+    lustStorm.slf_dm = -45;
+    lustStorm.mName = "Lust Storm";
+    lustStorm.slf_adStat.push_back(&(owner->StaticOverload));
+    lustStorm.selfTarget = true;
+    return lustStorm;
+}
+
+cmove LustStorm(){
+    cmove lustStorm;
+    lustStorm.mName = "Lust Storm";
+    lustStorm.selfTarget = true;
+    AllMoveList.push_back(lustStorm);
+    RosieMoveList.push_back(lustStorm);
+    return lustStorm;
+}

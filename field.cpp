@@ -52,3 +52,35 @@ void field::FieldSufferStatus(character* owner, character* other){
         FStatusL = NewStatL;
     }
 }
+
+void field::NewPage(){
+    note_page NewPage;
+    int lastNum = battleRecord.size();
+    NewPage.setPageNum(lastNum + 1);
+    battleRecord.push_back(NewPage);
+    cout << "Page " << lastNum + 1 << " created!" << endl;
+}
+
+note_page field::GetPage(int PageNum){
+    int currentTail = battleRecord.size() - 1;
+    if(PageNum > currentTail && currentTail >= 0){
+        cout << "Recalled bad page No." << PageNum << ", returning current tail page No. "<< currentTail << "!!!" << endl;
+        return battleRecord[currentTail];
+    }
+    else if(currentTail >= 0 && PageNum >= 0){
+        return battleRecord[PageNum];
+    }
+    else if(currentTail < 0){
+        cout << "No record Founded!" << endl;
+        note_page NewPage;
+        return NewPage;
+    }
+    else{
+        cout << "Recalled bad page No." << PageNum << ", returning current head page No. "<< 0 << "!!!" << endl;
+        return battleRecord[0];
+    }
+}
+
+note_page field::GetCurrentPage(){
+    return GetPage(battleRecord.size() - 1);
+}

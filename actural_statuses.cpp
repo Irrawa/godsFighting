@@ -130,3 +130,35 @@ void poisoned::RefStatus(character* selfCharacter, character* oppoCharacter, fie
 void poisoned::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     cout << "Poisoned status lost" << endl;
 }
+
+//*****************************STATIC OVERLOAD*******************************
+
+void staticOverload::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 5;
+    nT = iniT;
+    cout << "Static Overload status setup..." << endl;
+}
+
+void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    int dHP = 0;
+    string selfCharName = selfCharacter->cName;
+    note_page currentPage = currentField->GetCurrentPage();
+    string FasterName = currentPage.C00.cName;
+    string SlowerName = currentPage.C01.cName;
+    if(selfCharName == FasterName){
+        dHP = currentPage.C04.HP - currentPage.C02.HP;
+    }
+    else if(selfCharName == SlowerName){
+        dHP = currentPage.C03.HP - currentPage.C01.HP;
+    }
+    if(dHP > 0){
+        dHP = 0;
+    }
+    sta_Odh = dHP;
+}
+
+//void staticOverload::StatusTakeEffect(character* selfCharacter, character* oppoCharacter, field* currentField){
+//
+//}
+
+//void staticOverload::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){}

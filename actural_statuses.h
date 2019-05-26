@@ -93,6 +93,8 @@ public:
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 
+//*****************************POISONED*******************************
+
 class poisoned : public status{
 public:
     poisoned(){
@@ -108,6 +110,29 @@ public:
     virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+};
+
+//*****************************STATIC OVERLOAD*******************************
+class staticOverload : public status{
+public:
+    staticOverload() {
+        sta_name = "STATIC OVERLOAD";
+        sta_info = "Reflect half of the damage to the opponent";
+        iniT = 5;
+        nT = iniT;
+        sta_pos = true;
+        sta_neg = false;
+    }
+
+
+virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+//virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
+
+//virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
 };
 
 

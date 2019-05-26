@@ -15,6 +15,7 @@ character checkedCharacter2;
 
 
 character note_page::copy_char(character* originChar){
+    cout << "character " << originChar-> cName << " to record" << endl;
     character newChar = *originChar;
     int lenStat = originChar->statL.size();
     int lenAllStat = newChar.noteStatL.size();
@@ -29,6 +30,7 @@ character note_page::copy_char(character* originChar){
             }
         }
         newChar.statL = newStatL;
+        cout << "character " << newChar.cName << "recorded" << endl;
     }
     return newChar;
 }

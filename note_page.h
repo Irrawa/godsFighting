@@ -60,12 +60,17 @@ public:
     character C09;
 
 
-    int notePage;
+    int pageNum; //页码
+
+    void setPageNum(int num){
+        pageNum = num;
+    }
 
     character copy_char(character* originChar); //将原角色的所有特征拷贝（重点是状态指针的操作）
 
     void set_beforeMoveFast(character* c00){
         C00 = copy_char(c00);
+        cout << "C00 recorded!" << endl;
     }
 
     void set_beforeMoveSlow(character* c01){
