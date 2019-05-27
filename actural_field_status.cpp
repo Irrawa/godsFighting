@@ -42,6 +42,7 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
     (*other).ctr_spd += sta_Ods;
     cout << "奈亚德效果生效："<< sta_ds << endl;
     nT -= 1;
+
 }
 
 void nayadBreeze::StatusLoss(character* maker, character* other, field* currentField){

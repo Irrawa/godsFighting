@@ -266,7 +266,7 @@ cmove KissOfSuccubus(character * owner, character * taker, field * place){
     kissOfSuccubus.mName = "Kiss Of Succubus";
     kissOfSuccubus.mv_atk = 75;
     kissOfSuccubus.slf_dm = -90;
-    kissOfSuccubus.slf_dh = (owner->ctr_atk * kissOfSuccubus.mv_atk / taker->ctr_def) * 0.5;
+    kissOfSuccubus.slf_dh += (owner->ctr_atk * kissOfSuccubus.mv_atk / taker->ctr_def) * 0.5;
     return kissOfSuccubus;
 }
 

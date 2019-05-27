@@ -136,4 +136,27 @@ virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field
 };
 
 
+//*****************************SPIRITIED*******************************
+class spiritified : public status{
+public:
+    spiritified() {
+        sta_name = "SPIRITIFIED";
+        sta_info = "Greatly lower the move damage Rosie takes.";
+        iniT = 2;
+        nT = iniT;
+        sta_pos = true;
+        sta_neg = false;
+    }
+
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+    virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+//virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+};
+
 #endif //GODS_ACTURAL_STATUSES_H

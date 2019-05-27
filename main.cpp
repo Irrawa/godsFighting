@@ -81,11 +81,11 @@ int main() {
 
     Irrawa.SetMove(&Rosie, &TestField);
     Rosie.SetMove(&Irrawa, &TestField);
-    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[2]), &TestField);
+    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[1]), &TestField);
     Irrawa.print();
     Rosie.print();
     Irrawa.SetMove(&Rosie, &TestField);
-    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[3]), &TestField);
     Irrawa.print();
     Rosie.print();
     Rosie.SufferStatus(&Irrawa, &TestField);
