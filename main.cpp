@@ -66,17 +66,13 @@ int main() {
     Irrawa.SetMove(&Rosie, &TestField);
     Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
     Rosie.print();
-
     Rosie.SetMove(&Irrawa, &TestField);
     Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[4]), &TestField);
     Rosie.print();
-
     Rosie.SufferStatus(&Irrawa, &TestField);
     Mew.SetMove(&Rosie, &TestField);
-
     Mew.TakeTurn(&Rosie, &(Mew.moveL[1]), &TestField);
     Mew.print();
-
     Irrawa.SetMove(&Rosie, &TestField);
     Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
     Rosie.print();
@@ -90,7 +86,7 @@ int main() {
     Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
     Rosie.print();
     Rosie.SufferStatus(&Irrawa, &TestField);
-    
+
 
 
     return 0;
