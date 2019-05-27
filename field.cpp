@@ -29,7 +29,10 @@ void field::add_status(field_status* S, character* maker, character* other){
         this->FStatusL.push_back(tempStatus);
         cout << "添加" << tempStatus->sta_name << endl;
     } else {
+        this->FStatusL[a]->StatusLoss(this->FStatusL[a]->owner, this->FStatusL[a]->non_owner, this);
         this->FStatusL[a]->nT = this->FStatusL[a]->iniT;
+        this->FStatusL[a]->owner = maker;
+        this->FStatusL[a]->non_owner = other;
         cout << "覆盖" << endl;
     }
 };

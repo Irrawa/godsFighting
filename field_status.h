@@ -21,10 +21,10 @@ public:
 
     string sta_name, sta_info;
     //      状态名    状态介绍
-    int sta_dh, sta_dm, sta_da, sta_dd, sta_ds,
+    int sta_dh = 0, sta_dm = 0, sta_da = 0, sta_dd= 0, sta_ds= 0,
     //状态对造成的生命值、魔法值、攻击、防御、速度 的变化
-        sta_Odh, sta_Odm, sta_Oda, sta_Odd, sta_Ods,
-            iniT, nT, sta_id;
+        sta_Odh= 0, sta_Odm= 0, sta_Oda= 0, sta_Odd= 0, sta_Ods= 0,
+            iniT= 0, nT= 0, sta_id;
     //初始持续时间 目前持续时间 状态id
     vector <status> sta_rmStat;
 
