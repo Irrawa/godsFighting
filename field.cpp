@@ -34,11 +34,23 @@ void field::add_status(field_status* S, character* maker, character* other){
     }
 };
 
-void field::FieldSufferStatus(character* owner, character* other){
+void field::FieldSufferStatus(character* p1, character* p2){
     if(FStatusL.size() > 0){
         vector <field_status*> NewStatL;
         for(int i = 0; i < FStatusL.size(); i++){
             field_status* tempStat = FStatusL[i];
+            string OwnerName = FStatusL[i]->owner->cName;
+            string NonOwnerName = FStatusL[i]->non_owner->cName;
+            character* owner;
+            character* other;
+            if(OwnerName == p1->cName){
+                owner = p1;
+                other = p2;
+            }
+            else{
+                owner = p2;
+                other = p1;
+            }
             (*tempStat).RefStatus(owner, other, this);
             tempStat -> StatusTakeEffect(owner, other, this);  //效果造成影响，效果持续时间减少也在此实现
             if((*tempStat).nT >= 0){

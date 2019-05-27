@@ -36,6 +36,8 @@ void field_status::SetupStatus(character* maker, character* other, field* curren
     sta_Oda = 0;
     sta_Odd = 0;
     sta_Ods = 0;
+    owner = maker;
+    non_owner = other;
 }
 //状态被施加时，使用此函数初始化
 

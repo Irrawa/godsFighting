@@ -118,7 +118,7 @@ public:
     staticOverload() {
         sta_name = "STATIC OVERLOAD";
         sta_info = "Reflect half of the damage to the opponent";
-        iniT = 5;
+        iniT = 3;
         nT = iniT;
         sta_pos = true;
         sta_neg = false;

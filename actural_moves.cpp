@@ -29,7 +29,7 @@ cmove AquaBall(character * owner, character * taker, field * place){
     aquaBall.mName = "Aqua Ball";
     aquaBall.slf_dm = -100;
     aquaBall.mv_atk = 20;
-    cout << "AquaBall established!" << endl;
+//    cout << "AquaBall established!" << endl;
     aquaBall.opo_adStat.push_back(&(taker->CharChoke));
     return aquaBall;
 }
@@ -50,7 +50,7 @@ cmove WindSlash(character * owner, character * taker, field * place){
     windSlash.mName = "Wind Slash";
     windSlash.slf_dm = -80;
     windSlash.mv_atk = 65;
-    cout << "WindSlash established!" << endl;
+//    cout << "WindSlash established!" << endl;
     return windSlash;
 }
 
@@ -145,6 +145,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
     }
     int NumBadStatus = badStatL.size();
     if(NumBadStatus > 0) {
+        srand ( time(NULL) );
         int deleteNum = rand() % NumBadStatus;
         cout << "deleteNum = " << deleteNum << endl;
         int deleteOriginNum = NumShoot[deleteNum];
@@ -282,10 +283,11 @@ cmove KissOfSuccubus(){
 
 cmove LustStorm(character * owner, character * taker, field * place){
     cmove lustStorm;
-    lustStorm.slf_dm = -45;
+    lustStorm.slf_dm = -50;
+    lustStorm.mv_atk = 10;
     lustStorm.mName = "Lust Storm";
     lustStorm.slf_adStat.push_back(&(owner->StaticOverload));
-    lustStorm.selfTarget = true;
+    lustStorm.selfTarget = false;
     return lustStorm;
 }
 
@@ -296,4 +298,36 @@ cmove LustStorm(){
     AllMoveList.push_back(lustStorm);
     RosieMoveList.push_back(lustStorm);
     return lustStorm;
+}
+
+//****************************************************************************************************
+
+cmove ShadowMirror(character * owner, character * taker, field * place){
+    cmove shadowMirror;
+    character mirrorOwner;
+//    mirrorOwner.cName = taker->cName;//将镜像技能使用者的名字改成对手名，并调用对手的技能列表
+//    cout << mirrorOwner.cName << " copied" << endl;
+
+//    mirrorOwner.SetMove(taker, place);  //Problem
+
+    int oppoMoveLen = taker->moveL.size();
+    cout << oppoMoveLen << endl;
+    srand ( time(NULL) );
+    int chooseMoveNum = rand() % oppoMoveLen;
+    cout << rand() << endl;
+    cout << chooseMoveNum << endl;
+
+    shadowMirror = taker->moveL[chooseMoveNum];
+
+    cout << "copied " << shadowMirror.mName << endl;
+    shadowMirror.mName += "(shadow)";
+    return shadowMirror;
+}
+
+cmove ShadowMirror(){
+    cmove shadowMirror;
+    shadowMirror.mName = "Shadow Mirror";
+    AllMoveList.push_back(shadowMirror);
+    RosieMoveList.push_back(shadowMirror);
+    return shadowMirror;
 }

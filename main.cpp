@@ -27,27 +27,28 @@ void establish_moves(){
     cmove toxic_blast = ToxicBlast();
     cmove kiss_of_succubus = KissOfSuccubus();
     cmove lust_storm = LustStorm();
+    cmove shadow_mirror = ShadowMirror();
 }
-void IrrawaMoveReset(character* irrawa, character* opponent, field* battleField){
-    irrawa->moveL[0] = AquaBall(irrawa, opponent, battleField);
-    irrawa->moveL[1] = WindSlash(irrawa, opponent, battleField);
-    irrawa->moveL[2] = Tsunami(irrawa, opponent, battleField);
-    irrawa->moveL[3] = RainOfNayad(irrawa, opponent, battleField);
-    irrawa->moveL[4] = Tailwind(irrawa, opponent, battleField);
-}
-
-void MewMoveReset(character* mew, character* opponent, field* battleField){
-    mew->moveL[0] = OneiroSting(mew, opponent, battleField);
-    mew->moveL[1] = NetherVeil(mew, opponent, battleField);
-    mew->moveL[2] = Desolation(mew, opponent, battleField);
-    mew->moveL[3] = PsychoBoost(mew, opponent, battleField);
-    mew->moveL[4] = ToxicBlast(mew, opponent, battleField);
-}
-
-void RosieMoveReset(character* rosie, character* opponent, field* battleField){
-    rosie->moveL[0] = KissOfSuccubus(rosie, opponent, battleField);
-    rosie->moveL[1] = LustStorm(rosie, opponent, battleField);
-}
+//void IrrawaMoveReset(character* irrawa, character* opponent, field* battleField){
+//    irrawa->moveL[0] = AquaBall(irrawa, opponent, battleField);
+//    irrawa->moveL[1] = WindSlash(irrawa, opponent, battleField);
+//    irrawa->moveL[2] = Tsunami(irrawa, opponent, battleField);
+//    irrawa->moveL[3] = RainOfNayad(irrawa, opponent, battleField);
+//    irrawa->moveL[4] = Tailwind(irrawa, opponent, battleField);
+//}
+//
+//void MewMoveReset(character* mew, character* opponent, field* battleField){
+//    mew->moveL[0] = OneiroSting(mew, opponent, battleField);
+//    mew->moveL[1] = NetherVeil(mew, opponent, battleField);
+//    mew->moveL[2] = Desolation(mew, opponent, battleField);
+//    mew->moveL[3] = PsychoBoost(mew, opponent, battleField);
+//    mew->moveL[4] = ToxicBlast(mew, opponent, battleField);
+//}
+//
+//void RosieMoveReset(character* rosie, character* opponent, field* battleField){
+//    rosie->moveL[0] = KissOfSuccubus(rosie, opponent, battleField);
+//    rosie->moveL[1] = LustStorm(rosie, opponent, battleField);
+//}
 
 int main() {
 //    choke c;
@@ -58,7 +59,7 @@ int main() {
     character Rosie = ROSIE();
     field TestField;
     TestField.NewPage();
-    cout << "page address:" << &(TestField.battleRecord[0]) << endl;
+//    cout << "page address:" << &(TestField.battleRecord[0]) << endl;
 //    Irrawa.print();
 //    Rosie.print();
 //    RosieMoveReset(&Rosie, &Irrawa, &TestField);
@@ -67,46 +68,79 @@ int main() {
 //    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
 //    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
 
-    TestField.battleRecord[0].set_beforeMoveFast(&Rosie);
-    TestField.battleRecord[0].set_beforeMoveSlow(&Irrawa);
+//    TestField.battleRecord[0].set_beforeMoveFast(&Rosie);
+//    TestField.battleRecord[0].set_beforeMoveSlow(&Irrawa);
+//
+//    Irrawa.print();
+//    Rosie.print();
+//
+//    TestField.battleRecord[0].set_after1stMoveFast(&Rosie);
+//    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
+//
+    cout << "================================================" <<endl;
 
-    RosieMoveReset(&Rosie, &Irrawa, &TestField);
-    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[1]), &TestField);
+    Irrawa.SetMove(&Rosie, &TestField);
+    Rosie.SetMove(&Irrawa, &TestField);
+    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[2]), &TestField);
     Irrawa.print();
     Rosie.print();
-
-    TestField.battleRecord[0].set_after1stMoveFast(&Rosie);
-    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
-
-    IrrawaMoveReset(&Irrawa, &Rosie, &TestField);
+    Irrawa.SetMove(&Rosie, &TestField);
     Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
     Irrawa.print();
     Rosie.print();
-
-
-    TestField.battleRecord[0].set_after2ndMoveFast(&Rosie);
-    TestField.battleRecord[0].set_after2ndMoveSlow(&Irrawa);
-
     Rosie.SufferStatus(&Irrawa, &TestField);
-
-    Irrawa.print();
-    Rosie.print();
-
-    TestField.battleRecord[0].set_after1stStatFast(&Rosie);
-    TestField.battleRecord[0].set_after1stStatSlow(&Irrawa);
-
-    Irrawa.print();
-    Rosie.print();
-
     Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
 
-    TestField.battleRecord[0].set_after2ndStatFast(&Rosie);
-    TestField.battleRecord[0].set_after2ndStatSlow(&Irrawa);
-    TestField.NewPage();
     Irrawa.print();
     Rosie.print();
+    Rosie.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
+    Irrawa.print();
+    Rosie.print();
+    Rosie.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
+    Irrawa.print();
+    Rosie.print();
+    Rosie.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
+    Irrawa.print();
+    Rosie.print();
+    Rosie.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
+    Irrawa.print();
+    Rosie.print();
+    Rosie.SufferStatus(&Irrawa, &TestField);
+    Irrawa.SufferStatus(&Rosie, &TestField);
+    TestField.FieldSufferStatus(&Irrawa,&Rosie);
 
-
+//
+//
+//    TestField.battleRecord[0].set_after2ndMoveFast(&Rosie);
+//    TestField.battleRecord[0].set_after2ndMoveSlow(&Irrawa);
+//
+//    Rosie.SufferStatus(&Irrawa, &TestField);
+//
+//    Irrawa.print();
+//    Rosie.print();
+//
+//    TestField.battleRecord[0].set_after1stStatFast(&Rosie);
+//    TestField.battleRecord[0].set_after1stStatSlow(&Irrawa);
+//
+//    Irrawa.print();
+//    Rosie.print();
+//
+//    Irrawa.SufferStatus(&Rosie, &TestField);
+//
+//    TestField.battleRecord[0].set_after2ndStatFast(&Rosie);
+//    TestField.battleRecord[0].set_after2ndStatSlow(&Irrawa);
+//    TestField.NewPage();
+//    Irrawa.print();
+//    Rosie.print();
 
 
 //    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);

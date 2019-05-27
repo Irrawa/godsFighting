@@ -17,6 +17,8 @@ void nayadBreeze::SetupStatus(character* maker, character* other, field* current
     nT = iniT;
     sta_ds = 5;
     sta_dh = 20;
+    owner = maker;
+    non_owner = other;
     cout << "Nayad Breeze status setup..." << endl;
 }
 
@@ -51,7 +53,10 @@ void nayadBreeze::StatusLoss(character* maker, character* other, field* currentF
 void poisonAura::SetupStatus(character* maker, character* other, field* currentField){
     iniT = 5;
     nT = iniT;
+    owner = maker;
+    non_owner = other;
     cout << "Poison Aura status setup..." << endl;
+
 }
 
 

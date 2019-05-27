@@ -12,6 +12,7 @@
 #include "field.h"
 #include "field_status.h"
 #include "actural_statuses.h"
+#include "actural_moves.h"
 
 using namespace std;
 
@@ -106,7 +107,33 @@ string character::print(){ //输出角色状态
     return info;
 }
 
+void character::SetMove(character* opponent, field* battleField){
+    if(this->cName == "Irrawa"){
+        this->moveL[0] = AquaBall(this, opponent, battleField);
+        this->moveL[1] = WindSlash(this, opponent, battleField);
+        this->moveL[2] = Tsunami(this, opponent, battleField);
+        this->moveL[3] = RainOfNayad(this, opponent, battleField);
+        this->moveL[4] = Tailwind(this, opponent, battleField);
+        cout << "get Irrawa" << endl;
+    }
 
+    else if(this->cName == "Mew"){
+        this->moveL[0] = OneiroSting(this, opponent, battleField);
+        this->moveL[1] = NetherVeil(this, opponent, battleField);
+        this->moveL[2] = Desolation(this, opponent, battleField);
+        this->moveL[3] = PsychoBoost(this, opponent, battleField);
+        this->moveL[4] = ToxicBlast(this, opponent, battleField);
+    }
+    else if(this->cName == "Rosie"){
+        cout << "get Rosie" << endl;
+        this->moveL[0] = KissOfSuccubus(this, opponent, battleField);
+        this->moveL[1] = LustStorm(this, opponent, battleField);
+        this->moveL[2] = ShadowMirror(this, opponent, battleField);
+    }
+    else if(this->cName == "Asibi"){
+
+    }
+}
 
 
 //string cName; //角色名

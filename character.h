@@ -44,6 +44,8 @@ public:
 
     vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned};
 
+    void SetMove(character* opponent, field* battleField);
+
     choke CharChoke;
     aquaBlast CharAquaBlast;
     toxic CharToxic;

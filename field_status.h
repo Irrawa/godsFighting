@@ -28,6 +28,9 @@ public:
     //初始持续时间 目前持续时间 状态id
     vector <status> sta_rmStat;
 
+    character* owner;
+    character* non_owner;
+
 
     bool sta_pos, sta_neg;
 
