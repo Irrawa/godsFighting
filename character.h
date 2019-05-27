@@ -52,6 +52,7 @@ public:
     netherCircuit NetherCircuit;
     poisoned Poisoned;
     staticOverload StaticOverload;
+    spiritified Spiritified;
 };
 
 #endif //GODS_CHARACTER_H

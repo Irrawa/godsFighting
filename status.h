@@ -32,7 +32,9 @@ public:
     //正面状态还是负面状态？
 
     bool showStatus = true;
-    // 该状态是否可被玩家看到
+    // 该状态是否可被玩家看到;
+
+    int ParameterDeliver = 0;
 
 
     virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);

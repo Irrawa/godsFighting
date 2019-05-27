@@ -331,3 +331,46 @@ cmove ShadowMirror(){
     RosieMoveList.push_back(shadowMirror);
     return shadowMirror;
 }
+
+//****************************************************************************************************
+
+cmove DevilMentel(character * owner, character * taker, field * place){
+    cmove devilMentel;
+    devilMentel.slf_dm = -45;
+    devilMentel.mName = "Devil Mentel";
+    devilMentel.slf_adStat.push_back(&(owner->Spiritified));
+    devilMentel.selfTarget = true;
+    return devilMentel;
+}
+
+cmove DevilMentel(){
+    cmove devilMentel;
+    devilMentel.mName = "Devil Mentel";
+    devilMentel.selfTarget = true;
+    AllMoveList.push_back(devilMentel);
+    RosieMoveList.push_back(devilMentel);
+    return devilMentel;
+}
+
+//****************************************************************************************************
+
+cmove ArcTurbo(character * owner, character * taker, field * place){
+    cmove arcTurbo;
+    arcTurbo.mName = "Arc Turbo";
+    arcTurbo.slf_dm = -50;
+    arcTurbo.slf_dh = -50;
+    arcTurbo.slf_da = 20;
+    arcTurbo.slf_dd = 20;
+    arcTurbo.selfTarget = true;
+    return arcTurbo;
+}
+
+cmove ArcTurbo(){
+    cmove arcTurbo;
+    arcTurbo.mName = "Arc Turbo";
+    arcTurbo.selfTarget = true;
+    cout << "Arc Turbo established!" << endl;
+    AllMoveList.push_back(arcTurbo);
+    RosieMoveList.push_back(arcTurbo);
+    return arcTurbo;
+}

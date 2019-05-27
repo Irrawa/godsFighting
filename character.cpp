@@ -61,6 +61,7 @@ void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* curr
     else{
         cout << cName << " casted move <" << (*chosenMove).mName << ">!" << endl;
     }
+
     (*chosenMove).SpellMove(this, oppoCharacter, currentField);
     (*chosenMove).LaunchMove(this, oppoCharacter, currentField);
     (*chosenMove).ResetMove(this, oppoCharacter, currentField);
@@ -129,6 +130,9 @@ void character::SetMove(character* opponent, field* battleField){
         this->moveL[0] = KissOfSuccubus(this, opponent, battleField);
         this->moveL[1] = LustStorm(this, opponent, battleField);
         this->moveL[2] = ShadowMirror(this, opponent, battleField);
+        this->moveL[3] = DevilMentel(this, opponent, battleField);
+        this->moveL[4] = ArcTurbo(this, opponent, battleField);
+
     }
     else if(this->cName == "Asibi"){
 

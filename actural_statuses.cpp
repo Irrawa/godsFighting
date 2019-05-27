@@ -164,20 +164,22 @@ void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacte
 //*****************************SPIRIFIED*******************************
 
 void spiritified::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
-    iniT = 3;
+    iniT = 2;
     nT = iniT;
-    sta_ds = -15;
-    cout << "Choke status setup..." << endl;
+    cout << "SETUPED!!!" << endl;
+    ParameterDeliver += (selfCharacter->ctr_def) * 3;
+    (*selfCharacter).ctr_def += ParameterDeliver;
+    cout << "Spirified status setup..." << endl;
 }
 
 void spiritified::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
 //    cout << "Choke status refreshed..." << endl;
-    if (nT > 0 && nT < iniT) {
-        sta_ds = 0;
-    }
+//    if (nT > 0 && nT < iniT) {
+//        sta_dd = 0;
+//    }
 }
 
 void spiritified::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
-    cout << "Choke status lost" << endl;
-    (*selfCharacter).ctr_spd += 15;
+    cout << "Spirified status lost" << endl;
+    (*selfCharacter).ctr_def -= ParameterDeliver;
 }

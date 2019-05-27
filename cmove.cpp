@@ -89,6 +89,7 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     }
 
     if (slf_adStat.size() != 0) {
+//        cout << "add self stat" << endl;
         for (int i = 0; i < slf_adStat.size(); i++) {
             status *tempStatus = slf_adStat[i];
             speller->add_status(tempStatus, speller, thisField);
