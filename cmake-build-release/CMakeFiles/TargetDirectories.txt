@@ -1,0 +1,3 @@
+/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-release/CMakeFiles/edit_cache.dir
+/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-release/CMakeFiles/gods.dir

@@ -146,10 +146,10 @@ void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacte
     string FasterName = currentPage.C00.cName;
     string SlowerName = currentPage.C01.cName;
     if(selfCharName == FasterName){
-        dHP = currentPage.C04.HP - currentPage.C02.HP;
+        dHP = 0.5 * (currentPage.C04.HP - currentPage.C02.HP);
     }
     else if(selfCharName == SlowerName){
-        dHP = currentPage.C03.HP - currentPage.C01.HP;
+        dHP = 0.5 * (currentPage.C03.HP - currentPage.C01.HP);
     }
     if(dHP > 0){
         dHP = 0;

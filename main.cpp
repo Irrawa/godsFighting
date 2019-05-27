@@ -58,6 +58,7 @@ int main() {
     character Rosie = ROSIE();
     field TestField;
     TestField.NewPage();
+    cout << "page address:" << &(TestField.battleRecord[0]) << endl;
 //    Irrawa.print();
 //    Rosie.print();
 //    RosieMoveReset(&Rosie, &Irrawa, &TestField);
@@ -66,37 +67,50 @@ int main() {
 //    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
 //    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
 
-    TestField.BattleRecord[0].set_beforeMoveFast(&Rosie);
-    TestField.BattleRecord[0].set_beforeMoveSlow(&Irrawa);
+    TestField.battleRecord[0].set_beforeMoveFast(&Rosie);
+    TestField.battleRecord[0].set_beforeMoveSlow(&Irrawa);
 
     RosieMoveReset(&Rosie, &Irrawa, &TestField);
     Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[1]), &TestField);
+    Irrawa.print();
+    Rosie.print();
 
-    TestField.BattleRecord[0].set_after1stMoveFast(&Rosie);
-    TestField.BattleRecord[0].set_after1stMoveSlow(&Irrawa);
+    TestField.battleRecord[0].set_after1stMoveFast(&Rosie);
+    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
 
     IrrawaMoveReset(&Irrawa, &Rosie, &TestField);
     Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+    Irrawa.print();
+    Rosie.print();
 
-    TestField.BattleRecord[0].set_after2ndMoveFast(&Rosie);
-    TestField.BattleRecord[0].set_after2ndMoveSlow(&Irrawa);
+
+    TestField.battleRecord[0].set_after2ndMoveFast(&Rosie);
+    TestField.battleRecord[0].set_after2ndMoveSlow(&Irrawa);
 
     Rosie.SufferStatus(&Irrawa, &TestField);
 
-    TestField.BattleRecord[0].set_after1stStatFast(&Rosie);
-    TestField.BattleRecord[0].set_after1stStatSlow(&Irrawa);
+    Irrawa.print();
+    Rosie.print();
+
+    TestField.battleRecord[0].set_after1stStatFast(&Rosie);
+    TestField.battleRecord[0].set_after1stStatSlow(&Irrawa);
+
+    Irrawa.print();
+    Rosie.print();
 
     Irrawa.SufferStatus(&Rosie, &TestField);
 
-    TestField.BattleRecord[0].set_after2ndStatFast(&Rosie);
-    TestField.BattleRecord[0].set_after2ndStatSlow(&Irrawa);
+    TestField.battleRecord[0].set_after2ndStatFast(&Rosie);
+    TestField.battleRecord[0].set_after2ndStatSlow(&Irrawa);
     TestField.NewPage();
+    Irrawa.print();
+    Rosie.print();
 
 
 
 
-    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
-    Mew.print();
+//    Mew.TakeTurn(&Irrawa, &(Mew.moveL[0]), &TestField);
+//    Mew.print();
 
 
 //    MewMoveReset(&Mew, &Irrawa, &TestField);

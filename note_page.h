@@ -13,7 +13,6 @@
 using namespace std;
 class cmove;
 class field;
-class character;
 class field_status;
 
 class note_page{
@@ -59,6 +58,8 @@ public:
     //      记录后手方          9
     character C09;
 
+    vector <character*> CMemory = {&C00, &C01, &C02, &C03, &C04, &C05, &C06, &C07, &C08, &C09,};
+
 
     int pageNum; //页码
 
@@ -68,10 +69,7 @@ public:
 
     character copy_char(character* originChar); //将原角色的所有特征拷贝（重点是状态指针的操作）
 
-    void set_beforeMoveFast(character* c00){
-        C00 = copy_char(c00);
-        cout << "C00 recorded!" << endl;
-    }
+    void set_beforeMoveFast(character* c00);
 
     void set_beforeMoveSlow(character* c01){
         C01 = copy_char(c01);
