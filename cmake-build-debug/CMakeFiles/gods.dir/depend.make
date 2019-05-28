@@ -98,6 +98,8 @@ CMakeFiles/gods.dir/main.cpp.o: ../actural_characters.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_statuses.h
+CMakeFiles/gods.dir/main.cpp.o: ../battle_handler.cpp
+CMakeFiles/gods.dir/main.cpp.o: ../battle_handler.h
 CMakeFiles/gods.dir/main.cpp.o: ../character.h
 CMakeFiles/gods.dir/main.cpp.o: ../cmove.h
 CMakeFiles/gods.dir/main.cpp.o: ../field.h

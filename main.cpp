@@ -11,7 +11,8 @@
 #include <string>
 #include "actural_statuses.h"
 #include "note_page.h"
-
+#include "battle_handler.h"
+#include "battle_handler.cpp"
 using namespace std;
 
 void establish_moves(){
@@ -35,12 +36,12 @@ void establish_moves(){
 int main() {
 //    choke c;
 //    cout << c.get_information() << endl;
-    establish_moves();
-    character Irrawa = IRRAWA();
-    character Mew = MEW();
-    character Rosie = ROSIE();
-    field TestField;
-    TestField.NewPage();
+//    establish_moves();
+//    character Irrawa = IRRAWA();
+//    character Mew = MEW();
+//    character Rosie = ROSIE();
+//    field TestField;
+//    TestField.NewPage();
 
 //    cout << "page address:" << &(TestField.battleRecord[0]) << endl;
 //    Irrawa.print();
@@ -61,31 +62,33 @@ int main() {
 //    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
 //
     cout << "================================================" <<endl;
-
-    Rosie.print();
-    Irrawa.SetMove(&Rosie, &TestField);
-    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-    Rosie.print();
-    Rosie.SetMove(&Irrawa, &TestField);
-    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[4]), &TestField);
-    Rosie.print();
-    Rosie.SufferStatus(&Irrawa, &TestField);
-    Mew.SetMove(&Rosie, &TestField);
-    Mew.TakeTurn(&Rosie, &(Mew.moveL[1]), &TestField);
-    Mew.print();
-    Irrawa.SetMove(&Rosie, &TestField);
-    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-    Rosie.print();
-    Irrawa.print();
-    Rosie.SufferStatus(&Irrawa, &TestField);
-    Irrawa.SetMove(&Rosie, &TestField);
-    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-    Rosie.print();
-    Rosie.SufferStatus(&Irrawa, &TestField);
-    Irrawa.SetMove(&Rosie, &TestField);
-    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-    Rosie.print();
-    Rosie.SufferStatus(&Irrawa, &TestField);
+    battle_handler PVPBattle;
+    PVPBattle.Initialize();
+    PVPBattle.DecideCharacter();
+//    Rosie.print();
+//    Irrawa.SetMove(&Rosie, &TestField);
+//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+//    Rosie.print();
+//    Rosie.SetMove(&Irrawa, &TestField);
+//    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[4]), &TestField);
+//    Rosie.print();
+//    Rosie.SufferStatus(&Irrawa, &TestField);
+//    Mew.SetMove(&Rosie, &TestField);
+//    Mew.TakeTurn(&Rosie, &(Mew.moveL[1]), &TestField);
+//    Mew.print();
+//    Irrawa.SetMove(&Rosie, &TestField);
+//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+//    Rosie.print();
+//    Irrawa.print();
+//    Rosie.SufferStatus(&Irrawa, &TestField);
+//    Irrawa.SetMove(&Rosie, &TestField);
+//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+//    Rosie.print();
+//    Rosie.SufferStatus(&Irrawa, &TestField);
+//    Irrawa.SetMove(&Rosie, &TestField);
+//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
+//    Rosie.print();
+//    Rosie.SufferStatus(&Irrawa, &TestField);
 
 
 

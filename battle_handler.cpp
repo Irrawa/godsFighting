@@ -15,8 +15,10 @@
 
 using namespace std;
 
-void BattleHandler::Initialize(){
-    characterList = {IRRAWA(), MEW(), ROISE()};
+void battle_handler::Initialize(){
+
+    cout << "initializing" << endl;
+    characterList = {IRRAWA(), MEW(), ROSIE()};
     cmove aqua_ball = AquaBall();
     cmove wind_slash = WindSlash();
     cmove psycho_boost = PsychoBoost();
@@ -34,25 +36,65 @@ void BattleHandler::Initialize(){
     cmove arc_turbo = ArcTurbo();
 }
 
-void BattleHandler::showCharacterList(vector <character> theList){
-    charNum = theList.size();
+void battle_handler::showCharacterList(vector <character> theList){
+    int charNum = theList.size();
     for(int i = 0; i < charNum; i++){
-        cout << i + 1 << ": [-" << theList[i].cName << "-]" << end;
+        cout << i + 1 << ": [-" << theList[i].cName << "-]" << endl;
     }
 }
 
-void BattleHandler::ChooseCharacter(){
-    vector <character> showcase;
-    showcase = characterList;
-    cout << "P1 please choose your character:" << endl;
-    cout << "Insert the number to see more information about the character..." << endl;
-    int characterNum = showcase.size();
-    showCharacterList(showcase);
-    int p1chooseNum;
-    cin >> p1chooseNum;
-    //接下来要完善选角色的工作，从此开始！
+void battle_handler::ChooseCharacter(vector <character>* showcase, int playerNum){
+    bool pChooseSuccess = false;
+    while(!pChooseSuccess){
+        cout << "P" << playerNum << " please choose your character:" << endl;
+        cout << "Insert the number to see more information about the character..." << endl;
+        int characterNum = showcase->size();
+        showCharacterList(*showcase);
+        string sss;
+        int pChooseNum;
+        cin >> sss;
+        pChooseNum = atoi(sss.c_str());
+        if(pChooseNum > 0 && pChooseNum <= characterNum){
+            bool pVerified = false;
+            while(!pVerified){
+                (*showcase)[pChooseNum - 1].print();
+                cout << "Will you choose her as your God?(Y/N)" << endl;
+                char pVNum;
+                cin >> pVNum;
+                if(pVNum == 'y' || pVNum == 'Y') {
+                    if(playerNum == 1) {
+                        p1Character = (*showcase)[pChooseNum - 1];
+                    }
+                    else if(playerNum == 2) {
+                        p2Character = (*showcase)[pChooseNum - 1];
+                    }
+                    cout << "P"<< playerNum <<" choosed " << (*showcase)[pChooseNum - 1].cName << " as his god! Good luck to you!"<< endl;
+                    (*showcase).erase(showcase->begin() + pChooseNum);
+                    pVerified = true;
+                    pChooseSuccess = true;
+                }
+                else{
+                    pChooseSuccess = false;
+                    pVerified = true;
+                }
+            }
+        }
+        else{
+            cout << "Invalid Input!" << endl;
+            fflush(stdin);
+            pChooseSuccess = false;
+//            cin.clear();//清除错误标记，重新打开输入流，但是输入流中依旧保留着之前的不匹配的类型
+            /*cin.sync();*///清楚cin缓存区的数据。
+        }
+    }
 }
 
-void BattleHandler::JudgeSpeed(){
+void battle_handler::DecideCharacter(){
+    vector <character> showcase = characterList;
+    ChooseCharacter(&showcase, 1);
+    ChooseCharacter(&showcase, 2);
+}
+
+void battle_handler::JudgeSpeed(){
 
 }
