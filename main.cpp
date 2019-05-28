@@ -15,25 +15,60 @@
 #include "battle_handler.cpp"
 using namespace std;
 
-void establish_moves(){
-    cmove aqua_ball = AquaBall();
-    cmove wind_slash = WindSlash();
-    cmove psycho_boost = PsychoBoost();
-    cmove tsunami = Tsunami();
-    cmove rain_of_nayad = RainOfNayad();
-    cmove tailwind = Tailwind();
-    cmove oneiro_sting = OneiroSting();
-    cmove nether_veil = NetherVeil();
-    cmove desolation = Desolation();
-    cmove toxic_blast = ToxicBlast();
-    cmove kiss_of_succubus = KissOfSuccubus();
-    cmove lust_storm = LustStorm();
-    cmove shadow_mirror = ShadowMirror();
-    cmove devil_mentel = DevilMentel();
-    cmove arc_turbo = ArcTurbo();
+//void establish_moves(){
+//    cmove aqua_ball = AquaBall();
+//    cmove wind_slash = WindSlash();
+//    cmove psycho_boost = PsychoBoost();
+//    cmove tsunami = Tsunami();
+//    cmove rain_of_nayad = RainOfNayad();
+//    cmove tailwind = Tailwind();
+//    cmove oneiro_sting = OneiroSting();
+//    cmove nether_veil = NetherVeil();
+//    cmove desolation = Desolation();
+//    cmove toxic_blast = ToxicBlast();
+//    cmove kiss_of_succubus = KissOfSuccubus();
+//    cmove lust_storm = LustStorm();
+//    cmove shadow_mirror = ShadowMirror();
+//    cmove devil_mentel = DevilMentel();
+//    cmove arc_turbo = ArcTurbo();
+//}
+
+void PVPBattle(){
+    srand (time(NULL));
+    battle_handler PVPBattle;
+    PVPBattle.Initialize();
+    PVPBattle.DecideCharacter();
+    PVPBattle.p1Character.print();
+    PVPBattle.p2Character.print();
+    while(!PVPBattle.Winner) {
+        PVPBattle.JudgeSpeed();
+        PVPBattle.GeneralChooseMove(1);
+        PVPBattle.GeneralChooseMove(2);
+        if(PVPBattle.CastMove()){
+            break;
+        };
+        bool doubleBreak = false;
+        while(PVPBattle.IfSpeed()){
+            PVPBattle.SpeedChooseMove();
+            if(PVPBattle.SpeedCastMove()){
+                doubleBreak = true;
+                break;
+            };
+        }
+        if(doubleBreak){
+            break;
+        }
+        if(PVPBattle.DoStatus()){
+            break;
+        };
+        PVPBattle.p1Character.print();
+        PVPBattle.p2Character.print();
+    }
+    cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << "is winner!";
 }
 
 int main() {
+    PVPBattle();
 //    choke c;
 //    cout << c.get_information() << endl;
 //    establish_moves();
@@ -60,14 +95,10 @@ int main() {
 //
 //    TestField.battleRecord[0].set_after1stMoveFast(&Rosie);
 //    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
-//
-    cout << "================================================" <<endl;
-    battle_handler PVPBattle;
-    PVPBattle.Initialize();
-    PVPBattle.DecideCharacter();
-    PVPBattle.JudgeSpeed();
-    PVPBattle.fasterCharacter->print();
-    PVPBattle.slowerCharacter->print();
+
+
+
+//    cout << PVPBattle.p1MoveNum << " "<< PVPBattle.p2MoveNum << endl;
 //    Rosie.print();
 //    Irrawa.SetMove(&Rosie, &TestField);
 //    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);

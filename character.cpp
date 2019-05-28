@@ -55,18 +55,23 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
 }
 
 void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* currentField){  //角色对对方施放技能的全过程
-    if ((*chosenMove).selfTarget == false) {
-        cout << cName << " casted move <" << (*chosenMove).mName << "> to " << (*oppoCharacter).cName << "!" << endl;
+    if (-chosenMove->slf_dm <= this->MP) {
+        if ((*chosenMove).selfTarget == false) {
+            cout << cName << " casted move <" << (*chosenMove).mName << "> to " << (*oppoCharacter).cName << "!"
+                 << endl;
+        } else {
+            cout << cName << " casted move <" << (*chosenMove).mName << ">!" << endl;
+        }
+
+        (*chosenMove).SpellMove(this, oppoCharacter, currentField);
+        (*chosenMove).LaunchMove(this, oppoCharacter, currentField);
+        (*chosenMove).ResetMove(this, oppoCharacter, currentField);
     }
     else{
-        cout << cName << " casted move <" << (*chosenMove).mName << ">!" << endl;
+        cout << this->cName << " doesn't have enough MP to cast this move!" << endl;
+        cout << this->cName << " relaxed herself and recovered " << 50 <<" MP!" << endl;
+        this->MP += 50;
     }
-
-    (*chosenMove).SpellMove(this, oppoCharacter, currentField);
-    (*chosenMove).LaunchMove(this, oppoCharacter, currentField);
-    (*chosenMove).ResetMove(this, oppoCharacter, currentField);
-//    cout << (*oppoCharacter).HP << endl;
-
 }
 
 void character::SufferStatus(character* oppoCharacter, field* currentField){
@@ -118,31 +123,51 @@ string character::showIntroduction(){
     return info;
 };
 
+string character::showMoveInfo(){
+    stringstream infof;
+    infof << this->cName << "'s Move List:" << endl;
+    int moveLen = this->moveL.size();
+    for (int i = 0; i < moveLen; i++){
+//        infof << "\n";
+        infof << i + 1 << ":" << " [-" << this->moveL[i].mName << "-]";
+        infof << this->moveL[i].mInfo << "\n";
+    }
+    string info = infof.str();
+    cout << info;
+    return info;
+}
+
 void character::SetMove(character* opponent, field* battleField){
+    cout << "entered set move" << endl;
     if(this->cName == "Irrawa"){
-        this->moveL[0] = AquaBall(this, opponent, battleField);
-        this->moveL[1] = WindSlash(this, opponent, battleField);
-        this->moveL[2] = Tsunami(this, opponent, battleField);
-        this->moveL[3] = RainOfNayad(this, opponent, battleField);
-        this->moveL[4] = Tailwind(this, opponent, battleField);
-        cout << "get Irrawa" << endl;
+//        cout << "getting Irrawa" << endl;
+        this->moveL.clear();
+        this->moveL.push_back(AquaBall(this, opponent, battleField));  //0
+        this->moveL.push_back(WindSlash(this, opponent, battleField));
+        this->moveL.push_back(Tsunami(this, opponent, battleField));
+        this->moveL.push_back(RainOfNayad(this, opponent, battleField));
+        this->moveL.push_back(Tailwind(this, opponent, battleField));
+//        cout << "get Irrawa" << endl;
     }
 
     else if(this->cName == "Mew"){
-        this->moveL[0] = OneiroSting(this, opponent, battleField);
-        this->moveL[1] = NetherVeil(this, opponent, battleField);
-        this->moveL[2] = Desolation(this, opponent, battleField);
-        this->moveL[3] = PsychoBoost(this, opponent, battleField);
-        this->moveL[4] = ToxicBlast(this, opponent, battleField);
+        cout << "get Mew" << endl;
+        this->moveL.clear();
+        this->moveL.push_back(OneiroSting(this, opponent, battleField));
+        this->moveL.push_back(NetherVeil(this, opponent, battleField));
+        this->moveL.push_back(Desolation(this, opponent, battleField));
+        this->moveL.push_back(PsychoBoost(this, opponent, battleField));
+        this->moveL.push_back(ToxicBlast(this, opponent, battleField));
     }
     else if(this->cName == "Rosie"){
-        cout << "get Rosie" << endl;
-        this->moveL[0] = KissOfSuccubus(this, opponent, battleField);
-        this->moveL[1] = LustStorm(this, opponent, battleField);
-        this->moveL[2] = ShadowMirror(this, opponent, battleField);
-        this->moveL[3] = DevilMentel(this, opponent, battleField);
-        this->moveL[4] = ArcTurbo(this, opponent, battleField);
-
+        cout << "get Rosie!!!!" << endl;
+        this->moveL.clear();
+        this->moveL.push_back(KissOfSuccubus(this, opponent, battleField));
+        this->moveL.push_back(LustStorm(this, opponent, battleField));
+        this->moveL.push_back(ShadowMirror(this, opponent, battleField));
+        this->moveL.push_back(DevilMentel(this, opponent, battleField));
+        this->moveL.push_back(ArcTurbo(this, opponent, battleField));
+        cout << "Rosie done!" << endl;
     }
     else if(this->cName == "Asibi"){
 

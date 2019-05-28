@@ -305,20 +305,15 @@ cmove LustStorm(){
 cmove ShadowMirror(character * owner, character * taker, field * place){
     cmove shadowMirror;
     character mirrorOwner;
-//    mirrorOwner.cName = taker->cName;//将镜像技能使用者的名字改成对手名，并调用对手的技能列表
-//    cout << mirrorOwner.cName << " copied" << endl;
-
-//    mirrorOwner.SetMove(taker, place);  //Problem
-
     int oppoMoveLen = taker->moveL.size();
-    cout << oppoMoveLen << endl;
-    srand ( time(NULL) );
+    if(oppoMoveLen == 0){
+        taker->SetMove(owner, place);
+        oppoMoveLen = taker->moveL.size();
+    }
     int chooseMoveNum = rand() % oppoMoveLen;
     cout << rand() << endl;
     cout << chooseMoveNum << endl;
-
     shadowMirror = taker->moveL[chooseMoveNum];
-
     cout << "copied " << shadowMirror.mName << endl;
     shadowMirror.mName += "(shadow)";
     return shadowMirror;

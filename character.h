@@ -43,6 +43,8 @@ public:
 
     string print();
     string showIntroduction();
+    string showMoveInfo();
+
 
     vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned};
 

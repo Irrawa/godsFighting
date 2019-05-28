@@ -29,16 +29,20 @@ public:
     void ChooseCharacter(vector <character>* showcase, int playerNum);//目标玩家在showcase中选择角色
     void DecideCharacter();//双方选择各自角色，P1先选，P2后选
     void JudgeSpeed();//将p1Character和p2character分别赋给对应速度的指针
-
     void GeneralChooseMove(int playerNum); //P1选择时，playerNum应为1；P2选择时，playerNum应为2。
-
     int p1MoveNum, p2MoveNum; //玩家1，2所选择的对应角色的技能标号
-    
-    void CastMove(int playerNum); //playNum号玩家的角色施放技能
-    void SpeedChooseMove(int playerNum);//因速度而再次选择技能时，调用此函数
-    void doStatus();//先快速角色，再慢速角色，再场地
-    int Judge();//判断胜负，返回0为未分出胜负，返回1为p1获胜，返回2为p2获胜。
+    int fasterMoveNum, slowerMoveNum; // 较快、较慢角色的技能标号
+    int speedMoveNum; //速度快的角色额外施放技能的技能标号
+    int IfWin();//判断胜负，返回0为未分出胜负，返回1为p1获胜，返回2为p2获胜。
+    int CastMove(); //常规的双方施放技能，返回0为未分出胜负，返回1为p1获胜，返回2为p2获胜。
+    bool IfSpeed(); // 返回true则快速方再行动一次，返回false则不行动
 
+    void SpeedChooseMove();//因速度而再次选择技能时，调用此函数
+
+    int SpeedCastMove();
+
+    int DoStatus();//先快速角色，再慢速角色，再场地
+    int Winner = 0; //0表示未分出胜负，1表示P1胜利，2表示P2胜利
 };
 
 #endif

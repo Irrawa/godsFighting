@@ -34,6 +34,7 @@ void battle_handler::Initialize(){
     cmove shadow_mirror = ShadowMirror();
     cmove devil_mentel = DevilMentel();
     cmove arc_turbo = ArcTurbo();
+    srand(time(NULL));
 }
 
 void battle_handler::showCharacterList(vector <character> theList){
@@ -82,7 +83,7 @@ void battle_handler::ChooseCharacter(vector <character>* showcase, int playerNum
         }
         else{
             cout << "Invalid Input!" << endl;
-            fflush(stdin);
+//            fflush(stdin);
             pChooseSuccess = false;
 //            cin.clear();//清除错误标记，重新打开输入流，但是输入流中依旧保留着之前的不匹配的类型
             /*cin.sync();*///清楚cin缓存区的数据。
@@ -94,6 +95,8 @@ void battle_handler::DecideCharacter(){
     vector <character> showcase = characterList;
     ChooseCharacter(&showcase, 1);
     ChooseCharacter(&showcase, 2);
+    p1Character.SetMove(&p2Character, &BattleField);
+    p2Character.SetMove(&p1Character, &BattleField);
 }
 
 void battle_handler::JudgeSpeed(){
@@ -119,3 +122,111 @@ void battle_handler::JudgeSpeed(){
         }
     }
 }
+
+void battle_handler::GeneralChooseMove(int playNum){
+    if(playNum == 1){
+        p1Character.showMoveInfo();
+        string sss;
+        int mChooseNum;
+        cin >> sss;
+        mChooseNum = atoi(sss.c_str());
+        p1MoveNum = mChooseNum - 1;
+        if(p1Character.cName == fasterCharacter->cName){
+            fasterMoveNum = p1MoveNum;
+        }
+        else{
+            slowerMoveNum = p1MoveNum;
+        }
+    }
+    else if(playNum == 2){
+        p2Character.showMoveInfo();
+        string sss;
+        int mChooseNum;
+        cin >> sss;
+        mChooseNum = atoi(sss.c_str());
+        p2MoveNum = mChooseNum - 1;
+        if(p2Character.cName == fasterCharacter->cName){
+            fasterMoveNum = p2MoveNum;
+        }
+        else{
+            slowerMoveNum = p2MoveNum;
+        }
+    }
+}
+
+int battle_handler::IfWin(){
+    if(p1Character.HP <= 0 && p2Character.HP >= 0){
+        Winner = 2;
+        return 2;
+    }
+    else if (p2Character.HP <= 0 && p1Character.HP > 0){
+        Winner = 1;
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+int battle_handler::CastMove(){
+    fasterCharacter->SetMove(slowerCharacter, &BattleField);
+    fasterCharacter->TakeTurn(slowerCharacter, &(fasterCharacter->moveL[fasterMoveNum]), &BattleField);
+    if(IfWin()){
+        return IfWin();
+    }
+    slowerCharacter->SetMove(fasterCharacter, &BattleField);
+    slowerCharacter->TakeTurn(fasterCharacter, &(slowerCharacter->moveL[slowerMoveNum]), &BattleField);
+    return IfWin();
+}
+
+bool battle_handler::IfSpeed(){
+    //P = min(max([(SPD_A/SPD_B) – 1] * softer, 0),maxP)
+    float maxP = 0.9;
+    float softer = 0.5;
+    float P = (((float)fasterCharacter->ctr_spd / (float)slowerCharacter->ctr_spd) - 1.) * softer;
+    cout << fasterCharacter->ctr_spd << endl;
+    cout << slowerCharacter->ctr_spd << endl;
+    if(P < 0.){
+        P = 0.;
+    }
+    else if(P > maxP){
+        P = maxP;
+    };
+    float random = (float)(rand() % (10000)) / (float)(10000);
+    cout << P << endl;
+    cout << random << endl;
+    if(random <= P){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void battle_handler::SpeedChooseMove(){
+    cout << fasterCharacter->cName <<"'s speed advantage gained her another turn!" << endl;
+    fasterCharacter->showMoveInfo();
+    string sss;
+    int sChooseNum;
+    cin >> sss;
+    sChooseNum = atoi(sss.c_str());
+    speedMoveNum = sChooseNum - 1;
+}
+
+
+int battle_handler::SpeedCastMove(){
+    fasterCharacter->SetMove(slowerCharacter, &BattleField);
+    fasterCharacter->TakeTurn(slowerCharacter, &(fasterCharacter->moveL[speedMoveNum]), &BattleField);
+    return IfWin();
+}
+
+int battle_handler::DoStatus(){
+    fasterCharacter->SufferStatus(slowerCharacter, &BattleField);
+    if(IfWin()){
+        return IfWin();
+    }
+    slowerCharacter->SufferStatus(fasterCharacter, &BattleField);
+    return IfWin();
+}
+
+//Rosie.SufferStatus(&Irrawa, &TestField);
