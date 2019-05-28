@@ -65,6 +65,9 @@ int main() {
     battle_handler PVPBattle;
     PVPBattle.Initialize();
     PVPBattle.DecideCharacter();
+    PVPBattle.JudgeSpeed();
+    PVPBattle.fasterCharacter->print();
+    PVPBattle.slowerCharacter->print();
 //    Rosie.print();
 //    Irrawa.SetMove(&Rosie, &TestField);
 //    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);

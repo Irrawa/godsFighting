@@ -57,19 +57,20 @@ void battle_handler::ChooseCharacter(vector <character>* showcase, int playerNum
         if(pChooseNum > 0 && pChooseNum <= characterNum){
             bool pVerified = false;
             while(!pVerified){
-                (*showcase)[pChooseNum - 1].print();
+                (*showcase)[pChooseNum - 1].showIntroduction();  //输出角色简介
                 cout << "Will you choose her as your God?(Y/N)" << endl;
                 char pVNum;
                 cin >> pVNum;
                 if(pVNum == 'y' || pVNum == 'Y') {
                     if(playerNum == 1) {
                         p1Character = (*showcase)[pChooseNum - 1];
+                        cout << "P"<< playerNum <<" choosed " << p1Character.cName << " as his god! Good luck to you!"<< endl;
                     }
                     else if(playerNum == 2) {
                         p2Character = (*showcase)[pChooseNum - 1];
+                        cout << "P"<< playerNum <<" choosed " << p2Character.cName << " as his god! Good luck to you!"<< endl;
                     }
-                    cout << "P"<< playerNum <<" choosed " << (*showcase)[pChooseNum - 1].cName << " as his god! Good luck to you!"<< endl;
-                    (*showcase).erase(showcase->begin() + pChooseNum);
+                    (*showcase).erase(showcase->begin() + pChooseNum - 1);
                     pVerified = true;
                     pChooseSuccess = true;
                 }
@@ -96,5 +97,25 @@ void battle_handler::DecideCharacter(){
 }
 
 void battle_handler::JudgeSpeed(){
-
+    if(p1Character.ctr_spd > p2Character.ctr_spd){
+        fasterCharacter = &p1Character;
+        slowerCharacter = &p2Character;
+    }
+    else if (p1Character.ctr_spd < p2Character.ctr_spd){
+        fasterCharacter = &p2Character;
+        slowerCharacter = &p1Character;
+    }
+    else{
+        //两者速度相同的情况
+        srand ( time(NULL) );
+        int faster = rand() % 2;
+        if(faster == 0){
+            fasterCharacter = &p1Character;
+            slowerCharacter = &p2Character;
+        }
+        else{
+            fasterCharacter = &p2Character;
+            slowerCharacter = &p1Character;
+        }
+    }
 }

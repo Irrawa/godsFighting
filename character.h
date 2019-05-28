@@ -20,7 +20,7 @@ class status;
 class character{
 public:
     string cName; //角色名
-    string cInfo;
+    string cIntroduction;
     int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;
     //最大生命值       最大魔法值     攻击力       防御力       速度      生命值  魔法值
     vector <status*> statL;
@@ -42,6 +42,7 @@ public:
     bool IsAlive();
 
     string print();
+    string showIntroduction();
 
     vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned};
 

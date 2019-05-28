@@ -108,6 +108,16 @@ string character::print(){ //输出角色状态
     return info;
 }
 
+string character::showIntroduction(){
+    stringstream infof;
+    infof << "[" << cName << "]" << "\n";
+    infof <<"HP:" << HP << "   MP:" << MP << "   ATK:" << ctr_atk << "   DEF:" << ctr_def << "   SPD:" << ctr_spd << "\n";
+    infof << cIntroduction << "\n";
+    string info = infof.str();
+    cout << info;
+    return info;
+};
+
 void character::SetMove(character* opponent, field* battleField){
     if(this->cName == "Irrawa"){
         this->moveL[0] = AquaBall(this, opponent, battleField);

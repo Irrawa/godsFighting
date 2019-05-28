@@ -20,6 +20,7 @@ vector <character> AllCharacterList;
 
 character IRRAWA(){
     character irrawa;
+    irrawa.cIntroduction = "Irrawa is the guardian of river Irrawaddy. She is also a good wielder of wind and rain, buffing and destruction. ";
     irrawa.Initialize("Irrawa", IrrawaMoveList, 1200, 800, 125, 100, 80);
     AllCharacterList.push_back(irrawa);
     return irrawa;
@@ -28,6 +29,7 @@ character IRRAWA(){
 
 character MEW(){
     character mew;
+    mew.cIntroduction = "Mew is the soul of an lethal legendary poison sword. Her battle style is pain, or, torture, absolute torture. ";
     mew.Initialize("Mew", MewMoveList, 1000, 1000, 100, 100, 100);
     AllCharacterList.push_back(mew);
     return mew;
@@ -35,6 +37,7 @@ character MEW(){
 
 character ROSIE(){
     character rosie;
+    rosie.cIntroduction = "Rosie is a succubus. Though weak at first glance, she can always surprise you with her tactics and wisdom. ";
     rosie.Initialize("Rosie", RosieMoveList, 900, 1000, 90, 90, 120);
     AllCharacterList.push_back(rosie);
     return rosie;
