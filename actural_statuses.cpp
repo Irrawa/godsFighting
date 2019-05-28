@@ -15,7 +15,7 @@ void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
     iniT = 3;
     nT = iniT;
     sta_ds = -15;
-    cout << "Choke status setup..." << endl;
+//    cout << "Choke status setup..." << endl;
 }
 
 void choke::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -36,7 +36,7 @@ void choke::StatusLoss(character* selfCharacter, character* oppoCharacter, field
 void aquaBlast::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
-    cout << "AquaBlast status setup..." << endl;
+//    cout << "AquaBlast status setup..." << endl;
 }
 
 void aquaBlast::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -63,7 +63,7 @@ void netherCircuit::SetupStatus(character* selfCharacter, character* oppoCharact
     nT = iniT;
     sta_da = 20;
     sta_dd = 20;
-    cout << "Nether Circuit status setup..." << endl;
+//    cout << "Nether Circuit status setup..." << endl;
 }
 
 void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -100,7 +100,7 @@ void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
     nT = iniT;
     sta_dh = -10;
     toxicEnhancer = 1;
-    cout << "Toxic status setup..." << endl;
+//    cout << "Toxic status setup..." << endl;
 }
 
 void toxic::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -121,7 +121,7 @@ void poisoned::SetupStatus(character* selfCharacter, character* oppoCharacter, f
     iniT = 5;
     nT = iniT;
     sta_dh = -30;
-    cout << "Poisoned status setup..." << endl;
+//    cout << "Poisoned status setup..." << endl;
 }
 
 void poisoned::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -136,7 +136,7 @@ void poisoned::StatusLoss(character* selfCharacter, character* oppoCharacter, fi
 void staticOverload::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 3;
     nT = iniT;
-    cout << "Static Overload status setup..." << endl;
+//    cout << "Static Overload status setup..." << endl;
 }
 
 void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
@@ -161,15 +161,19 @@ void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacte
     }
 }
 
+void staticOverload::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    cout << "Static Overload status lost" << endl;
+}
+
 //*****************************SPIRIFIED*******************************
 
 void spiritified::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
-    cout << "SETUPED!!!" << endl;
+//    cout << "SETUPED!!!" << endl;
     ParameterDeliver += (selfCharacter->ctr_def) * 3;
     (*selfCharacter).ctr_def += ParameterDeliver;
-    cout << "Spirified status setup..." << endl;
+//    cout << "Spirified status setup..." << endl;
 }
 
 void spiritified::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {

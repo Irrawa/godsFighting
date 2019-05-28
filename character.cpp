@@ -33,10 +33,10 @@ void character::add_status(status* S, character* creator, field* thisField){
     if (!duplicateFlag) {
         tempStatus->SetupStatus(creator, this, thisField);
         (*this).statL.push_back(tempStatus);
-        cout << "添加" << endl;
+//        cout << "添加" << endl;
     } else {
         this->statL[a]->nT = this->statL[a]->iniT;
-        cout << "覆盖" << endl;
+//        cout << "覆盖" << endl;
     }
 //    statL.push_back(tempStatus);
 };
@@ -51,7 +51,7 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
     ctr_atk = atk;
     ctr_def = def;
     ctr_spd = spd;
-    cout << "Character " << cName << " created!" << endl;
+//    cout << "Character " << cName << " created!" << endl;
 }
 
 void character::TakeTurn(character* oppoCharacter, cmove* chosenMove,field* currentField){  //角色对对方施放技能的全过程
@@ -138,7 +138,7 @@ string character::showMoveInfo(){
 }
 
 void character::SetMove(character* opponent, field* battleField){
-    cout << "entered set move" << endl;
+//    cout << "entered set move" << endl;
     if(this->cName == "Irrawa"){
 //        cout << "getting Irrawa" << endl;
         this->moveL.clear();
@@ -151,7 +151,7 @@ void character::SetMove(character* opponent, field* battleField){
     }
 
     else if(this->cName == "Mew"){
-        cout << "get Mew" << endl;
+//        cout << "get Mew" << endl;
         this->moveL.clear();
         this->moveL.push_back(OneiroSting(this, opponent, battleField));
         this->moveL.push_back(NetherVeil(this, opponent, battleField));
@@ -160,14 +160,14 @@ void character::SetMove(character* opponent, field* battleField){
         this->moveL.push_back(ToxicBlast(this, opponent, battleField));
     }
     else if(this->cName == "Rosie"){
-        cout << "get Rosie!!!!" << endl;
+//        cout << "get Rosie!!!!" << endl;
         this->moveL.clear();
         this->moveL.push_back(KissOfSuccubus(this, opponent, battleField));
         this->moveL.push_back(LustStorm(this, opponent, battleField));
         this->moveL.push_back(ShadowMirror(this, opponent, battleField));
         this->moveL.push_back(DevilMentel(this, opponent, battleField));
         this->moveL.push_back(ArcTurbo(this, opponent, battleField));
-        cout << "Rosie done!" << endl;
+//        cout << "Rosie done!" << endl;
     }
     else if(this->cName == "Asibi"){
 

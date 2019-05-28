@@ -34,16 +34,16 @@ void status::StatusTakeEffect(character* self, character* oppo, field* currentFi
 }
 
 void status::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
-    cout << "General status setup..."<< endl;
+//    cout << "General status setup..."<< endl;
 }
 
 void status::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
-    cout << "General status refreshed..."<< endl;
+//    cout << "General status refreshed..."<< endl;
 }
 
 
 void status::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
-    cout << "General status Lost.."<< endl;
+//    cout << "General status Lost.."<< endl;
 }
 
 string status::get_information(){

@@ -36,7 +36,7 @@ void field_status::StatusTakeEffect(character* maker, character* other, field* c
     (*other).ctr_atk += sta_Oda;
     (*other).ctr_def += sta_Odd;
     (*other).ctr_spd += sta_Ods;
-    cout << "场地效果生效："<< sta_ds << endl;
+//    cout << "场地效果生效："<< sta_ds << endl;
     nT -= 1;
     sta_da = 0;
     sta_dd = 0;

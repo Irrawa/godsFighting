@@ -57,7 +57,7 @@ public:
     //3，状态生效，造成变化
     //4，清算是否分出胜负，分出返回true，不分出返回false
 
-    void FieldSufferStatus(character* owner, character* other);
+    void FieldSufferStatus(character* p1, character* p2);
     //场地状态生效
 
 
@@ -79,6 +79,8 @@ public:
     note_page GetPage(int PageNum);  //读取战斗记录的指定页
 
     note_page GetCurrentPage();  //读取当前页
+
+    void WriteRecord(character *targetC, int pageLine);
 
 
 

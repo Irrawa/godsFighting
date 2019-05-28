@@ -17,7 +17,7 @@ using namespace std;
 
 void battle_handler::Initialize(){
 
-    cout << "initializing" << endl;
+//    cout << "initializing" << endl;
     characterList = {IRRAWA(), MEW(), ROSIE()};
     cmove aqua_ball = AquaBall();
     cmove wind_slash = WindSlash();
@@ -126,10 +126,31 @@ void battle_handler::JudgeSpeed(){
 void battle_handler::GeneralChooseMove(int playNum){
     if(playNum == 1){
         p1Character.showMoveInfo();
+    }
+    else{
+        p2Character.showMoveInfo();
+    }
+
+    bool validInput = false;
+    int MLen = 0;
+    int mChooseNum;
+    if(playNum == 1){
+        MLen = p1Character.moveL.size();
+    }
+    else{
+        MLen = p2Character.moveL.size();
+    }
+
+    while(!validInput) {
         string sss;
-        int mChooseNum;
         cin >> sss;
         mChooseNum = atoi(sss.c_str());
+        if (mChooseNum <= MLen && mChooseNum > 0){
+            validInput = true;
+        }
+    }
+
+    if(playNum == 1){
         p1MoveNum = mChooseNum - 1;
         if(p1Character.cName == fasterCharacter->cName){
             fasterMoveNum = p1MoveNum;
@@ -139,11 +160,6 @@ void battle_handler::GeneralChooseMove(int playNum){
         }
     }
     else if(playNum == 2){
-        p2Character.showMoveInfo();
-        string sss;
-        int mChooseNum;
-        cin >> sss;
-        mChooseNum = atoi(sss.c_str());
         p2MoveNum = mChooseNum - 1;
         if(p2Character.cName == fasterCharacter->cName){
             fasterMoveNum = p2MoveNum;
@@ -169,13 +185,20 @@ int battle_handler::IfWin(){
 }
 
 int battle_handler::CastMove(){
+    BattleField.NewPage();
     fasterCharacter->SetMove(slowerCharacter, &BattleField);
+    BattleField.WriteRecord(fasterCharacter, 0);
+    BattleField.WriteRecord(slowerCharacter, 1);
     fasterCharacter->TakeTurn(slowerCharacter, &(fasterCharacter->moveL[fasterMoveNum]), &BattleField);
     if(IfWin()){
         return IfWin();
     }
     slowerCharacter->SetMove(fasterCharacter, &BattleField);
+    BattleField.WriteRecord(fasterCharacter, 2);
+    BattleField.WriteRecord(slowerCharacter, 3);
     slowerCharacter->TakeTurn(fasterCharacter, &(slowerCharacter->moveL[slowerMoveNum]), &BattleField);
+    BattleField.WriteRecord(fasterCharacter, 4);
+    BattleField.WriteRecord(slowerCharacter, 5);
     return IfWin();
 }
 
@@ -184,8 +207,8 @@ bool battle_handler::IfSpeed(){
     float maxP = 0.9;
     float softer = 0.5;
     float P = (((float)fasterCharacter->ctr_spd / (float)slowerCharacter->ctr_spd) - 1.) * softer;
-    cout << fasterCharacter->ctr_spd << endl;
-    cout << slowerCharacter->ctr_spd << endl;
+//    cout << fasterCharacter->ctr_spd << endl;
+//    cout << slowerCharacter->ctr_spd << endl;
     if(P < 0.){
         P = 0.;
     }
@@ -193,8 +216,8 @@ bool battle_handler::IfSpeed(){
         P = maxP;
     };
     float random = (float)(rand() % (10000)) / (float)(10000);
-    cout << P << endl;
-    cout << random << endl;
+//    cout << P << endl;
+//    cout << random << endl;
     if(random <= P){
         return true;
     }
@@ -206,10 +229,18 @@ bool battle_handler::IfSpeed(){
 void battle_handler::SpeedChooseMove(){
     cout << fasterCharacter->cName <<"'s speed advantage gained her another turn!" << endl;
     fasterCharacter->showMoveInfo();
-    string sss;
     int sChooseNum;
-    cin >> sss;
-    sChooseNum = atoi(sss.c_str());
+    bool validInput = false;
+    int MLen = fasterCharacter->moveL.size();
+    while(!validInput) {
+        string sss;
+        cin >> sss;
+        sChooseNum = atoi(sss.c_str());
+        if (sChooseNum <= MLen && sChooseNum > 0){
+            validInput = true;
+        }
+    }
+
     speedMoveNum = sChooseNum - 1;
 }
 
@@ -217,6 +248,8 @@ void battle_handler::SpeedChooseMove(){
 int battle_handler::SpeedCastMove(){
     fasterCharacter->SetMove(slowerCharacter, &BattleField);
     fasterCharacter->TakeTurn(slowerCharacter, &(fasterCharacter->moveL[speedMoveNum]), &BattleField);
+    BattleField.WriteRecord(fasterCharacter, 4);
+    BattleField.WriteRecord(slowerCharacter, 5);
     return IfWin();
 }
 
@@ -225,7 +258,15 @@ int battle_handler::DoStatus(){
     if(IfWin()){
         return IfWin();
     }
+    BattleField.WriteRecord(fasterCharacter, 6);
+    BattleField.WriteRecord(slowerCharacter, 7);
     slowerCharacter->SufferStatus(fasterCharacter, &BattleField);
+    if(IfWin()){
+        return IfWin();
+    }
+    BattleField.WriteRecord(fasterCharacter, 8);
+    BattleField.WriteRecord(slowerCharacter, 9);
+    BattleField.FieldSufferStatus(&p1Character, &p2Character);
     return IfWin();
 }
 

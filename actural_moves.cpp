@@ -37,7 +37,7 @@ cmove AquaBall(character * owner, character * taker, field * place){
 cmove AquaBall(){
     cmove aquaBall;
     aquaBall.mName = "Aqua Ball";
-    cout << "AquaBall established!" << endl;
+//    cout << "AquaBall established!" << endl;
     AllMoveList.push_back(aquaBall);
     IrrawaMoveList.push_back(aquaBall);
     return aquaBall;
@@ -57,7 +57,7 @@ cmove WindSlash(character * owner, character * taker, field * place){
 cmove WindSlash(){
     cmove windSlash;
     windSlash.mName = "Wind Slash";
-    cout << "WindSlash established!" << endl;
+//    cout << "WindSlash established!" << endl;
     AllMoveList.push_back(windSlash);
     IrrawaMoveList.push_back(windSlash);
     return windSlash;
@@ -71,7 +71,7 @@ cmove PsychoBoost(character * owner, character * taker, field * place){
     psychoBoost.slf_dm = -25;
     psychoBoost.slf_da = 15;
     psychoBoost.selfTarget = true;
-    cout << "PsychoBoost established!" << endl;
+//    cout << "PsychoBoost established!" << endl;
     return psychoBoost;
 }
 
@@ -81,7 +81,7 @@ cmove PsychoBoost(){
     psychoBoost.slf_dm = -25;
     psychoBoost.slf_da = 15;
     psychoBoost.selfTarget = true;
-    cout << "PsychoBoost established!" << endl;
+//    cout << "PsychoBoost established!" << endl;
     AllMoveList.push_back(psychoBoost);
     MewMoveList.push_back(psychoBoost);
     return psychoBoost;
@@ -121,7 +121,7 @@ cmove RainOfNayad(character * owner, character * taker, field * place){
 cmove RainOfNayad(){
     cmove rainOfNayad;
     rainOfNayad.mName = "Aqua Ball";
-    cout << "Rain of Nayad established!" << endl;
+//    cout << "Rain of Nayad established!" << endl;
     AllMoveList.push_back(rainOfNayad);
     IrrawaMoveList.push_back(rainOfNayad);
     return rainOfNayad;
@@ -157,7 +157,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
 cmove Tailwind(){
     cmove tailwind;
     tailwind.mName = "Tailwind";
-    cout << "Tailwind established!" << endl;
+//    cout << "Tailwind established!" << endl;
     AllMoveList.push_back(tailwind);
     tailwind.selfTarget = true;
     IrrawaMoveList.push_back(tailwind);
@@ -191,7 +191,7 @@ cmove OneiroSting(character * owner, character * taker, field * place){
     oneiroSting.mName = "Oneiro Sting";
     oneiroSting.slf_dm = -25;
     oneiroSting.mv_atk = 30;
-    cout << "Oneiro Sting established!" << endl;
+//    cout << "Oneiro Sting established!" << endl;
     oneiroSting.opo_adStat.push_back(&(taker->CharToxic));
     return oneiroSting;
 }
@@ -201,7 +201,7 @@ cmove OneiroSting(){
     oneiroSting.mName = "Oneiro Sting";
     oneiroSting.slf_dm = -25;
     oneiroSting.mv_atk = 30;
-    cout << "Oneiro Sting established!" << endl;
+//    cout << "Oneiro Sting established!" << endl;
     AllMoveList.push_back(oneiroSting);
     MewMoveList.push_back(oneiroSting);
     return oneiroSting;
@@ -220,7 +220,7 @@ cmove Desolation(character * owner, character * taker, field * place){
 cmove Desolation(){
     cmove desolation;
     desolation.mName = "Desolation";
-    cout << "Desolation established!" << endl;
+//    cout << "Desolation established!" << endl;
     AllMoveList.push_back(desolation);
     MewMoveList.push_back(desolation);
     return desolation;
@@ -253,7 +253,7 @@ cmove ToxicBlast(character * owner, character * taker, field * place){
 cmove ToxicBlast(){
     cmove toxicBlast;
     toxicBlast.mName = "Toxic Blast";
-    cout << "Toxic Blast established!" << endl;
+//    cout << "Toxic Blast established!" << endl;
     AllMoveList.push_back(toxicBlast);
     MewMoveList.push_back(toxicBlast);
     return toxicBlast;
@@ -273,7 +273,7 @@ cmove KissOfSuccubus(character * owner, character * taker, field * place){
 cmove KissOfSuccubus(){
     cmove kissOfSuccubus;
     kissOfSuccubus.mName = "Kiss Of Succubus";
-    cout << "Kiss of Succubus established!" << endl;
+//    cout << "Kiss of Succubus established!" << endl;
     AllMoveList.push_back(kissOfSuccubus);
     RosieMoveList.push_back(kissOfSuccubus);
     return kissOfSuccubus;
@@ -314,7 +314,7 @@ cmove ShadowMirror(character * owner, character * taker, field * place){
     cout << rand() << endl;
     cout << chooseMoveNum << endl;
     shadowMirror = taker->moveL[chooseMoveNum];
-    cout << "copied " << shadowMirror.mName << endl;
+//    cout << "copied " << shadowMirror.mName << endl;
     shadowMirror.mName += "(shadow)";
     return shadowMirror;
 }
@@ -364,7 +364,7 @@ cmove ArcTurbo(){
     cmove arcTurbo;
     arcTurbo.mName = "Arc Turbo";
     arcTurbo.selfTarget = true;
-    cout << "Arc Turbo established!" << endl;
+//    cout << "Arc Turbo established!" << endl;
     AllMoveList.push_back(arcTurbo);
     RosieMoveList.push_back(arcTurbo);
     return arcTurbo;

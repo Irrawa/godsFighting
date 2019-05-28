@@ -19,7 +19,7 @@ void nayadBreeze::SetupStatus(character* maker, character* other, field* current
     sta_dh = 20;
     owner = maker;
     non_owner = other;
-    cout << "Nayad Breeze status setup..." << endl;
+//    cout << "Nayad Breeze status setup..." << endl;
 }
 
 void nayadBreeze::RefStatus(character* maker, character* other, field* currentField) {
@@ -40,7 +40,7 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
     (*other).ctr_atk += sta_Oda;
     (*other).ctr_def += sta_Odd;
     (*other).ctr_spd += sta_Ods;
-    cout << "奈亚德效果生效："<< sta_ds << endl;
+//    cout << "奈亚德效果生效："<< sta_ds << endl;
     nT -= 1;
     cout << sta_da << endl;
     cout << sta_ds << endl;
@@ -59,7 +59,7 @@ void poisonAura::SetupStatus(character* maker, character* other, field* currentF
     nT = iniT;
     owner = maker;
     non_owner = other;
-    cout << "Poison Aura status setup..." << endl;
+//    cout << "Poison Aura status setup..." << endl;
 
 }
 
@@ -73,6 +73,10 @@ void poisonAura::StatusTakeEffect(character* maker, character* other, field* cur
     otherTempStatus->SetupStatus(other, maker, currentField);
     (*other).add_status(otherTempStatus, maker, currentField);
 
-    cout << "毒气效果生效："<< sta_ds << endl;
+//    cout << "毒气效果生效："<< sta_ds << endl;
     nT -= 1;
+}
+
+void poisonAura::StatusLoss(character* maker, character* other, field* currentField){
+    cout << "Poison Aura status lost" << endl;
 }

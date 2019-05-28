@@ -27,13 +27,14 @@ void field::add_status(field_status* S, character* maker, character* other){
     if (!duplicateFlag) {
         tempStatus->SetupStatus(maker, other, this);
         this->FStatusL.push_back(tempStatus);
-        cout << "添加" << tempStatus->sta_name << endl;
+//        cout << "添加" << tempStatus->sta_name << endl;
+
     } else {
         this->FStatusL[a]->StatusLoss(this->FStatusL[a]->owner, this->FStatusL[a]->non_owner, this);
         this->FStatusL[a]->nT = this->FStatusL[a]->iniT;
         this->FStatusL[a]->owner = maker;
         this->FStatusL[a]->non_owner = other;
-        cout << "覆盖" << endl;
+//        cout << "覆盖" << endl;
     }
 };
 
@@ -100,4 +101,20 @@ note_page field::GetPage(int PageNum){
 
 note_page field::GetCurrentPage(){
     return GetPage(battleRecord.size() - 1);
+}
+
+void field::WriteRecord(character *targetC, int pageLine){
+    note_page* lastPage = &(this->battleRecord[this->battleRecord.size() - 1]);
+    switch (pageLine){
+        case 0: lastPage->set_beforeMoveFast(targetC); break;
+        case 1: lastPage->set_beforeMoveSlow(targetC); break;
+        case 2: lastPage->set_after1stMoveFast(targetC); break;
+        case 3: lastPage->set_after1stMoveSlow(targetC); break;
+        case 4: lastPage->set_after2ndMoveFast(targetC); break;
+        case 5: lastPage->set_after2ndMoveSlow(targetC); break;
+        case 6: lastPage->set_after1stStatFast(targetC); break;
+        case 7: lastPage->set_after1stStatSlow(targetC); break;
+        case 8: lastPage->set_after2ndStatFast(targetC); break;
+        case 9: lastPage->set_after2ndStatSlow(targetC); break;
+    }
 }

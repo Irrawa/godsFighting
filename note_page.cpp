@@ -33,16 +33,16 @@ character note_page::copy_char(character* originChar){
         newChar.statL = newStatL;
 //        cout << "character " << newChar.cName << "recorded" << endl;
     }
-    cout << "character " << newChar.cName << " copied" << endl;
+//    cout << "character " << newChar.cName << " copied" << endl;
     return newChar;
 }
 
 void note_page::set_beforeMoveFast(character* c){
-    cout << &C00 << endl;
+//    cout << &C00 << endl;
     character C;
-    cout << &C << endl;
-    cout << "C00 setting called" << endl;
+//    cout << &C << endl;
+//    cout << "C00 setting called" << endl;
     C = copy_char(c);
     C00 = C;
-    cout << "C00 recorded!" << endl;
+//    cout << "C00 recorded!" << endl;
 }
