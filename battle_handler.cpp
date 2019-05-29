@@ -227,21 +227,25 @@ bool battle_handler::IfSpeed(){
 }
 
 void battle_handler::SpeedChooseMove(){
-    cout << fasterCharacter->cName <<"'s speed advantage gained her another turn!" << endl;
-    fasterCharacter->showMoveInfo();
-    int sChooseNum;
-    bool validInput = false;
-    int MLen = fasterCharacter->moveL.size();
-    while(!validInput) {
-        string sss;
-        cin >> sss;
-        sChooseNum = atoi(sss.c_str());
-        if (sChooseNum <= MLen && sChooseNum > 0){
-            validInput = true;
+    if(AIMode == false || fasterCharacter->cName == p1Character.cName) {
+        cout << fasterCharacter->cName << "'s speed advantage gained her another turn!" << endl;
+        fasterCharacter->showMoveInfo();
+        int sChooseNum;
+        bool validInput = false;
+        int MLen = fasterCharacter->moveL.size();
+        while (!validInput) {
+            string sss;
+            cin >> sss;
+            sChooseNum = atoi(sss.c_str());
+            if (sChooseNum <= MLen && sChooseNum > 0) {
+                validInput = true;
+            }
         }
+        speedMoveNum = sChooseNum - 1;
     }
-
-    speedMoveNum = sChooseNum - 1;
+    else{
+        speedMoveNum = rand() % p2Character.moveL.size();
+    }
 }
 
 
@@ -268,6 +272,79 @@ int battle_handler::DoStatus(){
     BattleField.WriteRecord(slowerCharacter, 9);
     BattleField.FieldSufferStatus(&p1Character, &p2Character);
     return IfWin();
+}
+
+int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
+    cout.setstate(std::ios_base::failbit);
+    srand (time(NULL));
+    battle_handler mirrorBattle;
+    mirrorBattle.Initialize();
+    mirrorBattle = *thisBattle;
+    int turn = 0;
+    while(!mirrorBattle.Winner){
+        mirrorBattle.JudgeSpeed();
+        if(turn > 0) {
+            mirrorBattle.fasterMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
+            mirrorBattle.slowerMoveNum = rand() % mirrorBattle.slowerCharacter->moveL.size();
+        }
+        else{
+            if(mirrorBattle.p2Character.cName == mirrorBattle.fasterCharacter->cName){
+                mirrorBattle.fasterMoveNum = p2ThisTurnMoveNum;
+                mirrorBattle.slowerMoveNum = rand() % mirrorBattle.slowerCharacter->moveL.size();
+            }
+            else{
+                mirrorBattle.slowerMoveNum = p2ThisTurnMoveNum;
+                mirrorBattle.fasterMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
+            }
+        }
+        if(mirrorBattle.CastMove()){
+            break;
+        };
+        bool doubleBreak = false;
+        while(mirrorBattle.IfSpeed()){
+            mirrorBattle.speedMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
+            if(mirrorBattle.SpeedCastMove()){
+                doubleBreak = true;
+                break;
+            };
+        }
+        if(doubleBreak){
+            break;
+        }
+        if(mirrorBattle.DoStatus()){
+            break;
+        };
+        turn += 1;
+    }
+    return mirrorBattle.Winner;
+}
+
+int battle_handler::AIChooseMove(int IQ){
+    cout.setstate(std::ios_base::failbit); //屏蔽cout输出
+    vector <int> winList;
+    int MaxCount = 0;
+    int recommendedMove = rand() % this->p1Character.moveL.size() ;
+    for (int i = 0; i < p2Character.moveL.size(); i++) { //
+        int winCount = 0;
+        for (int j = 0; j < IQ; j++) {
+            if(MontCarlo(this, i) == 2){
+                winCount += 1;
+            }
+        }
+        winList.push_back(winCount);
+        if(winCount > MaxCount){
+            MaxCount = winCount;
+            recommendedMove = i;
+        }
+    }
+    if(p2Character.cName == fasterCharacter->cName){
+        fasterMoveNum = recommendedMove;
+    }
+    else{
+        slowerMoveNum = recommendedMove;
+    }
+    cout.clear();//解放cout输出
+    return recommendedMove;
 }
 
 //Rosie.SufferStatus(&Irrawa, &TestField);

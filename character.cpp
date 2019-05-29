@@ -129,7 +129,12 @@ string character::showMoveInfo(){
     int moveLen = this->moveL.size();
     for (int i = 0; i < moveLen; i++){
 //        infof << "\n";
-        infof << i + 1 << ":" << " [-" << this->moveL[i].mName << "-]";
+        if(this->moveL[i].nameChanged == false) {
+            infof << i + 1 << ":" << " [-" << this->moveL[i].mName << "-]";
+        }
+        else{
+            infof << i + 1 << ":" << " [-" << this->moveL[i].realName << "-]";
+        }
         infof << this->moveL[i].mInfo << "\n";
     }
     string info = infof.str();

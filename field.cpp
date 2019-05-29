@@ -71,12 +71,12 @@ void field::FieldSufferStatus(character* p1, character* p2){
 
 void field::NewPage(){
     note_page NewPage;
-    cout << "Page in New: " << &NewPage << endl;
+//    cout << "Page in New: " << &NewPage << endl;
     int lastNum = battleRecord.size();
     NewPage.setPageNum(lastNum + 1);
     battleRecord.push_back(NewPage);
-    cout << "Page in record in funciton: " << &(battleRecord[0]) << endl;
-    cout << "Page " << lastNum + 1 << " created!" << endl;
+//    cout << "Page in record in funciton: " << &(battleRecord[0]) << endl;
+//    cout << "Page " << lastNum + 1 << " created!" << endl;
 }
 
 note_page field::GetPage(int PageNum){

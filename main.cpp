@@ -33,6 +33,9 @@ using namespace std;
 //    cmove arc_turbo = ArcTurbo();
 //}
 
+
+//To disable cout, use the following method:
+
 void PVPBattle(){
     srand (time(NULL));
     battle_handler PVPBattle;
@@ -44,6 +47,41 @@ void PVPBattle(){
         PVPBattle.JudgeSpeed();
         PVPBattle.GeneralChooseMove(1);
         PVPBattle.GeneralChooseMove(2);
+        if(PVPBattle.CastMove()){
+            break;
+        };
+        bool doubleBreak = false;
+        while(PVPBattle.IfSpeed()){
+            PVPBattle.SpeedChooseMove();
+            if(PVPBattle.SpeedCastMove()){
+                doubleBreak = true;
+                break;
+            };
+        }
+        if(doubleBreak){
+            break;
+        }
+        if(PVPBattle.DoStatus()){
+            break;
+        };
+        PVPBattle.p1Character.print();
+        PVPBattle.p2Character.print();
+    }
+    cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << "is winner!";
+}
+
+void PVABattle(){
+    srand (time(NULL));
+    battle_handler PVPBattle;
+    PVPBattle.Initialize();
+    PVPBattle.AIMode = true;
+    PVPBattle.DecideCharacter();
+    PVPBattle.p1Character.print();
+    PVPBattle.p2Character.print();
+    while(!PVPBattle.Winner) {
+        PVPBattle.JudgeSpeed();
+        PVPBattle.GeneralChooseMove(1);
+        PVPBattle.AIChooseMove(PVPBattle.AIIQ);
         if(PVPBattle.CastMove()){
             break;
         };

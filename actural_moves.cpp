@@ -316,12 +316,16 @@ cmove ShadowMirror(character * owner, character * taker, field * place){
     shadowMirror = taker->moveL[chooseMoveNum];
 //    cout << "copied " << shadowMirror.mName << endl;
     shadowMirror.mName += "(shadow)";
+    shadowMirror.nameChanged = true;
+    shadowMirror.realName = "Shadow Mirror";
     return shadowMirror;
 }
 
 cmove ShadowMirror(){
     cmove shadowMirror;
+    shadowMirror.nameChanged = true;
     shadowMirror.mName = "Shadow Mirror";
+    shadowMirror.realName = "Shadow Mirror";
     AllMoveList.push_back(shadowMirror);
     RosieMoveList.push_back(shadowMirror);
     return shadowMirror;

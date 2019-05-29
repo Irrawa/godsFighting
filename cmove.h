@@ -22,6 +22,8 @@ class status;
 class cmove{
 public:
     string mName, mInfo;
+    string realName = "";
+    bool nameChanged = false;
     //     技能名  技能介绍
     int slf_dh = 0, slf_dm = 0, slf_da = 0, slf_dd = 0, slf_ds = 0,
     //自身的hp、mp、atk、def、spd 变化
