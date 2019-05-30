@@ -231,6 +231,33 @@ actural_statuses.cpp.s:
 	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/actural_statuses.cpp.s
 .PHONY : actural_statuses.cpp.s
 
+battle_handler.o: battle_handler.cpp.o
+
+.PHONY : battle_handler.o
+
+# target to build an object file
+battle_handler.cpp.o:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/battle_handler.cpp.o
+.PHONY : battle_handler.cpp.o
+
+battle_handler.i: battle_handler.cpp.i
+
+.PHONY : battle_handler.i
+
+# target to preprocess a source file
+battle_handler.cpp.i:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/battle_handler.cpp.i
+.PHONY : battle_handler.cpp.i
+
+battle_handler.s: battle_handler.cpp.s
+
+.PHONY : battle_handler.s
+
+# target to generate assembly for a file
+battle_handler.cpp.s:
+	$(MAKE) -f CMakeFiles/gods.dir/build.make CMakeFiles/gods.dir/battle_handler.cpp.s
+.PHONY : battle_handler.cpp.s
+
 character.o: character.cpp.o
 
 .PHONY : character.o
@@ -441,6 +468,9 @@ help:
 	@echo "... actural_statuses.o"
 	@echo "... actural_statuses.i"
 	@echo "... actural_statuses.s"
+	@echo "... battle_handler.o"
+	@echo "... battle_handler.i"
+	@echo "... battle_handler.s"
 	@echo "... character.o"
 	@echo "... character.i"
 	@echo "... character.s"

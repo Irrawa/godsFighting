@@ -274,13 +274,31 @@ int battle_handler::DoStatus(){
     return IfWin();
 }
 
+static unsigned long x=123456789, y=362436069, z=521288629;
+
+unsigned long xorshf96(void) {          //period 2^96-1
+    unsigned long t;
+    x ^= x << 16;
+    x ^= x >> 5;
+    x ^= x << 1;
+
+    t = x;
+    x = y;
+    y = z;
+    z = t ^ x ^ y;
+
+    return z;
+}
+
 int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
     cout.setstate(std::ios_base::failbit);
-    srand (time(NULL));
     battle_handler mirrorBattle;
     mirrorBattle.Initialize();
     mirrorBattle = *thisBattle;
+    mirrorBattle.JudgeSpeed();
+    mirrorBattle.MirrorMode = true;
     int turn = 0;
+    srand(time(NULL));
     while(!mirrorBattle.Winner){
         mirrorBattle.JudgeSpeed();
         if(turn > 0) {
@@ -289,12 +307,19 @@ int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
         }
         else{
             if(mirrorBattle.p2Character.cName == mirrorBattle.fasterCharacter->cName){
+
                 mirrorBattle.fasterMoveNum = p2ThisTurnMoveNum;
-                mirrorBattle.slowerMoveNum = rand() % mirrorBattle.slowerCharacter->moveL.size();
+//                cout.clear();
+//                cout.setstate(std::ios_base::failbit);
+//                cout << xorshf96();
+//                cout.clear();
+//                cout.setstate(std::ios_base::failbit);
+
+                mirrorBattle.slowerMoveNum = xorshf96() % mirrorBattle.slowerCharacter->moveL.size();
             }
             else{
                 mirrorBattle.slowerMoveNum = p2ThisTurnMoveNum;
-                mirrorBattle.fasterMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
+                mirrorBattle.fasterMoveNum = xorshf96() % mirrorBattle.fasterCharacter->moveL.size();
             }
         }
         if(mirrorBattle.CastMove()){
@@ -320,6 +345,7 @@ int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
 }
 
 int battle_handler::AIChooseMove(int IQ){
+    battle_handler backupBattle = *this;
     cout.setstate(std::ios_base::failbit); //屏蔽cout输出
     vector <int> winList;
     int MaxCount = 0;
@@ -329,6 +355,14 @@ int battle_handler::AIChooseMove(int IQ){
         for (int j = 0; j < IQ; j++) {
             if(MontCarlo(this, i) == 2){
                 winCount += 1;
+//                cout.clear();
+//                cout << i << ": Win" << endl;
+//                cout.setstate(std::ios_base::failbit);
+            }
+            else {
+//                cout.clear();
+//                cout << i << ": Lose" << endl;
+//                cout.setstate(std::ios_base::failbit);
             }
         }
         winList.push_back(winCount);
@@ -336,7 +370,11 @@ int battle_handler::AIChooseMove(int IQ){
             MaxCount = winCount;
             recommendedMove = i;
         }
+                cout.clear();
+                cout << i << ":" << winCount << endl;
+                cout.setstate(std::ios_base::failbit);
     }
+    *this = backupBattle;
     if(p2Character.cName == fasterCharacter->cName){
         fasterMoveNum = recommendedMove;
     }

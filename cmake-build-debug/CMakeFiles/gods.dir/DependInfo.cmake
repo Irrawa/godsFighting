@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/otbooster/Downloads/2019up/cpp/gods/actural_field_status.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/actural_field_status.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/actural_moves.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/actural_moves.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/actural_statuses.cpp.o"
+  "/Users/otbooster/Downloads/2019up/cpp/gods/battle_handler.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/battle_handler.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/character.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/cmove.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/cmove.cpp.o"
   "/Users/otbooster/Downloads/2019up/cpp/gods/field.cpp" "/Users/otbooster/Downloads/2019up/cpp/gods/cmake-build-debug/CMakeFiles/gods.dir/field.cpp.o"

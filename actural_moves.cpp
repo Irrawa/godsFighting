@@ -27,6 +27,7 @@ vector <cmove> AsibiMoveList;  //Asibi的技能表，已设为全局变量
 cmove AquaBall(character * owner, character * taker, field * place){
     cmove aquaBall;
     aquaBall.mName = "Aqua Ball";
+    aquaBall.mInfo = "Standard move of Irrawa, inflict minor damage and choke the opponent, which lowers the speed.";
     aquaBall.slf_dm = -100;
     aquaBall.mv_atk = 20;
 //    cout << "AquaBall established!" << endl;
@@ -46,10 +47,12 @@ cmove AquaBall(){
 //****************************************************************************************************
 
 cmove WindSlash(character * owner, character * taker, field * place){
+    srand(time(NULL));
     cmove windSlash;
     windSlash.mName = "Wind Slash";
-    windSlash.slf_dm = -80;
-    windSlash.mv_atk = 65;
+    windSlash.mInfo = "Cut the opponent with razor wind, the damage can be doubled in some cases.";
+    windSlash.slf_dm = -90;
+    windSlash.mv_atk = 50 + 65 * (rand() % 2);
 //    cout << "WindSlash established!" << endl;
     return windSlash;
 }
@@ -68,6 +71,7 @@ cmove WindSlash(){
 cmove PsychoBoost(character * owner, character * taker, field * place){
     cmove psychoBoost;
     psychoBoost.mName = "Psycho Boost";
+    psychoBoost.mInfo = "Induce a strong feeling of braveness. Increase the ATK.";
     psychoBoost.slf_dm = -25;
     psychoBoost.slf_da = 15;
     psychoBoost.selfTarget = true;
@@ -92,6 +96,7 @@ cmove PsychoBoost(){
 cmove Tsunami(character * owner, character * taker, field * place){
     cmove tsunami;
     tsunami.mName = "Tsunami";
+    tsunami.mInfo = "A deadly attack. Create an aqua bomb on the opponent, which will explode later and deal massive damage.";
     tsunami.slf_dm = -150;
     tsunami.mv_atk = 30;
     tsunami.opo_adStat.push_back(&(taker->CharAquaBlast));
@@ -114,6 +119,7 @@ cmove RainOfNayad(character * owner, character * taker, field * place){
     cmove rainOfNayad;
     rainOfNayad.slf_dm = -50;
     rainOfNayad.mName = "Rain Of Nayad";
+    rainOfNayad.mInfo = "This comforting rain will continously boost ther users speed and recover their HP.";
     rainOfNayad.field_adStat.push_back(&(place->RainOfNayad));
     return rainOfNayad;
 }
@@ -133,6 +139,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
     cmove tailwind;
     tailwind.slf_dm = -20;
     tailwind.mName = "Tailwind";
+    tailwind.mInfo = "Randomly remove a negative status problem from the user.";
     vector <status*> badStatL;
     vector <int> NumShoot;
     tailwind.selfTarget = true;
@@ -170,6 +177,7 @@ cmove NetherVeil(character * owner, character * taker, field * place){
     cmove netherVeil;
     netherVeil.slf_dm = -75;
     netherVeil.mName = "Nether Veil";
+    netherVeil.mInfo = "Give the user a dark aura that increases ATK and DEF, and can get healed from poison.";
     netherVeil.slf_adStat.push_back(&(owner->NetherCircuit));
     netherVeil.selfTarget = true;
     return netherVeil;
@@ -189,6 +197,7 @@ cmove NetherVeil(){
 cmove OneiroSting(character * owner, character * taker, field * place){
     cmove oneiroSting;
     oneiroSting.mName = "Oneiro Sting";
+    oneiroSting.mInfo = "Stab the opponent with a taunted inspiration, causes Toxic status, which deals increasing damage each turn.";
     oneiroSting.slf_dm = -25;
     oneiroSting.mv_atk = 30;
 //    cout << "Oneiro Sting established!" << endl;
@@ -213,6 +222,7 @@ cmove Desolation(character * owner, character * taker, field * place){
     cmove desolation;
     desolation.slf_dm = -25;
     desolation.mName = "Desolation";
+    desolation.mInfo = "Taint the battlefield, giving all the character poison status each turn.";
     desolation.field_adStat.push_back(&(place->PoisonAura));
     return desolation;
 }
@@ -231,6 +241,7 @@ cmove Desolation(){
 cmove ToxicBlast(character * owner, character * taker, field * place){
     cmove toxicBlast;
     toxicBlast.mName = "Toxic Blast";
+    toxicBlast.mInfo = "Remove all the poison status on opponent and deal damage. The harsher the status removed is, the higher the damage will be.";
     toxicBlast.slf_dm = -150;
     int statLen = taker->statL.size();
     int totalDh = 0;
@@ -264,6 +275,7 @@ cmove ToxicBlast(){
 cmove KissOfSuccubus(character * owner, character * taker, field * place){
     cmove kissOfSuccubus;
     kissOfSuccubus.mName = "Kiss Of Succubus";
+    kissOfSuccubus.mInfo = "Deals damage and recover half the damage dealt.";
     kissOfSuccubus.mv_atk = 75;
     kissOfSuccubus.slf_dm = -90;
     kissOfSuccubus.slf_dh += (owner->ctr_atk * kissOfSuccubus.mv_atk / taker->ctr_def) * 0.5;
@@ -286,6 +298,7 @@ cmove LustStorm(character * owner, character * taker, field * place){
     lustStorm.slf_dm = -50;
     lustStorm.mv_atk = 10;
     lustStorm.mName = "Lust Storm";
+    lustStorm.mInfo = "Give the user Static Overload status, which deflects 30% the damage the user taken to the oppoent.";
     lustStorm.slf_adStat.push_back(&(owner->StaticOverload));
     lustStorm.selfTarget = false;
     return lustStorm;
@@ -318,6 +331,8 @@ cmove ShadowMirror(character * owner, character * taker, field * place){
     shadowMirror.mName += "(shadow)";
     shadowMirror.nameChanged = true;
     shadowMirror.realName = "Shadow Mirror";
+    shadowMirror.mInfo = "Using this move will randomly copy one of the opponent's move and cast it without additional cost.";
+    shadowMirror.slf_dm = -30;
     return shadowMirror;
 }
 
@@ -337,6 +352,7 @@ cmove DevilMentel(character * owner, character * taker, field * place){
     cmove devilMentel;
     devilMentel.slf_dm = -45;
     devilMentel.mName = "Devil Mentel";
+    devilMentel.mInfo = "Spirify the user for a while, greatly lower the physical damage she takes.";
     devilMentel.slf_adStat.push_back(&(owner->Spiritified));
     devilMentel.selfTarget = true;
     return devilMentel;
@@ -356,10 +372,11 @@ cmove DevilMentel(){
 cmove ArcTurbo(character * owner, character * taker, field * place){
     cmove arcTurbo;
     arcTurbo.mName = "Arc Turbo";
+    arcTurbo.mInfo = "A double edge move,greatly increases the user's ATK and DEF at the cost of both MP and HP.";
     arcTurbo.slf_dm = -50;
     arcTurbo.slf_dh = -50;
-    arcTurbo.slf_da = 20;
-    arcTurbo.slf_dd = 20;
+    arcTurbo.slf_da = 25;
+    arcTurbo.slf_dd = 25;
     arcTurbo.selfTarget = true;
     return arcTurbo;
 }

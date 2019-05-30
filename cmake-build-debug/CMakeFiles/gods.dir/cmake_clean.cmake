@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gods.dir/actural_field_status.cpp.o"
   "CMakeFiles/gods.dir/actural_moves.cpp.o"
   "CMakeFiles/gods.dir/actural_statuses.cpp.o"
+  "CMakeFiles/gods.dir/battle_handler.cpp.o"
   "CMakeFiles/gods.dir/character.cpp.o"
   "CMakeFiles/gods.dir/cmove.cpp.o"
   "CMakeFiles/gods.dir/field.cpp.o"

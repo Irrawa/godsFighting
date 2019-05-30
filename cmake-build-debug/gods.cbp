@@ -106,6 +106,12 @@
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h">
 			<Option target="gods"/>
 		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/battle_handler.cpp">
+			<Option target="gods"/>
+		</Unit>
+		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/battle_handler.h">
+			<Option target="gods"/>
+		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/character.cpp">
 			<Option target="gods"/>
 		</Unit>

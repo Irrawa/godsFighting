@@ -27,6 +27,7 @@ public:
     vector <character> characterList; //供选择的角色，不能被改变。
 
     bool AIMode = false;
+    bool MirrorMode = false;
     int AIIQ = 100;
 
     void Initialize();//初始化，包括创建角色名单和所有技能。

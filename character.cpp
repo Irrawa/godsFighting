@@ -135,7 +135,7 @@ string character::showMoveInfo(){
         else{
             infof << i + 1 << ":" << " [-" << this->moveL[i].realName << "-]";
         }
-        infof << this->moveL[i].mInfo << "\n";
+        infof << "->" << this->moveL[i].mInfo << "\n";
     }
     string info = infof.str();
     cout << info;

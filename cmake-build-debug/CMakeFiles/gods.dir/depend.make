@@ -49,6 +49,19 @@ CMakeFiles/gods.dir/actural_statuses.cpp.o: ../field_status.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../note_page.h
 CMakeFiles/gods.dir/actural_statuses.cpp.o: ../status.h
 
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../actural_characters.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../actural_field_status.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../actural_moves.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../actural_statuses.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../battle_handler.cpp
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../battle_handler.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../character.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../cmove.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../field.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../field_status.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../note_page.h
+CMakeFiles/gods.dir/battle_handler.cpp.o: ../status.h
+
 CMakeFiles/gods.dir/character.cpp.o: ../actural_characters.h
 CMakeFiles/gods.dir/character.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/character.cpp.o: ../actural_moves.h
@@ -98,7 +111,6 @@ CMakeFiles/gods.dir/main.cpp.o: ../actural_characters.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_field_status.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_moves.h
 CMakeFiles/gods.dir/main.cpp.o: ../actural_statuses.h
-CMakeFiles/gods.dir/main.cpp.o: ../battle_handler.cpp
 CMakeFiles/gods.dir/main.cpp.o: ../battle_handler.h
 CMakeFiles/gods.dir/main.cpp.o: ../character.h
 CMakeFiles/gods.dir/main.cpp.o: ../cmove.h

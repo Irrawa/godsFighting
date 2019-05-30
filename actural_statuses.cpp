@@ -51,8 +51,9 @@ void aquaBlast::StatusLoss(character* selfCharacter, character* oppoCharacter, f
 
 void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* currentField){
     if(nT <= 0) {
-        (*self).HP -= 300;
-        cout << "爆炸！💥" << endl;
+        int dh = 30000 / self->ctr_def;
+        (*self).HP -= dh;
+        cout << "💥The AquaBomb exploded and dealt " << dh << " damage to "<< self->cName << "!" << endl;
     }
     nT -= 1;
 }

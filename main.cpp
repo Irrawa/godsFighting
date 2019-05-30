@@ -12,7 +12,7 @@
 #include "actural_statuses.h"
 #include "note_page.h"
 #include "battle_handler.h"
-#include "battle_handler.cpp"
+//#include "battle_handler.cpp"
 using namespace std;
 
 //void establish_moves(){
@@ -106,7 +106,7 @@ void PVABattle(){
 }
 
 int main() {
-    PVPBattle();
+    PVABattle();
 //    choke c;
 //    cout << c.get_information() << endl;
 //    establish_moves();
