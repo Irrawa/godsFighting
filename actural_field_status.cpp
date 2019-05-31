@@ -51,6 +51,7 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
 void nayadBreeze::StatusLoss(character* maker, character* other, field* currentField){
     cout << "Nayad Breeze status lost" << endl;
     (*maker).ctr_spd -= totalBuffCount;
+    totalBuffCount = 0;
 }
 
 //*****************************Poison Aura*******************************

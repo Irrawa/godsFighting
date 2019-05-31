@@ -35,6 +35,7 @@ void battle_handler::Initialize(){
     cmove devil_mentel = DevilMentel();
     cmove arc_turbo = ArcTurbo();
     srand(time(NULL));
+    Winner = 0;
 }
 
 void battle_handler::showCharacterList(vector <character> theList){
@@ -227,7 +228,7 @@ bool battle_handler::IfSpeed(){
 }
 
 void battle_handler::SpeedChooseMove(){
-    if(AIMode == false || fasterCharacter->cName == p1Character.cName) {
+    if(AIMode == false) {
         cout << fasterCharacter->cName << "'s speed advantage gained her another turn!" << endl;
         fasterCharacter->showMoveInfo();
         int sChooseNum;
@@ -244,7 +245,7 @@ void battle_handler::SpeedChooseMove(){
         speedMoveNum = sChooseNum - 1;
     }
     else{
-        speedMoveNum = rand() % p2Character.moveL.size();
+        speedMoveNum = rand() % fasterCharacter->moveL.size();
     }
 }
 
@@ -290,11 +291,17 @@ unsigned long xorshf96(void) {          //period 2^96-1
     return z;
 }
 
-int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
+int MontCarlo(battle_handler* thisBattle, int AIThisMoveNum, int AIplayerNum){
     cout.setstate(std::ios_base::failbit);
     battle_handler mirrorBattle;
     mirrorBattle.Initialize();
     mirrorBattle = *thisBattle;
+    if(AIplayerNum == 1){
+        mirrorBattle.AICharacter = &mirrorBattle.p1Character;
+    }
+    else{
+        mirrorBattle.AICharacter = &mirrorBattle.p2Character;
+    }
     mirrorBattle.JudgeSpeed();
     mirrorBattle.MirrorMode = true;
     int turn = 0;
@@ -306,19 +313,18 @@ int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
             mirrorBattle.slowerMoveNum = rand() % mirrorBattle.slowerCharacter->moveL.size();
         }
         else{
-            if(mirrorBattle.p2Character.cName == mirrorBattle.fasterCharacter->cName){
+            if(mirrorBattle.AICharacter->cName == mirrorBattle.fasterCharacter->cName){
 
-                mirrorBattle.fasterMoveNum = p2ThisTurnMoveNum;
+                mirrorBattle.fasterMoveNum = AIThisMoveNum;
+
 //                cout.clear();
-//                cout.setstate(std::ios_base::failbit);
-//                cout << xorshf96();
-//                cout.clear();
+//                cout << xorshf96() << endl;
 //                cout.setstate(std::ios_base::failbit);
 
                 mirrorBattle.slowerMoveNum = xorshf96() % mirrorBattle.slowerCharacter->moveL.size();
             }
             else{
-                mirrorBattle.slowerMoveNum = p2ThisTurnMoveNum;
+                mirrorBattle.slowerMoveNum = AIThisMoveNum;
                 mirrorBattle.fasterMoveNum = xorshf96() % mirrorBattle.fasterCharacter->moveL.size();
             }
         }
@@ -344,26 +350,32 @@ int MontCarlo(battle_handler* thisBattle, int p2ThisTurnMoveNum){
     return mirrorBattle.Winner;
 }
 
-int battle_handler::AIChooseMove(int IQ){
+int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
+    if(AIplayerNum == 1){
+        AICharacter = &p1Character;
+    }
+    else{
+        AICharacter = &p2Character;
+    }
     battle_handler backupBattle = *this;
     cout.setstate(std::ios_base::failbit); //屏蔽cout输出
     vector <int> winList;
     int MaxCount = 0;
-    int recommendedMove = rand() % this->p1Character.moveL.size() ;
-    for (int i = 0; i < p2Character.moveL.size(); i++) { //
+    int recommendedMove = rand() % this->AICharacter->moveL.size() ;
+    for (int i = 0; i < AICharacter->moveL.size(); i++) { //
         int winCount = 0;
         for (int j = 0; j < IQ; j++) {
-            if(MontCarlo(this, i) == 2){
+            if(MontCarlo(this, i, AIplayerNum) == 2){
                 winCount += 1;
 //                cout.clear();
 //                cout << i << ": Win" << endl;
 //                cout.setstate(std::ios_base::failbit);
             }
-            else {
+//            else {
 //                cout.clear();
 //                cout << i << ": Lose" << endl;
 //                cout.setstate(std::ios_base::failbit);
-            }
+//            }
         }
         winList.push_back(winCount);
         if(winCount > MaxCount){
@@ -375,7 +387,7 @@ int battle_handler::AIChooseMove(int IQ){
                 cout.setstate(std::ios_base::failbit);
     }
     *this = backupBattle;
-    if(p2Character.cName == fasterCharacter->cName){
+    if(AICharacter->cName == fasterCharacter->cName){
         fasterMoveNum = recommendedMove;
     }
     else{

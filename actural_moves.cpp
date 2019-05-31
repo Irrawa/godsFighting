@@ -249,7 +249,7 @@ cmove ToxicBlast(character * owner, character * taker, field * place){
     for(int i = 0; i < statLen; i++){
         if(taker->statL[i]->sta_name == "TOXIC" or taker->statL[i]->sta_name == "POISONED"){
             toxicBlast.opo_rmStat.push_back(taker->statL[i]);
-            totalDh += 5 * taker->statL[i]->sta_dh;
+            totalDh += 5 * taker->statL[i]->sta_dh * owner->ctr_atk / taker->ctr_def;
         }
     }
     if(totalDh > -30){

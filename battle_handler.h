@@ -23,12 +23,13 @@ public:
 
     character* fasterCharacter;
     character* slowerCharacter;// 每回合都要重新判断一次，若两者速度一样，则随机分配。
+    character* AICharacter;
 
     vector <character> characterList; //供选择的角色，不能被改变。
 
     bool AIMode = false;
     bool MirrorMode = false;
-    int AIIQ = 100;
+    int AIIQ = 20;
 
     void Initialize();//初始化，包括创建角色名单和所有技能。
     void showCharacterList(vector <character> theList); //打印角色名单
@@ -52,7 +53,7 @@ public:
     int DoStatus();//先快速角色，再慢速角色，再场地
     int Winner = 0; //0表示未分出胜负，1表示P1胜利，2表示P2胜利
 
-    int AIChooseMove(int IQ); //AI选技能，用的时候将其代替 GeneralChooseMove(2)
+    int AIChooseMove(int IQ, int AIplayerNum); //AI选技能，用的时候将其代替 GeneralChooseMove(2)
 
 };
 

@@ -67,28 +67,33 @@ void PVPBattle(){
         PVPBattle.p1Character.print();
         PVPBattle.p2Character.print();
     }
-    cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << "is winner!";
+    if(PVPBattle.Winner == 1) {
+        cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << " is winner!";
+    }
+    else{
+        cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p2Character.cName << " is winner!";
+    }
 }
 
 void PVABattle(){
     srand (time(NULL));
-    battle_handler PVPBattle;
-    PVPBattle.Initialize();
-    PVPBattle.AIMode = true;
-    PVPBattle.DecideCharacter();
-    PVPBattle.p1Character.print();
-    PVPBattle.p2Character.print();
-    while(!PVPBattle.Winner) {
-        PVPBattle.JudgeSpeed();
-        PVPBattle.GeneralChooseMove(1);
-        PVPBattle.AIChooseMove(PVPBattle.AIIQ);
-        if(PVPBattle.CastMove()){
+    battle_handler PVABattle;
+    PVABattle.Initialize();
+    PVABattle.AIMode = true;
+    PVABattle.DecideCharacter();
+    PVABattle.p1Character.print();
+    PVABattle.p2Character.print();
+    while(!PVABattle.Winner) {
+        PVABattle.JudgeSpeed();
+        PVABattle.GeneralChooseMove(1);
+        PVABattle.AIChooseMove(PVABattle.AIIQ,2);
+        if(PVABattle.CastMove()){
             break;
         };
         bool doubleBreak = false;
-        while(PVPBattle.IfSpeed()){
-            PVPBattle.SpeedChooseMove();
-            if(PVPBattle.SpeedCastMove()){
+        while(PVABattle.IfSpeed()){
+            PVABattle.SpeedChooseMove();
+            if(PVABattle.SpeedCastMove()){
                 doubleBreak = true;
                 break;
             };
@@ -96,72 +101,88 @@ void PVABattle(){
         if(doubleBreak){
             break;
         }
-        if(PVPBattle.DoStatus()){
+        if(PVABattle.DoStatus()){
             break;
         };
-        PVPBattle.p1Character.print();
-        PVPBattle.p2Character.print();
+        PVABattle.p1Character.print();
+        PVABattle.p2Character.print();
     }
-    cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << "is winner!";
+    if(PVABattle.Winner == 1) {
+        cout << "P" << PVABattle.Winner << " and his guardian god " << PVABattle.p1Character.cName << " is winner!";
+    }
+    else{
+        cout << "P" << PVABattle.Winner << " and his guardian god " << PVABattle.p2Character.cName << " is winner!";
+    }
+}
+
+void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
+    int iterator = 1;
+    int dAbility = 0;
+    if (doBalancing) {
+        iterator = balance_round;
+    }
+    srand(time(NULL));
+    battle_handler AVABattle;
+    AVABattle.Initialize();
+    AVABattle.AIMode = true;
+    AVABattle.DecideCharacter();
+    AVABattle.p1Character.print();
+    AVABattle.p2Character.print();
+    battle_handler backupBattle = AVABattle;
+    for (int i = 0; i < iterator; i++) {
+        AVABattle = backupBattle;
+        if(doBalancing){
+//            int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;
+            AVABattle.p1Character.maxHP -= dAbility * 10;
+            AVABattle.p1Character.maxMP -= dAbility * 10;
+            AVABattle.p1Character.HP -= dAbility * 10;
+            AVABattle.p1Character.MP -= dAbility * 10;
+            AVABattle.p1Character.ctr_atk -= dAbility;
+            AVABattle.p1Character.ctr_def -= dAbility;
+            AVABattle.p1Character.ctr_spd -= dAbility;
+            cout.setstate(std::ios_base::failbit);
+        }
+        while (!AVABattle.Winner) {
+            AVABattle.JudgeSpeed();
+            AVABattle.AIChooseMove(IQ1, 1);
+            AVABattle.AIChooseMove(IQ2, 2);
+            if (AVABattle.CastMove()) {
+                break;
+            };
+            bool doubleBreak = false;
+            while (AVABattle.IfSpeed()) {
+                AVABattle.SpeedChooseMove();
+                if (AVABattle.SpeedCastMove()) {
+                    doubleBreak = true;
+                    break;
+                };
+            }
+            if (doubleBreak) {
+                break;
+            }
+            if (AVABattle.DoStatus()) {
+                break;
+            };
+            AVABattle.p1Character.print();
+            AVABattle.p2Character.print();
+        }
+        if (AVABattle.Winner == 1) {
+            cout << "P" << AVABattle.Winner << " and his guardian god " << AVABattle.p1Character.cName << " is winner!";
+            dAbility -= 1;
+        } else {
+            cout << "P" << AVABattle.Winner << " and his guardian god " << AVABattle.p2Character.cName << " is winner!";
+            dAbility += 1;
+        }
+        cout.clear();
+        cout << "DDDDDDDDDD:" << dAbility << endl;
+    }
+
+
 }
 
 int main() {
-    PVABattle();
-//    choke c;
-//    cout << c.get_information() << endl;
-//    establish_moves();
-//    character Irrawa = IRRAWA();
-//    character Mew = MEW();
-//    character Rosie = ROSIE();
-//    field TestField;
-//    TestField.NewPage();
-
-//    cout << "page address:" << &(TestField.battleRecord[0]) << endl;
-//    Irrawa.print();
-//    Rosie.print();
-//    RosieMoveReset(&Rosie, &Irrawa, &TestField);
-//    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[0]), &TestField);
-//    Asibi.print();
-//    AsibiMoveReset(&Asibi, &Irrawa, &TestField);
-//    Asibi.TakeTurn(&Irrawa, &(Asibi.moveL[0]), &TestField);
-
-//    TestField.battleRecord[0].set_beforeMoveFast(&Rosie);
-//    TestField.battleRecord[0].set_beforeMoveSlow(&Irrawa);
-//
-//    Irrawa.print();
-//    Rosie.print();
-//
-//    TestField.battleRecord[0].set_after1stMoveFast(&Rosie);
-//    TestField.battleRecord[0].set_after1stMoveSlow(&Irrawa);
-
-
-
-//    cout << PVPBattle.p1MoveNum << " "<< PVPBattle.p2MoveNum << endl;
-//    Rosie.print();
-//    Irrawa.SetMove(&Rosie, &TestField);
-//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-//    Rosie.print();
-//    Rosie.SetMove(&Irrawa, &TestField);
-//    Rosie.TakeTurn(&Irrawa, &(Rosie.moveL[4]), &TestField);
-//    Rosie.print();
-//    Rosie.SufferStatus(&Irrawa, &TestField);
-//    Mew.SetMove(&Rosie, &TestField);
-//    Mew.TakeTurn(&Rosie, &(Mew.moveL[1]), &TestField);
-//    Mew.print();
-//    Irrawa.SetMove(&Rosie, &TestField);
-//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-//    Rosie.print();
-//    Irrawa.print();
-//    Rosie.SufferStatus(&Irrawa, &TestField);
-//    Irrawa.SetMove(&Rosie, &TestField);
-//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-//    Rosie.print();
-//    Rosie.SufferStatus(&Irrawa, &TestField);
-//    Irrawa.SetMove(&Rosie, &TestField);
-//    Irrawa.TakeTurn(&Rosie, &(Irrawa.moveL[1]), &TestField);
-//    Rosie.print();
-//    Rosie.SufferStatus(&Irrawa, &TestField);
-
+//    AVABattle(5,5,true,50);
+    PVPBattle();
 
 
     return 0;

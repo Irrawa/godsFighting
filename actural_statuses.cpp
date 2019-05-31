@@ -99,7 +99,7 @@ void netherCircuit::StatusLoss(character* selfCharacter, character* oppoCharacte
 void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 3;
     nT = iniT;
-    sta_dh = -10;
+    sta_dh = -10 - selfCharacter->ctr_atk / 10;
     toxicEnhancer = 1;
 //    cout << "Toxic status setup..." << endl;
 }
