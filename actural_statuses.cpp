@@ -53,7 +53,7 @@ void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* curren
     if(nT <= 0) {
         int dh = 30000 / self->ctr_def;
         (*self).HP -= dh;
-        cout << "💥The AquaBomb exploded and dealt " << dh << " damage to "<< self->cName << "!" << endl;
+        cout << "The AquaBomb exploded and dealt " << dh << " damage to "<< self->cName << "!" << endl;
     }
     nT -= 1;
 }
@@ -217,6 +217,7 @@ void awakening::StatusLoss(character* selfCharacter, character* oppoCharacter, f
     if(selfCharacter->MP < 0){
         selfCharacter->MP = 0;
     }
+    cout << "Time was somewhat retrieved to the past!" << endl;
 }
 
 //*****************************NIGHTMARE*******************************
@@ -229,6 +230,7 @@ void nightmare::SetupStatus(character* selfCharacter, character* oppoCharacter, 
 
 void nightmare::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     selfCharacter->HP += 200;
+    cout << selfCharacter->cName << " awakened from her horrible nightmare!" <<endl;
 }
 
 //*****************************LOTUS*******************************
@@ -241,6 +243,7 @@ void lotus::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
 
 void lotus::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     selfCharacter->HP -= 200;
+    cout << selfCharacter->cName << " awakened from her sweet dream!" <<endl;
 }
 
 //*****************************TICK TOCK*******************************
@@ -255,6 +258,7 @@ void tickTock::StatusLoss(character* selfCharacter, character* oppoCharacter, fi
 //    cout << currentField->battleRecord.size() << endl;
     note_page addNote = currentField->GetPage(currentField->battleRecord.size() - 1);
     currentField->battleRecord.push_back(addNote);
+    cout <<  "Time has somewhat leaped forward!" <<endl;
 //    cout << currentField->battleRecord.size() << endl;
 }
 

@@ -137,26 +137,37 @@ cmove RainOfNayad(){
 
 cmove Tailwind(character * owner, character * taker, field * place){
     cmove tailwind;
-    tailwind.slf_dm = -20;
+    tailwind.slf_dm = -25;
     tailwind.mName = "Tailwind";
-    tailwind.mInfo = "Randomly remove a negative status problem from the user.";
+    tailwind.mInfo = "Randomly remove negative status problems from the user.";
     vector <status*> badStatL;
     vector <int> NumShoot;
     tailwind.selfTarget = true;
     int NumStatus = owner->statL.size();
+
+//    for(int i = 0; i < NumStatus; i++){
+//        if(owner->statL[i]->sta_neg == true){
+//            badStatL.push_back(owner->statL[i]);
+//            NumShoot.push_back(i);
+//        }
+//    }
+//    int NumBadStatus = badStatL.size();
+//    if(NumBadStatus > 0) {
+//        srand ( time(NULL) );
+//        int deleteNum = rand() % NumBadStatus;
+//        cout << "deleteNum = " << deleteNum << endl;
+//        int deleteOriginNum = NumShoot[deleteNum];
+//        cout << owner->statL[deleteOriginNum]->sta_name << endl;
+//        tailwind.slf_rmStat.push_back(owner->statL[deleteOriginNum]);
+//    }
+
+    srand (time(NULL));
     for(int i = 0; i < NumStatus; i++){
         if(owner->statL[i]->sta_neg == true){
-            badStatL.push_back(owner->statL[i]);
-            NumShoot.push_back(i);
+            if(rand() % 2 == 0) {
+                tailwind.slf_rmStat.push_back(owner->statL[i]);
+            }
         }
-    }
-    int NumBadStatus = badStatL.size();
-    if(NumBadStatus > 0) {
-        srand ( time(NULL) );
-        int deleteNum = rand() % NumBadStatus;
-        cout << "deleteNum = " << deleteNum << endl;
-        int deleteOriginNum = NumShoot[deleteNum];
-        tailwind.slf_rmStat.push_back(owner->statL[deleteOriginNum]);
     }
     return tailwind;
 }
@@ -324,8 +335,8 @@ cmove ShadowMirror(character * owner, character * taker, field * place){
         oppoMoveLen = taker->moveL.size();
     }
     int chooseMoveNum = rand() % oppoMoveLen;
-    cout << rand() << endl;
-    cout << chooseMoveNum << endl;
+//    cout << rand() << endl;
+//    cout << chooseMoveNum << endl;
     shadowMirror = taker->moveL[chooseMoveNum];
 //    cout << "copied " << shadowMirror.mName << endl;
     shadowMirror.mName += "(shadow)";
@@ -399,29 +410,33 @@ cmove ObjectiveIllusion(character * owner, character * taker, field * place){
     objectiveIllusion.mInfo = "A strategic move which recalls the time past 3 turns ago. Using it wisely may override the battle!";
     objectiveIllusion.slf_dm -= 50;
     objectiveIllusion.selfTarget = true;
-    note_page thePage = place->GetPage(place->battleRecord.size() - 4);
+    if(place->battleRecord.size() > 3) {
+        note_page thePage = place->GetPage(place->battleRecord.size() - 4);
 //    character fasterC = thePage.C00;
 //    character slowerC = thePage.C01;
-    character theOwner;
-    character theTaker;
-    if(owner->cName == thePage.C00.cName){
-        theOwner = thePage.C00;
-        theTaker = thePage.C01;
+        character theOwner;
+        character theTaker;
+        if (owner->cName == thePage.C00.cName) {
+            theOwner = thePage.C00;
+            theTaker = thePage.C01;
+        } else if (owner->cName == thePage.C01.cName) {
+            theOwner = thePage.C00;
+            theTaker = thePage.C01;
+        }
+        objectiveIllusion.slf_dh += (theOwner.HP - owner->HP);
+        objectiveIllusion.slf_dm += (theOwner.MP - owner->MP);
+        objectiveIllusion.slf_da += (theOwner.ctr_atk - owner->ctr_atk);
+        objectiveIllusion.slf_dd += (theOwner.ctr_def - owner->ctr_def);
+        objectiveIllusion.slf_ds += (theOwner.ctr_spd - owner->ctr_spd);
+        objectiveIllusion.opo_dh += (theTaker.HP - taker->HP);
+        objectiveIllusion.opo_dm += (theTaker.MP - taker->MP);
+        objectiveIllusion.opo_da += (theTaker.ctr_atk - taker->ctr_atk);
+        objectiveIllusion.opo_dd += (theTaker.ctr_def - taker->ctr_def);
+        objectiveIllusion.opo_ds += (theTaker.ctr_spd - taker->ctr_spd);
     }
-    else if(owner->cName == thePage.C01.cName){
-        theOwner = thePage.C00;
-        theTaker = thePage.C01;
+    else{
+        cout << "There is no history to recall!" << endl;
     }
-    objectiveIllusion.slf_dh += (theOwner.HP - owner->HP);
-    objectiveIllusion.slf_dm += (theOwner.MP - owner->MP);
-    objectiveIllusion.slf_da += (theOwner.ctr_atk - owner->ctr_atk);
-    objectiveIllusion.slf_dd += (theOwner.ctr_def - owner->ctr_def);
-    objectiveIllusion.slf_ds += (theOwner.ctr_spd - owner->ctr_spd);
-    objectiveIllusion.opo_dh += (theTaker.HP - taker->HP);
-    objectiveIllusion.opo_dm += (theTaker.MP - taker->MP);
-    objectiveIllusion.opo_da += (theTaker.ctr_atk - taker->ctr_atk);
-    objectiveIllusion.opo_dd += (theTaker.ctr_def - taker->ctr_def);
-    objectiveIllusion.opo_ds += (theTaker.ctr_spd - taker->ctr_spd);
     return objectiveIllusion;
 
 }

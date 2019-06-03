@@ -158,16 +158,34 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
             dAbility += 1;
         }
         cout.clear();
-        cout << "DDDDDDDDDD:" << dAbility << endl;
+        cout << "Current Estinated Delta Ability:" << dAbility << endl;
     }
 
 
 }
 
+void GodsFighting(){
+    cout << "Welcome!" << endl;
+    cout << "Please insert 1, 2 or 3 to choose game mode!" << endl;
+    cout << "1, [PVP Mode]-----You can battle with a friend here!" << endl;
+    cout << "2, [PVA Mode]-----You can battle with AI here!" << endl;
+    cout << "3, [AVA Mode]-----You can test the balance of the characters here!" << endl;
+    cout << "Other key to exit the game!" << endl;
+    int choice;
+    cin >> choice;
+    if (choice == 1){
+        PVPBattle();
+    }else if(choice == 2){
+        PVABattle();
+    }else if(choice == 3){
+        AVABattle(5,5,true,50);
+    }
+    else{
+        cout << "Bye!";
+    }
+}
+
 int main() {
-    AVABattle(5,5,true,50);
-//    PVPBattle();
-
-
+    GodsFighting();
     return 0;
 }

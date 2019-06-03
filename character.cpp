@@ -103,6 +103,7 @@ string character::print(){ //输出角色状态
     if(statL.size() > 0){
         for(int i = 0; i < statL.size(); i++){
             infof << "{" << statL[i]->sta_name << "} ";
+//            infof << "{" << statL[i]->sta_logo << "} ";
         }
     }
     else{

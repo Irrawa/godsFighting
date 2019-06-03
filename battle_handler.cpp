@@ -385,9 +385,9 @@ int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
             MaxCount = winCount;
             recommendedMove = i;
         }
-                cout.clear();
-                cout << i << ":" << winCount << endl;
-                cout.setstate(std::ios_base::failbit);
+//                cout.clear();
+//                cout << i << ":" << winCount << endl;
+//                cout.setstate(std::ios_base::failbit);
     }
     *this = backupBattle;
     if(AICharacter->cName == fasterCharacter->cName){

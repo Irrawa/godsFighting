@@ -16,7 +16,7 @@ class field_status;
 
 class status{
 public:
-    string sta_name, sta_info;
+    string sta_name, sta_info, sta_logo;
     //      状态名    状态介绍
     int sta_dh = 0, sta_dm = 0, sta_da = 0, sta_dd = 0, sta_ds = 0,
     //状态造成的生命值、魔法值、攻击、防御、速度 的变化
