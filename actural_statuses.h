@@ -159,4 +159,66 @@ public:
 
 };
 
+//*****************************Awakening*******************************
+
+class awakening : public status{
+public:
+    awakening() {
+            sta_name = "AWAKENING";
+            sta_info = "Time will back flow after this status takes effect";
+            iniT = 2;
+            nT = iniT;
+            sta_pos = true;
+            sta_neg = false;
+    }
+
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+};
+
+//*****************************Nightmare*******************************
+
+class nightmare : public status{
+public:
+    nightmare() {
+        sta_name = "NIGHTMARE";
+        sta_info = "She is now suffering a nightmare, it will end sooner or later!";
+        iniT = 1;
+        nT = iniT;
+        sta_pos = true;
+        sta_neg = false;
+    }
+
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+};
+
+//*****************************Lotus*******************************
+
+class lotus : public status{
+public:
+    lotus() {
+        sta_name = "LOTUS";
+        sta_info = "She is now dreaming sweetness, it will end sooner or later!";
+        iniT = 1;
+        nT = iniT;
+        sta_pos = false;
+        sta_neg = true;
+    }
+
+
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+};
 #endif //GODS_ACTURAL_STATUSES_H

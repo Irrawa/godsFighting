@@ -18,7 +18,7 @@ using namespace std;
 void battle_handler::Initialize(){
 
 //    cout << "initializing" << endl;
-    characterList = {IRRAWA(), MEW(), ROSIE()};
+    characterList = {IRRAWA(), MEW(), ROSIE(), ASIBI()};
     cmove aqua_ball = AquaBall();
     cmove wind_slash = WindSlash();
     cmove psycho_boost = PsychoBoost();
@@ -34,6 +34,9 @@ void battle_handler::Initialize(){
     cmove shadow_mirror = ShadowMirror();
     cmove devil_mentel = DevilMentel();
     cmove arc_turbo = ArcTurbo();
+    cmove objective_illusion = ObjectiveIllusion();
+    cmove dark_void = DarkVoid();
+    cmove utopia = Utopia();
     srand(time(NULL));
     Winner = 0;
 }

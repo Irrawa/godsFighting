@@ -107,6 +107,8 @@ public:
         C09 = copy_char(c09);
     }
 
+    void copyCharToCurrent(character* CToChange, int PageLine);
+
 
 
 

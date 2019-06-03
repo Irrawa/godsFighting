@@ -390,3 +390,127 @@ cmove ArcTurbo(){
     RosieMoveList.push_back(arcTurbo);
     return arcTurbo;
 }
+
+//****************************************************************************************************
+
+cmove ObjectiveIllusion(character * owner, character * taker, field * place){
+    cmove objectiveIllusion;
+    objectiveIllusion.mName = "Objective Illusion";
+    objectiveIllusion.mInfo = "A strategic move which recalls the time past 3 turns ago. Using it wisely may override the battle!";
+    objectiveIllusion.slf_dm -= 50;
+    objectiveIllusion.selfTarget = true;
+    note_page thePage = place->GetPage(place->battleRecord.size() - 4);
+//    character fasterC = thePage.C00;
+//    character slowerC = thePage.C01;
+    character theOwner;
+    character theTaker;
+    if(owner->cName == thePage.C00.cName){
+        theOwner = thePage.C00;
+        theTaker = thePage.C01;
+    }
+    else if(owner->cName == thePage.C01.cName){
+        theOwner = thePage.C00;
+        theTaker = thePage.C01;
+    }
+    objectiveIllusion.slf_dh += (theOwner.HP - owner->HP);
+    objectiveIllusion.slf_dm += (theOwner.MP - owner->MP);
+    objectiveIllusion.slf_da += (theOwner.ctr_atk - owner->ctr_atk);
+    objectiveIllusion.slf_dd += (theOwner.ctr_def - owner->ctr_def);
+    objectiveIllusion.slf_ds += (theOwner.ctr_spd - owner->ctr_spd);
+    objectiveIllusion.opo_dh += (theTaker.HP - taker->HP);
+    objectiveIllusion.opo_dm += (theTaker.MP - taker->MP);
+    objectiveIllusion.opo_da += (theTaker.ctr_atk - taker->ctr_atk);
+    objectiveIllusion.opo_dd += (theTaker.ctr_def - taker->ctr_def);
+    objectiveIllusion.opo_ds += (theTaker.ctr_spd - taker->ctr_spd);
+    return objectiveIllusion;
+
+}
+
+cmove ObjectiveIllusion(){
+    cmove objectiveIllusion;
+    objectiveIllusion.mName = "Objective Illusion";
+    objectiveIllusion.selfTarget = true;
+    AllMoveList.push_back(objectiveIllusion);
+    AsibiMoveList.push_back(objectiveIllusion);
+
+    return objectiveIllusion;
+}
+
+//****************************************************************************************************
+cmove DarkVoid(character * owner, character * taker, field * place){
+    cmove darkVoid;
+    darkVoid.mName = "Dark Void";
+    darkVoid.mInfo = "Weave a nightmare for the opponent, temporarily lower her HP.";
+    darkVoid.slf_dm -= 50;
+    bool locateFlag = false;
+    if(taker->statL.size() > 0){
+        for(int i = 0; i < taker->statL.size(); i++){
+            if(taker->statL[i]->sta_name == "NIGHTMARE"){
+                locateFlag = true;
+//                cout << "STATED!!" << endl;
+            }
+        }
+    }
+    if(!locateFlag) {
+        darkVoid.opo_dh -= 200;
+    }
+    darkVoid.opo_adStat.push_back(&(taker->Nightmare));
+    return darkVoid;
+}
+
+cmove DarkVoid(){
+    cmove darkVoid;
+    darkVoid.mName = "Dark Void";
+    AllMoveList.push_back(darkVoid);
+    AsibiMoveList.push_back(darkVoid);
+    return darkVoid;
+}
+
+//****************************************************************************************************
+cmove Utopia(character * owner, character * taker, field * place){
+    cmove utopia;
+    utopia.mName = "Utopia";
+    utopia.mInfo = "Weave a lotus land for the user, temporarily boost her HP.";
+    utopia.slf_dm -= 50;
+    bool locateFlag = false;
+    if(taker->statL.size() > 0){
+        for(int i = 0; i < taker->statL.size(); i++){
+            if(taker->statL[i]->sta_name == "LOTUS"){
+                locateFlag = true;
+//                cout << "STATED!!" << endl;
+            }
+        }
+    }
+    if(!locateFlag) {
+        utopia.opo_dh += 200;
+    }
+    utopia.opo_adStat.push_back(&(taker->Lotus));
+    return utopia;
+}
+cmove Utopia(){
+    cmove utopia;
+    utopia.mName = "Utopia";
+    AllMoveList.push_back(utopia);
+    AsibiMoveList.push_back(utopia);
+    return utopia;
+}
+
+
+
+//****************************************************************************************************
+
+cmove FleetingMeme(){
+
+}
+cmove FleetingMeme(character * owner, character * taker, field * place){
+
+}
+
+//****************************************************************************************************
+
+cmove DoomDesire(){
+
+}
+cmove DoomDesire(character * owner, character * taker, field * place){
+
+}

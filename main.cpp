@@ -15,23 +15,7 @@
 //#include "battle_handler.cpp"
 using namespace std;
 
-//void establish_moves(){
-//    cmove aqua_ball = AquaBall();
-//    cmove wind_slash = WindSlash();
-//    cmove psycho_boost = PsychoBoost();
-//    cmove tsunami = Tsunami();
-//    cmove rain_of_nayad = RainOfNayad();
-//    cmove tailwind = Tailwind();
-//    cmove oneiro_sting = OneiroSting();
-//    cmove nether_veil = NetherVeil();
-//    cmove desolation = Desolation();
-//    cmove toxic_blast = ToxicBlast();
-//    cmove kiss_of_succubus = KissOfSuccubus();
-//    cmove lust_storm = LustStorm();
-//    cmove shadow_mirror = ShadowMirror();
-//    cmove devil_mentel = DevilMentel();
-//    cmove arc_turbo = ArcTurbo();
-//}
+
 
 
 //To disable cout, use the following method:

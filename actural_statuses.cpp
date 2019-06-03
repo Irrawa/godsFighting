@@ -188,3 +188,67 @@ void spiritified::StatusLoss(character* selfCharacter, character* oppoCharacter,
     cout << "Spirified status lost" << endl;
     (*selfCharacter).ctr_def -= ParameterDeliver;
 }
+
+
+//*****************************AWAKENING*******************************
+
+void awakening::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 0;
+    nT = iniT;
+}
+
+void awakening::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    note_page thePage = currentField->GetPage(currentField->battleRecord.size() - 4);
+    character fasterC = thePage.C00;
+    character slowerC = thePage.C01;
+    fasterC.print();
+    slowerC.print();
+//    cout << "FasterC:";
+    fasterC.print();
+    if(selfCharacter->cName == fasterC.cName){
+        thePage.copyCharToCurrent(selfCharacter, 0);
+        thePage.copyCharToCurrent(oppoCharacter, 1);
+    }
+    else if(selfCharacter->cName == slowerC.cName){
+        thePage.copyCharToCurrent(selfCharacter, 0);
+        thePage.copyCharToCurrent(oppoCharacter, 1);
+    }
+    selfCharacter->MP -= 50;
+    if(selfCharacter->MP < 0){
+        selfCharacter->MP = 0;
+    }
+}
+
+//*****************************NIGHTMARE*******************************
+
+void nightmare::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 2;
+    nT = iniT;
+//    selfCharacter->HP -= 200;
+}
+
+void nightmare::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    selfCharacter->HP += 200;
+}
+
+//*****************************LOTUS*******************************
+
+void lotus::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 2;
+    nT = iniT;
+//    selfCharacter->HP -= 200;
+}
+
+void lotus::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+    selfCharacter->HP -= 200;
+}
+
+
+
+
+
+
+
+
+
+

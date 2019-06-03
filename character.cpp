@@ -51,6 +51,7 @@ void character::Initialize(string name, vector <cmove> cmoveList, int hp, int mp
     ctr_atk = atk;
     ctr_def = def;
     ctr_spd = spd;
+    noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned, &StaticOverload, &Spiritified, &Nightmare};
 //    cout << "Character " << cName << " created!" << endl;
 }
 
@@ -175,10 +176,14 @@ void character::SetMove(character* opponent, field* battleField){
 //        cout << "Rosie done!" << endl;
     }
     else if(this->cName == "Asibi"){
-
+        this->moveL.clear();
+        this->moveL.push_back(ObjectiveIllusion(this, opponent, battleField));
+        this->moveL.push_back(DarkVoid(this, opponent, battleField));
+        this->moveL.push_back(Utopia(this, opponent, battleField));
+//        this->moveL.push_back(FleetingMeme(this, opponent, battleField));
+//        this->moveL.push_back(DoomDesire(this, opponent, battleField));
     }
 }
-
 
 //string cName; //角色名
 //int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;

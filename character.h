@@ -46,7 +46,7 @@ public:
     string showMoveInfo();
 
 
-    vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned};
+    vector <status*> noteStatL = {&CharChoke, &CharAquaBlast, &CharToxic, &NetherCircuit, &Poisoned, &StaticOverload, &Spiritified, &Nightmare};
 
     void SetMove(character* opponent, field* battleField);
 
@@ -57,6 +57,9 @@ public:
     poisoned Poisoned;
     staticOverload StaticOverload;
     spiritified Spiritified;
+    awakening Awakening;
+    nightmare Nightmare;
+    lotus Lotus;
 };
 
 #endif //GODS_CHARACTER_H

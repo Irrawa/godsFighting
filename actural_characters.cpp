@@ -45,6 +45,7 @@ character ROSIE(){
 
 character ASIBI(){
     character asibi;
+    asibi.cIntroduction = "Asibi is the lord of dream, though her power is hard to wield, once released will bring the doom of the world. ";
     asibi.Initialize("Asibi", AsibiMoveList, 1100, 1200, 110, 110, 100);
     AllCharacterList.push_back(asibi);
     return asibi;
