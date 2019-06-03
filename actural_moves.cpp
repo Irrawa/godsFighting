@@ -482,9 +482,9 @@ cmove Utopia(character * owner, character * taker, field * place){
         }
     }
     if(!locateFlag) {
-        utopia.opo_dh += 200;
+        utopia.slf_dh += 200;
     }
-    utopia.opo_adStat.push_back(&(taker->Lotus));
+    utopia.slf_adStat.push_back(&(taker->Lotus));
     return utopia;
 }
 cmove Utopia(){
@@ -499,18 +499,39 @@ cmove Utopia(){
 
 //****************************************************************************************************
 
-cmove FleetingMeme(){
-
-}
 cmove FleetingMeme(character * owner, character * taker, field * place){
+    cmove fleetingMeme;
+    fleetingMeme.mName = "Fleeting Meme";
+    fleetingMeme.mInfo = "Freeze the next move into time and skip it!";
+    fleetingMeme.slf_dm -= 10;
+    fleetingMeme.slf_adStat.push_back(&(taker->TickTock));
+    return fleetingMeme;
+}
 
+cmove FleetingMeme(){
+    cmove fleetingMeme;
+    fleetingMeme.mName = "Fleeting Meme";
+    AllMoveList.push_back(fleetingMeme);
+    AsibiMoveList.push_back(fleetingMeme);
+    return fleetingMeme;
 }
 
 //****************************************************************************************************
 
-cmove DoomDesire(){
-
-}
 cmove DoomDesire(character * owner, character * taker, field * place){
-
+    cmove doomDesire;
+    doomDesire.mName = "Doom Desire";
+    doomDesire.mInfo = "This move will release Asibi's Ture Power only after the 50th turn.";
+    doomDesire.mv_atk = 5;
+    if(place->battleRecord.size() >= 50){
+        doomDesire.mv_atk = 500;
+    }
+    return doomDesire;
+}
+cmove DoomDesire(){
+    cmove doomDesire;
+    doomDesire.mName = "Doom Desire";
+    AllMoveList.push_back(doomDesire);
+    AsibiMoveList.push_back(doomDesire);
+    return doomDesire;
 }

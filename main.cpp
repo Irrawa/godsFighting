@@ -165,8 +165,8 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
 }
 
 int main() {
-//    AVABattle(5,5,true,50);
-    PVPBattle();
+    AVABattle(5,5,true,50);
+//    PVPBattle();
 
 
     return 0;

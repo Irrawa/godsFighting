@@ -243,9 +243,20 @@ void lotus::StatusLoss(character* selfCharacter, character* oppoCharacter, field
     selfCharacter->HP -= 200;
 }
 
+//*****************************TICK TOCK*******************************
 
+void tickTock::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
+    iniT = 0;
+    nT = iniT;
+//    selfCharacter->HP -= 200;
+}
 
-
+void tickTock::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
+//    cout << currentField->battleRecord.size() << endl;
+    note_page addNote = currentField->GetPage(currentField->battleRecord.size() - 1);
+    currentField->battleRecord.push_back(addNote);
+//    cout << currentField->battleRecord.size() << endl;
+}
 
 
 

@@ -10,6 +10,7 @@
 #include <string>
 #include "field_status.h"
 #include "status.h"
+//#include "note_page.h"
 
 using namespace std;
 
@@ -216,9 +217,20 @@ public:
 
 
     virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
-
-
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 
+};
+
+class tickTock : public status{
+public:
+    tickTock(){
+        sta_name = "TICK TOCK";
+        sta_info = "next turn will escape from time!";
+        iniT = 0;
+        sta_pos = false;
+        sta_neg = false;
+    }
+    virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+    virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 #endif //GODS_ACTURAL_STATUSES_H

@@ -180,8 +180,8 @@ void character::SetMove(character* opponent, field* battleField){
         this->moveL.push_back(ObjectiveIllusion(this, opponent, battleField));
         this->moveL.push_back(DarkVoid(this, opponent, battleField));
         this->moveL.push_back(Utopia(this, opponent, battleField));
-//        this->moveL.push_back(FleetingMeme(this, opponent, battleField));
-//        this->moveL.push_back(DoomDesire(this, opponent, battleField));
+        this->moveL.push_back(FleetingMeme(this, opponent, battleField));
+        this->moveL.push_back(DoomDesire(this, opponent, battleField));
     }
 }
 

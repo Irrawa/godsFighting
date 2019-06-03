@@ -60,6 +60,7 @@ public:
     awakening Awakening;
     nightmare Nightmare;
     lotus Lotus;
+    tickTock TickTock;
 };
 
 #endif //GODS_CHARACTER_H
