@@ -60,7 +60,6 @@ void poisonAura::SetupStatus(character* maker, character* other, field* currentF
     nT = iniT;
     owner = maker;
     non_owner = other;
-//    cout << "Poison Aura status setup..." << endl;
 
 }
 
@@ -74,7 +73,6 @@ void poisonAura::StatusTakeEffect(character* maker, character* other, field* cur
     otherTempStatus->SetupStatus(other, maker, currentField);
     (*other).add_status(otherTempStatus, maker, currentField);
 
-//    cout << "毒气效果生效："<< sta_ds << endl;
     nT -= 1;
 }
 

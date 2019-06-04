@@ -51,7 +51,18 @@ void battle_handler::showCharacterList(vector <character> theList){
 void battle_handler::ChooseCharacter(vector <character>* showcase, int playerNum){
     bool pChooseSuccess = false;
     while(!pChooseSuccess){
-        cout << "P" << playerNum << " please choose your character:" << endl;
+        if(GameMode == 2 and playerNum == 2){
+            cout << "Please choose your opponent's character!" << endl;
+        }else if(GameMode == 3){
+            if(playerNum == 1){
+                cout << "Please choose the character you want to adjust!" << endl;
+            }else{
+                cout << "Please choose the character you want to base on!" << endl;
+            }
+        }
+        else {
+            cout << "P" << playerNum << " please choose your character:" << endl;
+        }
         cout << "Insert the number to see more information about the character..." << endl;
         int characterNum = showcase->size();
         showCharacterList(*showcase);
@@ -69,11 +80,11 @@ void battle_handler::ChooseCharacter(vector <character>* showcase, int playerNum
                 if(pVNum == 'y' || pVNum == 'Y') {
                     if(playerNum == 1) {
                         p1Character = (*showcase)[pChooseNum - 1];
-                        cout << "P"<< playerNum <<" choosed " << p1Character.cName << " as his god! Good luck to you!"<< endl;
+                        cout << "P"<< playerNum <<" choosed " << p1Character.cName << " as his god! Good luck to you!\n"<< endl;
                     }
                     else if(playerNum == 2) {
                         p2Character = (*showcase)[pChooseNum - 1];
-                        cout << "P"<< playerNum <<" choosed " << p2Character.cName << " as his god! Good luck to you!"<< endl;
+                        cout << "P"<< playerNum <<" choosed " << p2Character.cName << " as his god! Good luck to you!\n"<< endl;
                     }
                     (*showcase).erase(showcase->begin() + pChooseNum - 1);
                     pVerified = true;
@@ -101,6 +112,7 @@ void battle_handler::DecideCharacter(){
     ChooseCharacter(&showcase, 2);
     p1Character.SetMove(&p2Character, &BattleField);
     p2Character.SetMove(&p1Character, &BattleField);
+    BattleField.build_begin_state(p1Character,p2Character);
 }
 
 void battle_handler::JudgeSpeed(){
@@ -370,24 +382,13 @@ int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
         for (int j = 0; j < IQ; j++) {
             if(MontCarlo(this, i, AIplayerNum) == 2){
                 winCount += 1;
-//                cout.clear();
-//                cout << i << ": Win" << endl;
-//                cout.setstate(std::ios_base::failbit);
             }
-//            else {
-//                cout.clear();
-//                cout << i << ": Lose" << endl;
-//                cout.setstate(std::ios_base::failbit);
-//            }
         }
         winList.push_back(winCount);
         if(winCount > MaxCount){
             MaxCount = winCount;
             recommendedMove = i;
         }
-//                cout.clear();
-//                cout << i << ":" << winCount << endl;
-//                cout.setstate(std::ios_base::failbit);
     }
     *this = backupBattle;
     if(AICharacter->cName == fasterCharacter->cName){
@@ -399,5 +400,3 @@ int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
     cout.clear();//解放cout输出
     return recommendedMove;
 }
-
-//Rosie.SufferStatus(&Irrawa, &TestField);

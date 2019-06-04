@@ -23,6 +23,7 @@ using namespace std;
 void PVPBattle(){
     srand (time(NULL));
     battle_handler PVPBattle;
+    PVPBattle.GameMode = 1;
     PVPBattle.Initialize();
     PVPBattle.DecideCharacter();
     PVPBattle.p1Character.print();
@@ -62,6 +63,7 @@ void PVPBattle(){
 void PVABattle(){
     srand (time(NULL));
     battle_handler PVABattle;
+    PVABattle.GameMode = 2;
     PVABattle.Initialize();
     PVABattle.AIMode = true;
     PVABattle.DecideCharacter();
@@ -107,6 +109,7 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
     }
     srand(time(NULL));
     battle_handler AVABattle;
+    AVABattle.GameMode = 3;
     AVABattle.Initialize();
     AVABattle.AIMode = true;
     AVABattle.DecideCharacter();
@@ -117,13 +120,13 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
         AVABattle = backupBattle;
         if(doBalancing){
 //            int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;
-            AVABattle.p1Character.maxHP -= dAbility * 10;
-            AVABattle.p1Character.maxMP -= dAbility * 10;
-            AVABattle.p1Character.HP -= dAbility * 10;
-            AVABattle.p1Character.MP -= dAbility * 10;
-            AVABattle.p1Character.ctr_atk -= dAbility;
-            AVABattle.p1Character.ctr_def -= dAbility;
-            AVABattle.p1Character.ctr_spd -= dAbility;
+            AVABattle.p1Character.maxHP += dAbility * 10;
+            AVABattle.p1Character.maxMP += dAbility * 10;
+            AVABattle.p1Character.HP += dAbility * 10;
+            AVABattle.p1Character.MP += dAbility * 10;
+            AVABattle.p1Character.ctr_atk += dAbility;
+            AVABattle.p1Character.ctr_def += dAbility;
+            AVABattle.p1Character.ctr_spd += dAbility;
             cout.setstate(std::ios_base::failbit);
         }
         while (!AVABattle.Winner) {
@@ -158,7 +161,7 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
             dAbility += 1;
         }
         cout.clear();
-        cout << "Current Estinated Delta Ability:" << dAbility << endl;
+        cout << "Current Estimated Delta Ability:" << dAbility << endl;
     }
 
 

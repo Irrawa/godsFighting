@@ -10,6 +10,34 @@
 #include "cmove.h"
 using namespace std;
 
+void field::build_begin_state(character C1, character C2){
+    NewPage();
+    if(C1.ctr_spd > C2.ctr_spd){
+        WriteRecord(&C1,0);
+        WriteRecord(&C2,1);
+        WriteRecord(&C1,2);
+        WriteRecord(&C2,3);
+        WriteRecord(&C1,4);
+        WriteRecord(&C2,5);
+        WriteRecord(&C1,6);
+        WriteRecord(&C2,7);
+        WriteRecord(&C1,8);
+        WriteRecord(&C2,9);
+
+    }else{
+        WriteRecord(&C1,1);
+        WriteRecord(&C2,0);
+        WriteRecord(&C1,3);
+        WriteRecord(&C2,2);
+        WriteRecord(&C1,5);
+        WriteRecord(&C2,4);
+        WriteRecord(&C1,7);
+        WriteRecord(&C2,6);
+        WriteRecord(&C1,9);
+        WriteRecord(&C2,8);
+    }
+}
+
 void field::add_status(field_status* S, character* maker, character* other){
     field_status* tempStatus = S;
     bool duplicateFlag = false;
@@ -85,7 +113,7 @@ void field::NewPage(){
 note_page field::GetPage(int PageNum){
     int currentTail = battleRecord.size() - 1;
     if(PageNum > currentTail && currentTail >= 0){
-        cout << "Recalled bad page No." << PageNum << ", returning current tail page No. "<< currentTail << "!!!" << endl;
+//        cout << "Recalled bad page No." << PageNum << ", returning current tail page No. "<< currentTail << "!!!" << endl;
         return battleRecord[currentTail];
     }
     else if(currentTail >= 0 && PageNum >= 0){
@@ -97,7 +125,7 @@ note_page field::GetPage(int PageNum){
         return NewPage;
     }
     else{
-        cout << "Recalled bad page No." << PageNum << ", returning current head page No. "<< 0 << "!!!" << endl;
+//        cout << "Recalled bad page No." << PageNum << ", returning current head page No. "<< 0 << "!!!" << endl;
         return battleRecord[0];
     }
 }

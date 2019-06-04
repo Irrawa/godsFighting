@@ -29,21 +29,20 @@ void cmove::SpellMove(character *speller, character *taker, field *thisField){
     if(opo_dh < 0){
         cout << "The move <" << mName <<"> inflicted *" << -opo_dh << "* damage to " << (*taker).cName << endl;
     }
+    if(slf_dh < 0){
+        cout << "The move <" << mName <<"> inflicted *" << -slf_dh << "* damage to " << (*speller).cName << endl;
+    }
+    if(opo_dh > 0){
+        cout << "The move <" << mName <<"> healed *" << opo_dh << "* to " << (*taker).cName << endl;
+    }
+    if(slf_dh > 0){
+        cout << "The move <" << mName <<"> healed *" << slf_dh << "* to " << (*speller).cName << endl;
+    }
+
 }
 
 void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     owner = speller;
-    (*speller).HP += slf_dh;
-    (*speller).MP += slf_dm;
-    (*speller).ctr_atk += slf_da;
-    (*speller).ctr_def += slf_dd;
-    (*speller).ctr_spd += slf_ds;
-    (*taker).HP += opo_dh;
-    (*taker).MP += opo_dm;
-    (*taker).ctr_atk += opo_da;
-    (*taker).ctr_def += opo_dd;
-    (*taker).ctr_spd += opo_ds;
-
     int rmLen = slf_rmStat.size();  //删除自身的指定状态列表
     if(rmLen > 0){
         int len = speller->statL.size();
@@ -109,6 +108,16 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
 
         }
     }
+    (*speller).HP += slf_dh;
+    (*speller).MP += slf_dm;
+    (*speller).ctr_atk += slf_da;
+    (*speller).ctr_def += slf_dd;
+    (*speller).ctr_spd += slf_ds;
+    (*taker).HP += opo_dh;
+    (*taker).MP += opo_dm;
+    (*taker).ctr_atk += opo_da;
+    (*taker).ctr_def += opo_dd;
+    (*taker).ctr_spd += opo_ds;
 }
 //    cout << (*taker).HP << endl;
 

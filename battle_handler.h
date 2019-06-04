@@ -30,6 +30,7 @@ public:
     bool AIMode = false;
     bool MirrorMode = false;
     int AIIQ = 20;
+    int GameMode = 1; //1:PVP; 2:PVA; 3:AVA
 
     void Initialize();//初始化，包括创建角色名单和所有技能。
     void showCharacterList(vector <character> theList); //打印角色名单

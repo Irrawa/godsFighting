@@ -144,23 +144,6 @@ cmove Tailwind(character * owner, character * taker, field * place){
     vector <int> NumShoot;
     tailwind.selfTarget = true;
     int NumStatus = owner->statL.size();
-
-//    for(int i = 0; i < NumStatus; i++){
-//        if(owner->statL[i]->sta_neg == true){
-//            badStatL.push_back(owner->statL[i]);
-//            NumShoot.push_back(i);
-//        }
-//    }
-//    int NumBadStatus = badStatL.size();
-//    if(NumBadStatus > 0) {
-//        srand ( time(NULL) );
-//        int deleteNum = rand() % NumBadStatus;
-//        cout << "deleteNum = " << deleteNum << endl;
-//        int deleteOriginNum = NumShoot[deleteNum];
-//        cout << owner->statL[deleteOriginNum]->sta_name << endl;
-//        tailwind.slf_rmStat.push_back(owner->statL[deleteOriginNum]);
-//    }
-
     srand (time(NULL));
     for(int i = 0; i < NumStatus; i++){
         if(owner->statL[i]->sta_neg == true){
@@ -235,6 +218,7 @@ cmove Desolation(character * owner, character * taker, field * place){
     desolation.mName = "Desolation";
     desolation.mInfo = "Taint the battlefield, giving all the character poison status each turn.";
     desolation.field_adStat.push_back(&(place->PoisonAura));
+    desolation.selfTarget = true;
     return desolation;
 }
 
@@ -410,10 +394,19 @@ cmove ObjectiveIllusion(character * owner, character * taker, field * place){
     objectiveIllusion.mInfo = "A strategic move which recalls the time past 3 turns ago. Using it wisely may override the battle!";
     objectiveIllusion.slf_dm -= 50;
     objectiveIllusion.selfTarget = true;
-    if(place->battleRecord.size() > 3) {
+
+    int NumStatus = owner->statL.size();
+    for(int i = 0; i < NumStatus; i++){
+        objectiveIllusion.slf_rmStat.push_back(owner->statL[i]);
+    }
+
+    NumStatus = taker->statL.size();
+    for(int i = 0; i < NumStatus; i++){
+        objectiveIllusion.opo_rmStat.push_back(taker->statL[i]);
+    }
+
+    if(place->battleRecord.size() > 1) {
         note_page thePage = place->GetPage(place->battleRecord.size() - 4);
-//    character fasterC = thePage.C00;
-//    character slowerC = thePage.C01;
         character theOwner;
         character theTaker;
         if (owner->cName == thePage.C00.cName) {
@@ -455,7 +448,7 @@ cmove ObjectiveIllusion(){
 cmove DarkVoid(character * owner, character * taker, field * place){
     cmove darkVoid;
     darkVoid.mName = "Dark Void";
-    darkVoid.mInfo = "Weave a nightmare for the opponent, temporarily lower her HP.";
+    darkVoid.mInfo = "Weave a nightmare for yourself, temporarily lower your HP.";
     darkVoid.slf_dm -= 50;
     bool locateFlag = false;
     if(taker->statL.size() > 0){
@@ -485,8 +478,9 @@ cmove DarkVoid(){
 cmove Utopia(character * owner, character * taker, field * place){
     cmove utopia;
     utopia.mName = "Utopia";
-    utopia.mInfo = "Weave a lotus land for the user, temporarily boost her HP.";
+    utopia.mInfo = "Weave a lotus land for your opponent, temporarily boost her HP.";
     utopia.slf_dm -= 50;
+    utopia.selfTarget = true;
     bool locateFlag = false;
     if(taker->statL.size() > 0){
         for(int i = 0; i < taker->statL.size(); i++){
