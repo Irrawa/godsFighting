@@ -242,7 +242,7 @@ cmove ToxicBlast(character * owner, character * taker, field * place){
     int totalDh = 0;
     vector <status*> NewStatL;
     for(int i = 0; i < statLen; i++){
-        if(taker->statL[i]->sta_name == "TOXIC" or taker->statL[i]->sta_name == "POISONED"){
+        if(taker->statL[i]->specialProperty == "poison"){
             toxicBlast.opo_rmStat.push_back(taker->statL[i]);
             totalDh += 5 * taker->statL[i]->sta_dh * owner->ctr_atk / taker->ctr_def;
         }
@@ -397,12 +397,16 @@ cmove ObjectiveIllusion(character * owner, character * taker, field * place){
 
     int NumStatus = owner->statL.size();
     for(int i = 0; i < NumStatus; i++){
-        objectiveIllusion.slf_rmStat.push_back(owner->statL[i]);
+        if(owner->statL[i]->specialProperty == "dream"){
+            objectiveIllusion.slf_rmStat.push_back(owner->statL[i]);
+        }
     }
 
     NumStatus = taker->statL.size();
     for(int i = 0; i < NumStatus; i++){
-        objectiveIllusion.opo_rmStat.push_back(taker->statL[i]);
+        if(taker->statL[i]->specialProperty == "dream") {
+            objectiveIllusion.opo_rmStat.push_back(taker->statL[i]);
+        }
     }
 
     if(place->battleRecord.size() > 1) {
@@ -413,8 +417,8 @@ cmove ObjectiveIllusion(character * owner, character * taker, field * place){
             theOwner = thePage.C00;
             theTaker = thePage.C01;
         } else if (owner->cName == thePage.C01.cName) {
-            theOwner = thePage.C00;
-            theTaker = thePage.C01;
+            theOwner = thePage.C01;
+            theTaker = thePage.C00;
         }
         objectiveIllusion.slf_dh += (theOwner.HP - owner->HP);
         objectiveIllusion.slf_dm += (theOwner.MP - owner->MP);
@@ -448,14 +452,13 @@ cmove ObjectiveIllusion(){
 cmove DarkVoid(character * owner, character * taker, field * place){
     cmove darkVoid;
     darkVoid.mName = "Dark Void";
-    darkVoid.mInfo = "Weave a nightmare for yourself, temporarily lower your HP.";
+    darkVoid.mInfo = "Weave a nightmare for your opponent, temporarily lower her HP.";
     darkVoid.slf_dm -= 50;
     bool locateFlag = false;
     if(taker->statL.size() > 0){
         for(int i = 0; i < taker->statL.size(); i++){
             if(taker->statL[i]->sta_name == "NIGHTMARE"){
                 locateFlag = true;
-//                cout << "STATED!!" << endl;
             }
         }
     }
@@ -478,15 +481,14 @@ cmove DarkVoid(){
 cmove Utopia(character * owner, character * taker, field * place){
     cmove utopia;
     utopia.mName = "Utopia";
-    utopia.mInfo = "Weave a lotus land for your opponent, temporarily boost her HP.";
+    utopia.mInfo = "Weave a lotus land for you to dream on, temporarily boost your HP.";
     utopia.slf_dm -= 50;
     utopia.selfTarget = true;
     bool locateFlag = false;
-    if(taker->statL.size() > 0){
-        for(int i = 0; i < taker->statL.size(); i++){
-            if(taker->statL[i]->sta_name == "LOTUS"){
+    if(owner->statL.size() > 0){
+        for(int i = 0; i < owner->statL.size(); i++){
+            if(owner->statL[i]->sta_name == "LOTUS"){
                 locateFlag = true;
-//                cout << "STATED!!" << endl;
             }
         }
     }

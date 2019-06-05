@@ -22,7 +22,7 @@ public:
     //状态造成的生命值、魔法值、攻击、防御、速度 的变化
             sta_Odh = 0, sta_Odm = 0, sta_Oda = 0, sta_Odd = 0, sta_Ods = 0,
     //对对手造成的...变化
-            iniT = 1, nT = 1, sta_id = 0;
+            iniT = 1, nT = 1;
     //初始持续时间 目前持续时间 状态id
 
     vector <cmove> LinkedMoves;
@@ -35,6 +35,8 @@ public:
     // 该状态是否可被玩家看到;
 
     int ParameterDeliver = 0;
+
+    string specialProperty;
 
 
     virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);

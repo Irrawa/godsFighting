@@ -15,7 +15,7 @@ void choke::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
     iniT = 3;
     nT = iniT;
     sta_ds = -15;
-//    cout << "Choke status setup..." << endl;
+    cout << "The Choke status slowed " << selfCharacter->cName << "!" <<  endl;
 }
 
 void choke::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -36,14 +36,10 @@ void choke::StatusLoss(character* selfCharacter, character* oppoCharacter, field
 void aquaBlast::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
-//    cout << "AquaBlast status setup..." << endl;
+    cout << "The Aqua Bomb was set on "<< selfCharacter->cName << "! Watch out!" << endl;
 }
 
-void aquaBlast::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
-    if (nT > 0 && nT < iniT) {
-        sta_ds = 0;
-    }
-}
+void aquaBlast::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {}
 
 void aquaBlast::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField) {
     cout << "AquaBlast status lost" << endl;
@@ -53,7 +49,7 @@ void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* curren
     if(nT <= 0) {
         int dh = 30000 / self->ctr_def;
         (*self).HP -= dh;
-        cout << "The AquaBomb exploded and dealt " << dh << " damage to "<< self->cName << "!" << endl;
+        cout << "The Aqua Bomb exploded and dealt " << dh << " damage to "<< self->cName << "!" << endl;
     }
     nT -= 1;
 }
@@ -62,9 +58,9 @@ void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* curren
 void netherCircuit::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
-    sta_da = 20;
-    sta_dd = 20;
-//    cout << "Nether Circuit status setup..." << endl;
+    sta_da = 15;
+    sta_dd = 15;
+    cout << selfCharacter->cName << " can now heal herself from poisoning." << endl;
 }
 
 void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -72,7 +68,7 @@ void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter
     vector <status*> targetSList = selfCharacter->statL;
     int Length = targetSList.size();
     for(int i = 0; i < Length; i++){
-        if(targetSList[i]->sta_name == "TOXIC" or targetSList[i]->sta_name == "POISONED"){
+        if(targetSList[i]->specialProperty == "poison"){
             if(targetSList[i]->sta_dh < 0) {
                 targetSList[i]->sta_dh *= -1;
             }
@@ -101,7 +97,7 @@ void toxic::SetupStatus(character* selfCharacter, character* oppoCharacter, fiel
     nT = iniT;
     sta_dh = -10 - selfCharacter->ctr_atk / 10;
     toxicEnhancer = 1;
-//    cout << "Toxic status setup..." << endl;
+    cout << selfCharacter->cName << " is badly poisoned! She will suffer increasingly lethal pain from this." << endl;
 }
 
 void toxic::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -122,7 +118,7 @@ void poisoned::SetupStatus(character* selfCharacter, character* oppoCharacter, f
     iniT = 5;
     nT = iniT;
     sta_dh = -30;
-//    cout << "Poisoned status setup..." << endl;
+    cout << selfCharacter->cName << " is poisoned! She will suffer pain from this in several turns." << endl;
 }
 
 void poisoned::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -137,7 +133,7 @@ void poisoned::StatusLoss(character* selfCharacter, character* oppoCharacter, fi
 void staticOverload::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 3;
     nT = iniT;
-//    cout << "Static Overload status setup..." << endl;
+    cout << selfCharacter->cName << " is surrounded by a static storm, deflecting some damage back to her opponent! " << endl;
 }
 
 void staticOverload::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
@@ -174,7 +170,7 @@ void spiritified::SetupStatus(character* selfCharacter, character* oppoCharacter
 //    cout << "SETUPED!!!" << endl;
     ParameterDeliver += (selfCharacter->ctr_def) * 3;
     (*selfCharacter).ctr_def += ParameterDeliver;
-//    cout << "Spirified status setup..." << endl;
+    cout << selfCharacter->cName << "'s body disappeared! She is now nearly indamageable!" << endl;
 }
 
 void spiritified::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {
@@ -225,12 +221,18 @@ void awakening::StatusLoss(character* selfCharacter, character* oppoCharacter, f
 void nightmare::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
+    specialProperty = "dream";
 //    selfCharacter->HP -= 200;
 }
 
 void nightmare::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
-    selfCharacter->HP += 200;
-    cout << selfCharacter->cName << " awakened from her horrible nightmare!" <<endl;
+    if(nT <= 0) {
+        selfCharacter->HP += 200;
+        cout << selfCharacter->cName << " awakened from her horrible nightmare!" << endl;
+    }
+    else{
+        cout << selfCharacter->cName << "'s nightmare was turned to reality!" << endl;
+    }
 }
 
 //*****************************LOTUS*******************************
@@ -238,12 +240,18 @@ void nightmare::StatusLoss(character* selfCharacter, character* oppoCharacter, f
 void lotus::SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField){
     iniT = 2;
     nT = iniT;
+    specialProperty = "dream";
 //    selfCharacter->HP -= 200;
 }
 
 void lotus::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
-    selfCharacter->HP -= 200;
-    cout << selfCharacter->cName << " awakened from her sweet dream!" <<endl;
+    if(nT <= 0) {
+        selfCharacter->HP -= 200;
+        cout << selfCharacter->cName << " awakened from her sweet dream!" << endl;
+    }
+    else{
+    cout << selfCharacter->cName << "'s wonderland was turned to reality!" << endl;
+    }
 }
 
 //*****************************TICK TOCK*******************************

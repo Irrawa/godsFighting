@@ -141,9 +141,11 @@ void battle_handler::JudgeSpeed(){
 
 void battle_handler::GeneralChooseMove(int playNum){
     if(playNum == 1){
+        cout << p1Character.cName <<"'s commander, please choose the move..." << endl;
         p1Character.showMoveInfo();
     }
     else{
+        cout << p2Character.cName <<"'s commander, please choose the move..." << endl;
         p2Character.showMoveInfo();
     }
 

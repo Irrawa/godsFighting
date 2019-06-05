@@ -23,7 +23,7 @@ public:
     nayadBreeze(){
         sta_name = "NAYAD BREEZE";
         sta_info = "Increase speed each turn, the longer the status last, the more the speed increases.\nStill helps recover some HP.";
-//        sta_logo = "\uD83C\uDF2C";
+        sta_logo = "././././././././././././././././././././././";
         iniT = 5;
         nT = iniT;
         sta_pos = false;
@@ -49,7 +49,7 @@ public:
     poisonAura(){
         sta_name = "POISON AURA";
         sta_info = "add Poison status to each character each turn.";
-//        sta_logo = "\uD83E\uDDA0";
+        sta_logo = "O。O。O。O。O。O。O。O。O。O。O。O。O。O。O。O。";
         iniT = 5;
         nT = iniT;
     }

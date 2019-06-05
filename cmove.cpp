@@ -24,7 +24,10 @@ void cmove::set_SODhmads(int sh = 0,int sm = 0,int sa = 0,int sd = 0,int ss = 0,
 }
 
 void cmove::SpellMove(character *speller, character *taker, field *thisField){
-    int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
+    if((*taker).ctr_def < 1){
+        (*taker).ctr_def = 1;
+    }
+    int damage = mv_atk * (*speller).ctr_atk / ((*taker).ctr_def + 1);
     opo_dh -= damage;
     if(opo_dh < 0){
         cout << "The move <" << mName <<"> inflicted *" << -opo_dh << "* damage to " << (*taker).cName << endl;

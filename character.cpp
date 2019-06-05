@@ -31,7 +31,7 @@ void character::add_status(status* S, character* creator, field* thisField){
         }
     }
     if (!duplicateFlag) {
-        tempStatus->SetupStatus(creator, this, thisField);
+        tempStatus->SetupStatus(this, creator, thisField);
         (*this).statL.push_back(tempStatus);
 //        cout << "添加" << endl;
     } else {

@@ -42,7 +42,7 @@ public:
     //效果产生影响
     virtual void StatusLoss(character* maker, character* other, field* currentField);
     //状态消失时调用的函数，主要功能为将一些状态造成的改变复原（如攻击力降低等）
-    string get_information();
+    string print_status();
 
 };
 

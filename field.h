@@ -23,7 +23,6 @@ class field{
 public:
     vector <field_status*> FStatusL;
     // 场地状态列表
-    vector <note_page> BattleRecord;
 
     character fasterCharacter;
     character slowerCharacter;
@@ -81,6 +80,8 @@ public:
     note_page GetCurrentPage();  //读取当前页
 
     void WriteRecord(character *targetC, int pageLine);
+
+    void printStatus();
 
 
 

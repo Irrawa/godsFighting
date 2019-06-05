@@ -20,42 +20,70 @@ using namespace std;
 
 //To disable cout, use the following method:
 
+void showScreen(battle_handler battleHandler){
+    cout << "============================================" << endl;
+    int fsLen = battleHandler.BattleField.FStatusL.size();
+    if(fsLen > 0){
+        for(int i = 0; i < fsLen; i++){
+            cout << battleHandler.BattleField.FStatusL[i]->sta_logo << endl;
+        }
+    }
+    battleHandler.p1Character.print();
+    cout << endl;
+    cout << endl;
+    battleHandler.p2Character.print();
+    if(fsLen > 0){
+        for(int i = fsLen - 1; i >= 0; i--){
+            cout << battleHandler.BattleField.FStatusL[i]->sta_logo << endl;
+        }
+    }
+    cout << "============================================" << endl;
+}
+
+
+
 void PVPBattle(){
     srand (time(NULL));
     battle_handler PVPBattle;
     PVPBattle.GameMode = 1;
     PVPBattle.Initialize();
     PVPBattle.DecideCharacter();
-    PVPBattle.p1Character.print();
-    PVPBattle.p2Character.print();
-    while(!PVPBattle.Winner) {
+    showScreen(PVPBattle);
+    bool play = true;
+    while(play == true) {
         PVPBattle.JudgeSpeed();
-        PVPBattle.GeneralChooseMove(1);
-        PVPBattle.GeneralChooseMove(2);
-        if(PVPBattle.CastMove()){
+        if(rand() % 2 == 1) {
+            PVPBattle.GeneralChooseMove(1);
+            PVPBattle.GeneralChooseMove(2);
+        }
+        else{
+            PVPBattle.GeneralChooseMove(2);
+            PVPBattle.GeneralChooseMove(1);
+        }
+        if (PVPBattle.CastMove()) {
             break;
         };
         bool doubleBreak = false;
-        while(PVPBattle.IfSpeed()){
+        int speedCount = 0;
+        while (PVPBattle.IfSpeed() && speedCount < 3) {
             PVPBattle.SpeedChooseMove();
-            if(PVPBattle.SpeedCastMove()){
+            if (PVPBattle.SpeedCastMove()) {
                 doubleBreak = true;
                 break;
             };
+            speedCount++;
         }
-        if(doubleBreak){
+        if (doubleBreak) {
             break;
         }
-        if(PVPBattle.DoStatus()){
+        if (PVPBattle.DoStatus()) {
             break;
         };
-        PVPBattle.p1Character.print();
-        PVPBattle.p2Character.print();
+        showScreen(PVPBattle);
     }
-    if(PVPBattle.Winner == 1) {
+    if (PVPBattle.Winner == 1) {
         cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p1Character.cName << " is winner!";
-    }
-    else{
+    } else {
         cout << "P" << PVPBattle.Winner << " and his guardian god " << PVPBattle.p2Character.cName << " is winner!";
     }
 }
@@ -67,8 +95,8 @@ void PVABattle(){
     PVABattle.Initialize();
     PVABattle.AIMode = true;
     PVABattle.DecideCharacter();
-    PVABattle.p1Character.print();
-    PVABattle.p2Character.print();
+    showScreen(PVABattle);
+    bool play = true;
     while(!PVABattle.Winner) {
         PVABattle.JudgeSpeed();
         PVABattle.GeneralChooseMove(1);
@@ -77,12 +105,15 @@ void PVABattle(){
             break;
         };
         bool doubleBreak = false;
-        while(PVABattle.IfSpeed()){
+        int speedCount = 0;
+        while(PVABattle.IfSpeed() && speedCount < 3){
             PVABattle.SpeedChooseMove();
+            speedCount += 1;
             if(PVABattle.SpeedCastMove()){
                 doubleBreak = true;
                 break;
             };
+            speedCount += 1;
         }
         if(doubleBreak){
             break;
@@ -90,8 +121,7 @@ void PVABattle(){
         if(PVABattle.DoStatus()){
             break;
         };
-        PVABattle.p1Character.print();
-        PVABattle.p2Character.print();
+        showScreen(PVABattle);
     }
     if(PVABattle.Winner == 1) {
         cout << "P" << PVABattle.Winner << " and his guardian god " << PVABattle.p1Character.cName << " is winner!";
@@ -113,8 +143,7 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
     AVABattle.Initialize();
     AVABattle.AIMode = true;
     AVABattle.DecideCharacter();
-    AVABattle.p1Character.print();
-    AVABattle.p2Character.print();
+    showScreen(AVABattle);
     battle_handler backupBattle = AVABattle;
     for (int i = 0; i < iterator; i++) {
         AVABattle = backupBattle;
@@ -137,12 +166,14 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
                 break;
             };
             bool doubleBreak = false;
-            while (AVABattle.IfSpeed()) {
+            int speedCount = 0;
+            while (AVABattle.IfSpeed() && speedCount < 3) {
                 AVABattle.SpeedChooseMove();
                 if (AVABattle.SpeedCastMove()) {
                     doubleBreak = true;
                     break;
                 };
+                speedCount++;
             }
             if (doubleBreak) {
                 break;
@@ -150,8 +181,7 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
             if (AVABattle.DoStatus()) {
                 break;
             };
-            AVABattle.p1Character.print();
-            AVABattle.p2Character.print();
+            showScreen(AVABattle);
         }
         if (AVABattle.Winner == 1) {
             cout << "P" << AVABattle.Winner << " and his guardian god " << AVABattle.p1Character.cName << " is winner!";
@@ -168,24 +198,34 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
 }
 
 void GodsFighting(){
-    cout << "Welcome!" << endl;
-    cout << "Please insert 1, 2 or 3 to choose game mode!" << endl;
-    cout << "1, [PVP Mode]-----You can battle with a friend here!" << endl;
-    cout << "2, [PVA Mode]-----You can battle with AI here!" << endl;
-    cout << "3, [AVA Mode]-----You can test the balance of the characters here!" << endl;
-    cout << "Other key to exit the game!" << endl;
-    int choice;
-    cin >> choice;
-    if (choice == 1){
-        PVPBattle();
-    }else if(choice == 2){
-        PVABattle();
-    }else if(choice == 3){
-        AVABattle(5,5,true,50);
+    bool p = true;
+    while(p) {
+        cout << "Welcome!" << endl;
+        cout << "Please insert 1, 2 or 3 to choose game mode!" << endl;
+        cout << "1, [PVP Mode]-----You can battle with a friend here!" << endl;
+        cout << "2, [PVA Mode]-----You can battle with AI here!" << endl;
+        cout << "3, [AVA Mode]-----You can test the balance of the characters here!" << endl;
+        cout << "Other key to exit the game!" << endl;
+        int choice;
+        cin >> choice;
+        if (choice == 1) {
+            PVPBattle();
+            p = false;
+        } else if (choice == 2) {
+            PVABattle();
+            p = false;
+        } else if (choice == 3) {
+            AVABattle(5, 5, true, 50);
+            p = false;
+        }
+        string playAgain;
+        cout << "Do you want to play again? Y to play again! Other to return to main menu!" << endl;
+        cin >> playAgain;
+        if(playAgain == "y" || playAgain == "Y"){
+            p = true;
+        }
     }
-    else{
-        cout << "Bye!";
-    }
+    cout << "Bye!" << endl;
 }
 
 int main() {

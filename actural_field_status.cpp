@@ -40,11 +40,9 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
     (*other).ctr_atk += sta_Oda;
     (*other).ctr_def += sta_Odd;
     (*other).ctr_spd += sta_Ods;
-//    cout << "奈亚德效果生效："<< sta_ds << endl;
+    cout << maker->cName << " is imbued with Nayad's Power. "<< endl;
     nT -= 1;
-//    cout << sta_da << endl;
-//    cout << sta_ds << endl;
-//    cout << sta_dh << endl;
+
 
 }
 
@@ -65,12 +63,12 @@ void poisonAura::SetupStatus(character* maker, character* other, field* currentF
 
 
 void poisonAura::StatusTakeEffect(character* maker, character* other, field* currentField){
+    cout << "The Poison Aura tainted the field!" << endl;
+
     status* selfTempStatus = &(maker->Poisoned);
-    selfTempStatus->SetupStatus(maker, other, currentField);
     (*maker).add_status(selfTempStatus, maker, currentField);
 
     status* otherTempStatus = &(other->Poisoned);
-    otherTempStatus->SetupStatus(other, maker, currentField);
     (*other).add_status(otherTempStatus, maker, currentField);
 
     nT -= 1;

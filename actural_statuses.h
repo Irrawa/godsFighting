@@ -63,7 +63,7 @@ public:
     netherCircuit(){
         sta_name = "NETHER CIRCUIT";
         sta_info = "Increase 20 ATK and DEF, heals the character while suffer poison";
-//        sta_logo = "\uD83D\uDC9E"
+//        sta_logo = "\uD83D\uDC9E";
         iniT = 2;
         nT = iniT;
         sta_pos = true;
@@ -85,6 +85,7 @@ public:
     toxic(){
         sta_name = "TOXIC";
         sta_info = "Inflict increasing damage each turn.";
+        specialProperty = "poison";
 //        sta_logo = "☠️";
         iniT = 3;
         nT = iniT;
@@ -106,6 +107,7 @@ public:
     poisoned(){
         sta_name = "POISONED";
         sta_info = "Inflict damage each turn.";
+        specialProperty = "poison";
 //        sta_logo = "\uD83D\uDC80️"
         iniT = 5;
         nT = iniT;
@@ -137,8 +139,6 @@ virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, fie
 
 virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
-//virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
-
 virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 
 };
@@ -162,8 +162,6 @@ public:
 
     virtual void RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
 
-//virtual void StatusTakeEffect(character* self, character* oppo, field* currentField);
-
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 
 };
@@ -176,7 +174,7 @@ public:
             sta_name = "AWAKENING";
             sta_info = "Time will back flow after this status takes effect";
 //            sta_logo = "\uD83D\uDCAD";
-            iniT = 2;
+            iniT = 0;
             nT = iniT;
             sta_pos = true;
             sta_neg = false;
@@ -198,7 +196,8 @@ public:
         sta_name = "NIGHTMARE";
         sta_info = "She is now suffering a nightmare, it will end sooner or later!";
 //        sta_logo = "\uD83D\uDC7E";
-        iniT = 1;
+        specialProperty = "dream";
+        iniT = 2;
         nT = iniT;
         sta_pos = true;
         sta_neg = false;
@@ -220,14 +219,17 @@ public:
         sta_name = "LOTUS";
         sta_info = "She is now dreaming sweetness, it will end sooner or later!";
 //        sta_logo = "\uD83D\uDCAB";
-        iniT = 1;
+        iniT = 2;
         nT = iniT;
+        specialProperty = "dream";
         sta_pos = false;
         sta_neg = true;
     }
 
 
     virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
+
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 
 };
@@ -242,6 +244,7 @@ public:
         sta_neg = false;
     }
     virtual void SetupStatus(character* selfCharacter, character* oppoCharacter, field* currentField);
+
     virtual void StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField);
 };
 #endif //GODS_ACTURAL_STATUSES_H
