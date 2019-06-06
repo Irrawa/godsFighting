@@ -319,9 +319,10 @@ cmove ShadowMirror(character * owner, character * taker, field * place){
         oppoMoveLen = taker->moveL.size();
     }
     int chooseMoveNum = rand() % oppoMoveLen;
-//    cout << rand() << endl;
-//    cout << chooseMoveNum << endl;
+    
+    taker->SetMove(owner, place);
     shadowMirror = taker->moveL[chooseMoveNum];
+
 //    cout << "copied " << shadowMirror.mName << endl;
     shadowMirror.mName += "(shadow)";
     shadowMirror.nameChanged = true;
