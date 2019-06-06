@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "actural_statuses.h"
 #include "character.h"
 #include "actural_moves.h"
@@ -30,16 +31,16 @@ void nayadBreeze::RefStatus(character* maker, character* other, field* currentFi
 
 void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* currentField){
     (*maker).HP += sta_dh;
-    (*maker).MP += sta_dm;
-    (*maker).ctr_atk += sta_da;
-    (*maker).ctr_def += sta_dd;
+//    (*maker).MP += sta_dm;
+//    (*maker).ctr_atk += sta_da;
+//    (*maker).ctr_def += sta_dd;
     (*maker).ctr_spd += sta_ds;
     totalBuffCount += sta_ds;
-    (*other).HP += sta_Odh;
-    (*other).MP += sta_Odm;
-    (*other).ctr_atk += sta_Oda;
-    (*other).ctr_def += sta_Odd;
-    (*other).ctr_spd += sta_Ods;
+//    (*other).HP += sta_Odh;
+//    (*other).MP += sta_Odm;
+//    (*other).ctr_atk += sta_Oda;
+//    (*other).ctr_def += sta_Odd;
+//    (*other).ctr_spd += sta_Ods;
     cout << maker->cName << " is imbued with Nayad's Power. "<< endl;
     nT -= 1;
 
@@ -48,7 +49,7 @@ void nayadBreeze::StatusTakeEffect(character* maker, character* other, field* cu
 
 void nayadBreeze::StatusLoss(character* maker, character* other, field* currentField){
     cout << "Nayad Breeze status lost" << endl;
-    (*maker).ctr_spd -= totalBuffCount;
+    (*maker).ctr_spd = max((*maker).ctr_spd - totalBuffCount, 1);
     totalBuffCount = 0;
 }
 

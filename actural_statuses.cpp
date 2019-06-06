@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "actural_statuses.h"
 #include "character.h"
 #include "actural_moves.h"
@@ -78,8 +79,8 @@ void netherCircuit::RefStatus(character* selfCharacter, character* oppoCharacter
 
 void netherCircuit::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     cout << "Nether Circuit status lost" << endl;
-    (*selfCharacter).ctr_atk -= 20;
-    (*selfCharacter).ctr_def -= 20;
+    (*selfCharacter).ctr_atk = max((*selfCharacter).ctr_atk - 20, 1);
+    (*selfCharacter).ctr_def = max((*selfCharacter).ctr_def - 20, 1);
     vector <status*> targetSList = selfCharacter->statL;
     int Length = targetSList.size();
     for(int i = 0; i < Length; i++){
@@ -182,7 +183,7 @@ void spiritified::RefStatus(character* selfCharacter, character* oppoCharacter, 
 
 void spiritified::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField){
     cout << "Spirified status lost" << endl;
-    (*selfCharacter).ctr_def -= ParameterDeliver;
+    (*selfCharacter).ctr_def = max((*selfCharacter).ctr_def - ParameterDeliver, 1);
 }
 
 

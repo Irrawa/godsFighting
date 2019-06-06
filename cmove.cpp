@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 
@@ -121,10 +122,20 @@ void cmove::LaunchMove(character *speller, character *taker, field *thisField) {
     (*taker).ctr_atk += opo_da;
     (*taker).ctr_def += opo_dd;
     (*taker).ctr_spd += opo_ds;
+
+    speller->MP = max(speller->MP, 0);
+    speller->ctr_atk = max(speller->ctr_atk, 1);
+    speller->ctr_def = max(speller->ctr_def, 1);
+    speller->ctr_spd = max(speller->ctr_spd, 1);
+    taker->MP = max(taker->MP, 0);
+    taker->ctr_atk = max(taker->ctr_atk, 1);
+    taker->ctr_def = max(taker->ctr_def, 1);
+    taker->ctr_spd = max(taker->ctr_spd, 1);
+
 }
 //    cout << (*taker).HP << endl;
 
 void cmove::ResetMove(character *speller, character *taker, field *thisField){
     int damage = mv_atk * (*speller).ctr_atk / (*taker).ctr_def;
-    opo_dh += damage;
+    opo_dh -= damage;
 }

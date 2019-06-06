@@ -310,48 +310,44 @@ unsigned long xorshf96(void) {          //period 2^96-1
 
 int MontCarlo(battle_handler* thisBattle, int AIThisMoveNum, int AIplayerNum){
     cout.setstate(std::ios_base::failbit);
-    battle_handler mirrorBattle;
-    mirrorBattle.Initialize();
-    mirrorBattle = *thisBattle;
+    battle_handler BUBattle;
+//    mirrorBattle.Initialize();
+//    mirrorBattle = *thisBattle;
+    BUBattle = *thisBattle;
     if(AIplayerNum == 1){
-        mirrorBattle.AICharacter = &mirrorBattle.p1Character;
+        thisBattle->AICharacter = &(thisBattle->p1Character);
     }
     else{
-        mirrorBattle.AICharacter = &mirrorBattle.p2Character;
+        thisBattle->AICharacter = &(thisBattle->p2Character);
     }
-    mirrorBattle.JudgeSpeed();
-    mirrorBattle.MirrorMode = true;
+    thisBattle->JudgeSpeed();
+    thisBattle->MirrorMode = true;
     int turn = 0;
     srand(time(NULL));
-    while(!mirrorBattle.Winner){
-        mirrorBattle.JudgeSpeed();
+    while(!thisBattle->Winner){
+        thisBattle->JudgeSpeed();
         if(turn > 0) {
-            mirrorBattle.fasterMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
-            mirrorBattle.slowerMoveNum = rand() % mirrorBattle.slowerCharacter->moveL.size();
+            thisBattle->fasterMoveNum = rand() % thisBattle->fasterCharacter->moveL.size();
+            thisBattle->slowerMoveNum = rand() % thisBattle->slowerCharacter->moveL.size();
         }
         else{
-            if(mirrorBattle.AICharacter->cName == mirrorBattle.fasterCharacter->cName){
+            if(thisBattle->AICharacter->cName == thisBattle->fasterCharacter->cName){
 
-                mirrorBattle.fasterMoveNum = AIThisMoveNum;
-
-//                cout.clear();
-//                cout << xorshf96() << endl;
-//                cout.setstate(std::ios_base::failbit);
-
-                mirrorBattle.slowerMoveNum = xorshf96() % mirrorBattle.slowerCharacter->moveL.size();
+                thisBattle->fasterMoveNum = AIThisMoveNum;
+                thisBattle->slowerMoveNum = xorshf96() % thisBattle->slowerCharacter->moveL.size();
             }
             else{
-                mirrorBattle.slowerMoveNum = AIThisMoveNum;
-                mirrorBattle.fasterMoveNum = xorshf96() % mirrorBattle.fasterCharacter->moveL.size();
+                thisBattle->slowerMoveNum = AIThisMoveNum;
+                thisBattle->fasterMoveNum = xorshf96() % thisBattle->fasterCharacter->moveL.size();
             }
         }
-        if(mirrorBattle.CastMove()){
+        if(thisBattle->CastMove()){
             break;
         };
         bool doubleBreak = false;
-        while(mirrorBattle.IfSpeed()){
-            mirrorBattle.speedMoveNum = rand() % mirrorBattle.fasterCharacter->moveL.size();
-            if(mirrorBattle.SpeedCastMove()){
+        while(thisBattle->IfSpeed()){
+            thisBattle->speedMoveNum = rand() % thisBattle->fasterCharacter->moveL.size();
+            if(thisBattle->SpeedCastMove()){
                 doubleBreak = true;
                 break;
             };
@@ -359,12 +355,15 @@ int MontCarlo(battle_handler* thisBattle, int AIThisMoveNum, int AIplayerNum){
         if(doubleBreak){
             break;
         }
-        if(mirrorBattle.DoStatus()){
+        if(thisBattle->DoStatus()){
             break;
         };
         turn += 1;
     }
-    return mirrorBattle.Winner;
+    int mirrorBattleWinner = thisBattle->Winner;
+    *thisBattle = BUBattle;
+//    thisBattle->BattleField.battleRecord.clear();
+    return mirrorBattleWinner;
 }
 
 int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
@@ -379,12 +378,19 @@ int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
     vector <int> winList;
     int MaxCount = 0;
     int recommendedMove = rand() % this->AICharacter->moveL.size() ;
+
     for (int i = 0; i < AICharacter->moveL.size(); i++) { //
         int winCount = 0;
         for (int j = 0; j < IQ; j++) {
-            if(MontCarlo(this, i, AIplayerNum) == 2){
+            if(MontCarlo(this, i, AIplayerNum) == AIplayerNum){
                 winCount += 1;
             }
+
+//            cout.clear();
+//            cout << this->BattleField.battleRecord.size() << endl;
+//            cout.setstate(std::ios_base::failbit);
+//            BattleRecord记录正常，内存不是在这里泄漏的
+
         }
         winList.push_back(winCount);
         if(winCount > MaxCount){
@@ -392,6 +398,7 @@ int battle_handler::AIChooseMove(int IQ, int AIplayerNum){
             recommendedMove = i;
         }
     }
+
     *this = backupBattle;
     if(AICharacter->cName == fasterCharacter->cName){
         fasterMoveNum = recommendedMove;

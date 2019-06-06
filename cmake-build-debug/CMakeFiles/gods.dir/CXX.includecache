@@ -47,6 +47,8 @@ vector
 -
 string
 -
+algorithm
+-
 actural_statuses.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
 character.h
@@ -110,6 +112,8 @@ iostream
 vector
 -
 string
+-
+algorithm
 -
 actural_statuses.h
 /Users/otbooster/Downloads/2019up/cpp/gods/actural_statuses.h
@@ -238,6 +242,8 @@ iostream
 vector
 -
 string
+-
+algorithm
 -
 
 /Users/otbooster/Downloads/2019up/cpp/gods/cmove.h
@@ -374,6 +380,10 @@ iostream
 vector
 -
 string
+-
+cmath
+-
+algorithm
 -
 character.h
 /Users/otbooster/Downloads/2019up/cpp/gods/character.h

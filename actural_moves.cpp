@@ -411,25 +411,25 @@ cmove ObjectiveIllusion(character * owner, character * taker, field * place){
 
     if(place->battleRecord.size() > 1) {
         note_page thePage = place->GetPage(place->battleRecord.size() - 4);
-        character theOwner;
-        character theTaker;
+        character* theOwner;
+        character* theTaker;
         if (owner->cName == thePage.C00.cName) {
-            theOwner = thePage.C00;
-            theTaker = thePage.C01;
+            theOwner = &(thePage.C00);
+            theTaker = &(thePage.C01);
         } else if (owner->cName == thePage.C01.cName) {
-            theOwner = thePage.C01;
-            theTaker = thePage.C00;
+            theOwner = &(thePage.C01);
+            theTaker = &(thePage.C00);
         }
-        objectiveIllusion.slf_dh += (theOwner.HP - owner->HP);
-        objectiveIllusion.slf_dm += (theOwner.MP - owner->MP);
-        objectiveIllusion.slf_da += (theOwner.ctr_atk - owner->ctr_atk);
-        objectiveIllusion.slf_dd += (theOwner.ctr_def - owner->ctr_def);
-        objectiveIllusion.slf_ds += (theOwner.ctr_spd - owner->ctr_spd);
-        objectiveIllusion.opo_dh += (theTaker.HP - taker->HP);
-        objectiveIllusion.opo_dm += (theTaker.MP - taker->MP);
-        objectiveIllusion.opo_da += (theTaker.ctr_atk - taker->ctr_atk);
-        objectiveIllusion.opo_dd += (theTaker.ctr_def - taker->ctr_def);
-        objectiveIllusion.opo_ds += (theTaker.ctr_spd - taker->ctr_spd);
+        objectiveIllusion.slf_dh += (theOwner->HP - owner->HP);
+        objectiveIllusion.slf_dm += (theOwner->MP - owner->MP);
+        objectiveIllusion.slf_da += (theOwner->ctr_atk - owner->ctr_atk);
+        objectiveIllusion.slf_dd += (theOwner->ctr_def - owner->ctr_def);
+        objectiveIllusion.slf_ds += (theOwner->ctr_spd - owner->ctr_spd);
+        objectiveIllusion.opo_dh += (theTaker->HP - taker->HP);
+        objectiveIllusion.opo_dm += (theTaker->MP - taker->MP);
+        objectiveIllusion.opo_da += (theTaker->ctr_atk - taker->ctr_atk);
+        objectiveIllusion.opo_dd += (theTaker->ctr_def - taker->ctr_def);
+        objectiveIllusion.opo_ds += (theTaker->ctr_spd - taker->ctr_spd);
     }
     else{
         cout << "There is no history to recall!" << endl;
@@ -532,10 +532,12 @@ cmove FleetingMeme(){
 cmove DoomDesire(character * owner, character * taker, field * place){
     cmove doomDesire;
     doomDesire.mName = "Doom Desire";
-    doomDesire.mInfo = "This move will release Asibi's Ture Power only after the 50th turn.";
+    doomDesire.mInfo = "If the battle has lasted long enough, this move will release Asibi's Ture Power.";
     doomDesire.mv_atk = 5;
+    doomDesire.opo_dh = -5;
     if(place->battleRecord.size() >= 50){
-        doomDesire.mv_atk = 500;
+        doomDesire.mv_atk = 150;
+        doomDesire.opo_dh = -150;
     }
     return doomDesire;
 }

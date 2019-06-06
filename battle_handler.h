@@ -29,7 +29,7 @@ public:
 
     bool AIMode = false;
     bool MirrorMode = false;
-    int AIIQ = 20;
+    int AIIQ = 50;
     int GameMode = 1; //1:PVP; 2:PVA; 3:AVA
 
     void Initialize();//初始化，包括创建角色名单和所有技能。
