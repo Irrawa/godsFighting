@@ -136,9 +136,6 @@
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/field_status.h">
 			<Option target="gods"/>
 		</Unit>
-		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/godFighting.h">
-			<Option target="gods"/>
-		</Unit>
 		<Unit filename="/Users/otbooster/Downloads/2019up/cpp/gods/main.cpp">
 			<Option target="gods"/>
 		</Unit>

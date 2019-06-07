@@ -7,6 +7,7 @@
 #include "actural_moves.h"
 #include "actural_characters.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include "actural_statuses.h"
@@ -28,10 +29,11 @@ void showScreen(battle_handler battleHandler){
             cout << battleHandler.BattleField.FStatusL[i]->sta_logo << endl;
         }
     }
-    battleHandler.p1Character.print();
-    cout << endl;
-    cout << endl;
     battleHandler.p2Character.print();
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    battleHandler.p1Character.print();
     if(fsLen > 0){
         for(int i = fsLen - 1; i >= 0; i--){
             cout << battleHandler.BattleField.FStatusL[i]->sta_logo << endl;
@@ -143,21 +145,42 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
     AVABattle.Initialize();
     AVABattle.AIMode = true;
     AVABattle.DecideCharacter();
-    showScreen(AVABattle);
+
+    ifstream inputS("suggested.txt");
+    if (inputS){
+        inputS >> AVABattle.p1Character.maxHP >> AVABattle.p1Character.maxMP >> AVABattle.p1Character.ctr_atk\
+               >> AVABattle.p1Character.ctr_def >> AVABattle.p1Character.ctr_spd;
+        cout << "Original Input File Loaded!" << endl;
+    }
+    else{
+        cout << "No File Loaded!" << endl;
+    }
+    inputS.close();
+
+//    showScreen(AVABattle);
     battle_handler backupBattle = AVABattle;
+    vector <int> record;
     for (int i = 0; i < iterator; i++) {
         AVABattle = backupBattle;
+
         if(doBalancing){
 //            int maxHP = 1000, maxMP = 1000, ctr_atk = 100, ctr_def = 100, ctr_spd = 100, HP, MP;
             AVABattle.p1Character.maxHP += dAbility * 10;
             AVABattle.p1Character.maxMP += dAbility * 10;
-            AVABattle.p1Character.HP += dAbility * 10;
-            AVABattle.p1Character.MP += dAbility * 10;
+            AVABattle.p1Character.HP = AVABattle.p1Character.maxHP;
+            AVABattle.p1Character.MP = AVABattle.p1Character.maxMP;
             AVABattle.p1Character.ctr_atk += dAbility;
             AVABattle.p1Character.ctr_def += dAbility;
             AVABattle.p1Character.ctr_spd += dAbility;
             cout.setstate(std::ios_base::failbit);
         }
+
+        ofstream suggested("suggested.txt");
+        suggested << AVABattle.p1Character.maxHP << ' ' << AVABattle.p1Character.maxMP << ' ' << AVABattle.p1Character.ctr_atk \
+        << ' ' << AVABattle.p1Character.ctr_def << ' ' << AVABattle.p1Character.ctr_spd;
+        suggested.close();
+
+
         while (!AVABattle.Winner) {
             AVABattle.JudgeSpeed();
             AVABattle.AIChooseMove(IQ1, 1);
@@ -192,15 +215,24 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
         }
         cout.clear();
         cout << "Current Estimated Delta Ability:" << dAbility << endl;
+        record.push_back(dAbility);
+
     }
-
-
+//    ofstream suggested("suggested.txt");
+//    suggested << AVABattle.p1Character.maxHP << ' ' << AVABattle.p1Character.maxMP << ' ' << AVABattle.p1Character.ctr_atk \
+//        << ' ' << AVABattle.p1Character.ctr_def << ' ' << AVABattle.p1Character.ctr_spd;
+    ofstream serie("serie.txt");
+    serie << AVABattle.p1Character.cName << endl;
+    for(int i = 0; i < record.size(); i++){
+        serie << record[i] << endl;
+    }
 }
+
 
 void GodsFighting(){
     bool p = true;
     while(p) {
-        cout << "Welcome!" << endl;
+        cout << "Welcome to the God's Fighting!" << endl;
         cout << "Please insert 1, 2 or 3 to choose game mode!" << endl;
         cout << "1, [PVP Mode]-----You can battle with a friend here!" << endl;
         cout << "2, [PVA Mode]-----You can battle with AI here!" << endl;
@@ -215,7 +247,7 @@ void GodsFighting(){
             PVABattle();
             p = false;
         } else if (choice == 3) {
-            AVABattle(5, 5, true, 50);
+            AVABattle(5, 5, true, 20);
             p = false;
         }
         string playAgain;

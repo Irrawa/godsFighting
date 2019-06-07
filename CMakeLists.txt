@@ -24,7 +24,6 @@ add_executable(gods
         field.h
         field_status.cpp
         field_status.h
-        godFighting.h
         main.cpp
         note_page.cpp
         note_page.h

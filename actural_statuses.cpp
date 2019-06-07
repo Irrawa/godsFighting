@@ -42,9 +42,7 @@ void aquaBlast::SetupStatus(character* selfCharacter, character* oppoCharacter, 
 
 void aquaBlast::RefStatus(character* selfCharacter, character* oppoCharacter, field* currentField) {}
 
-void aquaBlast::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField) {
-    cout << "AquaBlast status lost" << endl;
-}
+void aquaBlast::StatusLoss(character* selfCharacter, character* oppoCharacter, field* currentField) {}
 
 void aquaBlast::StatusTakeEffect(character* self, character* oppo, field* currentField){
     if(nT <= 0) {
