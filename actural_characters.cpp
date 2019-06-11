@@ -21,7 +21,7 @@ vector <character> AllCharacterList;
 character IRRAWA(){
     character irrawa;
     irrawa.cIntroduction = "Irrawa is the guardian of river Irrawaddy. She is also a good wielder of wind and rain, buffing and destruction. ";
-    irrawa.Initialize("Irrawa", IrrawaMoveList, 1200, 800, 125, 100, 80);
+    irrawa.Initialize("Irrawa", IrrawaMoveList, 1200, 800, 115, 100, 80);
     AllCharacterList.push_back(irrawa);
     return irrawa;
 }

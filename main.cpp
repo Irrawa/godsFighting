@@ -231,8 +231,12 @@ void AVABattle(int IQ1, int IQ2, bool doBalancing, int balance_round) {
 
 void GodsFighting(){
     bool p = true;
+    cout << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' << '\n' <<endl;
+    cout << "========================================================" << endl;
+    cout << "=============Welcome to the God's Fighting!=============" << endl;
+    cout << "========================================================" << endl;
+    cout << '\n' << '\n' << '\n' << endl;
     while(p) {
-        cout << "Welcome to the God's Fighting!" << endl;
         cout << "Please insert 1, 2 or 3 to choose game mode!" << endl;
         cout << "1, [PVP Mode]-----You can battle with a friend here!" << endl;
         cout << "2, [PVA Mode]-----You can battle with AI here!" << endl;
@@ -250,14 +254,19 @@ void GodsFighting(){
             AVABattle(5, 5, true, 20);
             p = false;
         }
+        else{
+            break;
+        }
         string playAgain;
-        cout << "Do you want to play again? Y to play again! Other to return to main menu!" << endl;
+        cout << "Y to return to main menu! Other to exit the game!" << endl;
         cin >> playAgain;
         if(playAgain == "y" || playAgain == "Y"){
             p = true;
         }
     }
-    cout << "Bye!" << endl;
+    cout << "========================================================" << endl;
+    cout << "=========================BYE!===========================" << endl;
+    cout << "========================================================" << endl;
 }
 
 int main() {

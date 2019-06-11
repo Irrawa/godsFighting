@@ -147,7 +147,7 @@ cmove Tailwind(character * owner, character * taker, field * place){
     srand (time(NULL));
     for(int i = 0; i < NumStatus; i++){
         if(owner->statL[i]->sta_neg == true){
-            if(rand() % 2 == 0) {
+            if(rand() % 3 != 0) {
                 tailwind.slf_rmStat.push_back(owner->statL[i]);
             }
         }
